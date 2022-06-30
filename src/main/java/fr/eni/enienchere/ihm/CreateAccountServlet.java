@@ -48,7 +48,6 @@ public class CreateAccountServlet extends HttpServlet {
         } catch (BLLException e) {
             throw new RuntimeException(e);
         }
-        response.sendRedirect(INDEX);
-
+        response.sendRedirect(request.getContextPath()+INDEX);
     }
 }
