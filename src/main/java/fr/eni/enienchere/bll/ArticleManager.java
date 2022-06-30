@@ -1,6 +1,6 @@
 package fr.eni.enienchere.bll;
 
-import fr.eni.projectsevenenchere.bo.Article;
+import fr.eni.enienchere.bo.Article;
 
 import java.util.List;
 

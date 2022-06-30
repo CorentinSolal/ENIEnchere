@@ -1,6 +1,6 @@
 package fr.eni.enienchere.bll;
 
-import fr.eni.projectsevenenchere.bo.Categorie;
+import fr.eni.enienchere.bo.Categorie;
 
 public interface CategorieManager {
 

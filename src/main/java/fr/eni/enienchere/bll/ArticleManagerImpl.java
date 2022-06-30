@@ -1,9 +1,9 @@
 package fr.eni.enienchere.bll;
 
-import fr.eni.projectsevenenchere.bo.Article;
-import fr.eni.projectsevenenchere.dal.ArticleDAO;
-import fr.eni.projectsevenenchere.dal.DALException;
-import fr.eni.projectsevenenchere.dal.DAOFactory;
+import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.dal.ArticleDAO;
+import fr.eni.enienchere.dal.DALException;
+import fr.eni.enienchere.dal.DAOFactory;
 
 import java.util.List;
 

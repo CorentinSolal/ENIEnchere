@@ -1,9 +1,9 @@
 package fr.eni.enienchere.bll;
 
-import fr.eni.projectsevenenchere.bo.User;
-import fr.eni.projectsevenenchere.dal.DALException;
-import fr.eni.projectsevenenchere.dal.DAOFactory;
-import fr.eni.projectsevenenchere.dal.UserDAO;
+import fr.eni.enienchere.bo.User;
+import fr.eni.enienchere.dal.DALException;
+import fr.eni.enienchere.dal.DAOFactory;
+import fr.eni.enienchere.dal.UserDAO;
 
 public class UserManagerImpl implements UserManager{
 

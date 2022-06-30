@@ -1,9 +1,9 @@
 package fr.eni.enienchere.bll;
 
-import fr.eni.projectsevenenchere.bo.Categorie;
-import fr.eni.projectsevenenchere.dal.CategorieDAO;
-import fr.eni.projectsevenenchere.dal.DALException;
-import fr.eni.projectsevenenchere.dal.DAOFactory;
+import fr.eni.enienchere.bo.Categorie;
+import fr.eni.enienchere.dal.CategorieDAO;
+import fr.eni.enienchere.dal.DALException;
+import fr.eni.enienchere.dal.DAOFactory;
 
 public class CategorieManagerImpl implements CategorieManager {
 
