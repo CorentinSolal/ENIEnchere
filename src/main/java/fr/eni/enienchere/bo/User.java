@@ -26,6 +26,8 @@ public class User {
         this.email = email;
         this.telephone = telephone;
         this.password = password;
+        this.credit=1000;
+        this.admin=false;
     }
 
     public User(String pseudo, String nom, String prenom, String adresse, String cpo,String ville, String email, String telephone, String password) {
@@ -38,6 +40,8 @@ public class User {
         this.email = email;
         this.telephone = telephone;
         this.password = password;
+        this.credit=1000;
+        this.admin=false;
     }
 
     public Integer getNoUser() {
