@@ -11,8 +11,8 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
 
 public class UserDAOImpl implements UserDAO{
 
-    private static final String CREATE="INSERT INTO UTILISATEURS () VALUES ()";
-    private static final String UPDATE="UPDATE UTILISATEURS SET PSEUDO=?,nom=?,prenom=?,telephone=?,rue=?,code_postal=?,ville=?";
+    private static final String CREATE="INSERT INTO UTILISATEURS (pseudo, nom, prenom, adresse, cpo, ville, email, telephone, password) VALUES (?,?,?,?,?,?,?,?,?)";
+    private static final String UPDATE="UPDATE UTILISATEURS SET PSEUDO=?,nom=?,prenom=?,telephone=?,rue=?,code_postal=?,ville=?,email=?,telephone=?,password=?,";
     private static final String VERIFY=""; // TODO requete à faire
     // TODO Requete a faire pour les méthodes
 
@@ -21,7 +21,17 @@ public class UserDAOImpl implements UserDAO{
 
             PreparedStatement stmt = conn.prepareStatement(CREATE, RETURN_GENERATED_KEYS);
 
-           // TODO prepareStatement
+            stmt.setString(1,user.getPseudo());
+            stmt.setString(2,user.getNom());
+            stmt.setString(3,user.getPrenom());
+            stmt.setString(4,user.getAdresse());
+            stmt.setString(5,user.getCpo());
+            stmt.setString(6,user.getVille());
+            stmt.setString(7,user.getEmail());
+            stmt.setString(8,user.getTelephone());
+            stmt.setString(9,user.getPassword());
+
+
 
             stmt.executeUpdate();
 
@@ -42,10 +52,12 @@ public class UserDAOImpl implements UserDAO{
             stmt.setString(2,user.getNom());
             stmt.setString(3,user.getPrenom());
             stmt.setString(4,user.getAdresse());
-            stmt.setInt(5,user.getCpo());
-            stmt.setString(6,user.getEmail());
-            stmt.setInt(7,user.getTelephone());
-            stmt.setString(8,user.getPassword());
+            stmt.setString(5,user.getCpo());
+            stmt.setString(6,user.getVille());
+           stmt.setString(7,user.getEmail());
+           stmt.setString(8,user.getTelephone());
+           stmt.setString(9,user.getPassword());
+
 
             int nbRows = stmt.executeUpdate();
 
