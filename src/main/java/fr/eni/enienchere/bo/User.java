@@ -7,31 +7,34 @@ public class User {
     private String nom;
     private String prenom;
     private String adresse;
-    private Integer cpo;
+    private String cpo;
+    private String ville;
     private String email;
-    private Integer telephone;
+    private String telephone;
     private String password;
     private int credit;
     private boolean admin;
 
-    public User(Integer noUser, String pseudo, String nom, String prenom, String adresse, Integer cpo, String email, Integer telephone, String password) {
+    public User(Integer noUser, String pseudo, String nom, String prenom, String adresse, String cpo,String ville, String email, String telephone, String password) {
         this.noUser = noUser;
         this.pseudo = pseudo;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
         this.cpo = cpo;
+        this.ville =ville;
         this.email = email;
         this.telephone = telephone;
         this.password = password;
     }
 
-    public User(String pseudo, String nom, String prenom, String adresse, Integer cpo, String email, Integer telephone, String password) {
+    public User(String pseudo, String nom, String prenom, String adresse, String cpo,String ville, String email, String telephone, String password) {
         this.pseudo = pseudo;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
         this.cpo = cpo;
+        this.ville =ville;
         this.email = email;
         this.telephone = telephone;
         this.password = password;
@@ -77,12 +80,20 @@ public class User {
         this.adresse = adresse;
     }
 
-    public Integer getCpo() {
+    public String getCpo() {
         return cpo;
     }
 
-    public void setCpo(Integer cpo) {
+    public void setCpo(String cpo) {
         this.cpo = cpo;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 
     public String getEmail() {
@@ -93,11 +104,11 @@ public class User {
         this.email = email;
     }
 
-    public Integer getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Integer telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 

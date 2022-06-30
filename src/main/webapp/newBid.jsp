@@ -3,9 +3,10 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Connexion</title>
+    <title>ENI Enchères</title>
 </head>
 <body>
 <header>
@@ -20,16 +21,18 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="">Home</a>
+                        <a class="nav-link active" href="">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="BidListServlet">Enchères en cours</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ConnectionServlet">Se connecter<span class="visually-hidden">(current)</span></a>
+                        <a class="nav-link" href="ConnectionServlet">Se connecter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
+                        <a class="nav-link" href="ConnectionServlet">Se déconnecter</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
@@ -37,6 +40,7 @@
                             <a class="dropdown-item" href="#">Mes enchères</a>
                             <a class="dropdown-item" href="#">Mes articles</a>
                             <a class="dropdown-item" href="ProfilServlet">Voir mon profil</a>
+                            <a class="dropdown-item" href="NewBidServlet">Ajouter un article</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Se déconnecter</a>
                         </div>
@@ -50,28 +54,6 @@
         </div>
     </nav>
 </header>
-<main>
-    <div class="container">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form>
-                        <div class="form-group">
-                            <label for="email" class="form-label mt-4">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="form-label mt-4">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-outline-primary" style="margin-top:20px;">submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </body>
 </html>
