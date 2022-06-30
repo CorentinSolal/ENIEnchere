@@ -1,6 +1,6 @@
 package fr.eni.enienchere.dal;
 
-import fr.eni.projectsevenenchere.bo.Bid;
+import fr.eni.enienchere.bo.Bid;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

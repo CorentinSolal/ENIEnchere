@@ -1,6 +1,6 @@
 package fr.eni.enienchere.dal;
 
-import fr.eni.projectsevenenchere.bo.User;
+import fr.eni.enienchere.bo.User;
 
 public interface UserDAO {
 
