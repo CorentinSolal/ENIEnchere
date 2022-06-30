@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "HomeServlet", value = "/HomeServlet")
+@WebServlet({"/HomeServlet","/register"})
 public class HomeServlet extends HttpServlet {
     private static final String INDEX="/index.jsp";
     private static final String CONNECTION="/connection.jsp";

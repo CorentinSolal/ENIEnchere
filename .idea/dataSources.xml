@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="BID_DB" uuid="7f565f61-9ee5-41b9-9be0-4ff6613289d6">
+    <data-source source="LOCAL" name="BID_DB" uuid="22119b78-fb33-4bd2-b0d7-7a18acafab56">
       <driver-ref>sqlserver.localdb.jtds</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
