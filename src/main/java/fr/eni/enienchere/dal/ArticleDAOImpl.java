@@ -1,6 +1,6 @@
 package fr.eni.enienchere.dal;
 
-import fr.eni.projectsevenenchere.bo.Article;
+import fr.eni.enienchere.bo.Article;
 
 import java.sql.*;
 import java.util.ArrayList;

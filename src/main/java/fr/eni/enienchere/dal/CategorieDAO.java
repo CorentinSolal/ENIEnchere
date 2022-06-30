@@ -1,6 +1,6 @@
 package fr.eni.enienchere.dal;
 
-import fr.eni.projectsevenenchere.bo.Categorie;
+import fr.eni.enienchere.bo.Categorie;
 
 public interface CategorieDAO {
 
