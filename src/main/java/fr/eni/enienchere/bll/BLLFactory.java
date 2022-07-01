@@ -12,4 +12,6 @@ public class BLLFactory {
     public static CategorieManagerImpl getCategorieManager() {return new CategorieManagerImpl();}
 
     public static BidManagerImpl getBidManager() {return new BidManagerImpl();}
+
+    public static RetraitManagerImpl getRetraitManager() {return new RetraitManagerImpl();}
 }
