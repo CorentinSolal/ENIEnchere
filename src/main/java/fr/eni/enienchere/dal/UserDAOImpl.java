@@ -128,7 +128,6 @@ public class UserDAOImpl implements UserDAO{
             } else {
                 throw new DALException("Login ou Mot de passe incorrecte");
             }
-
         } catch (Exception e) {
             throw new DALException("", e);
         }

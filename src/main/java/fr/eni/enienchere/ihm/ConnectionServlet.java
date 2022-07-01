@@ -18,8 +18,8 @@ public class ConnectionServlet extends HttpServlet {
     private static final String NEWBID="/.jsp";
     private static final String PROFIL="/profil.jsp";
 
-    UserManager um;
-
+    private UserManager um;
+    private HttpSession session;
     @Override
     public void init() throws ServletException {
         um= BLLFactory.getUserManager();
@@ -32,9 +32,16 @@ public class ConnectionServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session=request.getSession();
         try {
             User user= um.connectUser(request.getParameter("username"), request.getParameter("password"));
+            session.setAttribute("id", user.getNoUser());
+            session.setAttribute("username", user.getPseudo());
+            session.setAttribute("connected","true");
+            response.sendRedirect(INDEX);
         }catch (BLLException e) {
+            request.setAttribute("error", "Erreur lors de la connection");
+            request.getRequestDispatcher(CONNECTION).forward(request, response);
             e.printStackTrace();
         }
     }
