@@ -16,7 +16,7 @@ public class UserManagerImpl implements UserManager{
         try {
             userDAO.addUser(user);
         } catch (DALException e) {
-            throw new BLLException("",e);
+            throw new BLLException("Erreur UserManagerImpl addUser",e);
         }
     }
     public void updateUser(User user) throws BLLException {
@@ -36,6 +36,15 @@ public class UserManagerImpl implements UserManager{
     public User selectUser(Integer id) throws BLLException {
         try {
             return userDAO.selectUser(id);
+        } catch (DALException e) {
+            throw new BLLException("",e);
+        }
+    }
+
+    @Override
+    public void connectUser(String username, String password) throws BLLException {
+        try{
+            userDAO.connectUser(username,password);
         } catch (DALException e) {
             throw new BLLException("",e);
         }

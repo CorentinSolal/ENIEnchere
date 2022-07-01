@@ -8,4 +8,6 @@ public interface UserDAO {
     void updateUser(User user) throws DALException;
     void deleteUser(Integer id) throws DALException;
     User selectUser(Integer id) throws DALException;
+
+    void connectUser(String username, String password);
 }
