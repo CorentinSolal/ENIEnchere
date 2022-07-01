@@ -55,7 +55,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <form action="HomeServlet" method="post">
+                    <form action="CreateAccountServlet" method="post">
                         <fieldset>
                             <div class="form-group m-4">
                                 <h2 class="m-5" style="text-align:center">Créer un compte</h2>
