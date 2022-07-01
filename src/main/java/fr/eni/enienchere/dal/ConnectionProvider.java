@@ -9,9 +9,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class ConnectionProvider {
-
     private static DataSource dataSource;
-
     static {
         try {
             Context context = new InitialContext();

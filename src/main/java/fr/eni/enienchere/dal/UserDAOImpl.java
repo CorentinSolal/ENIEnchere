@@ -14,6 +14,7 @@ public class UserDAOImpl implements UserDAO{
     private static final String INSERT = "insert into UTILISATEURS (pseudo, nom, prenom, "
             + "email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) "
             + "values ( ?, ?, ?, ?, ?, ?, ?, ?, ?,100, false)";
+    private static final String CONNECT="SELECT * FROM UTILISATEURS WHERE pseudo=? AND mot_de_passe=?";
     private static final String UPDATE="UPDATE UTILISATEURS SET PSEUDO=?,nom=?,prenom=?,telephone=?,rue=?,code_postal=?,ville=?,email=?,telephone=?,password=?,";
     private static final String DELETE="DELETE FROM UTILISATEURS WHERE no_utilisateur = ?";
     private static final String VERIFY="SELECT * FROM UTILISATEURS WHERE no_utilisateur = ?";
@@ -110,5 +111,26 @@ public class UserDAOImpl implements UserDAO{
         }
 
         return user;
+    }
+
+    @Override
+    public User connectUser(String username, String password) throws DALException {
+        try (Connection connection= ConnectionProvider.getConnection()){
+            PreparedStatement stmt = connection.prepareStatement(CONNECT);
+
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return new User(rs.getInt("no_utilisateur"),rs.getString("pseudo"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("telephone"), rs.getString("rue"), rs.getString("code_postal"), rs.getString("ville"), rs.getString("mot_de_passe"), rs.getInt("credit"), rs.getBoolean("administrateur"));
+            } else {
+                throw new DALException("Login ou Mot de passe incorrecte");
+            }
+
+        } catch (Exception e) {
+            throw new DALException("", e);
+        }
     }
 }

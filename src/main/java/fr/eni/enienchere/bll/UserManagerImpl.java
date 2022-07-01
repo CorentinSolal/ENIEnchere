@@ -16,28 +16,37 @@ public class UserManagerImpl implements UserManager{
         try {
             userDAO.addUser(user);
         } catch (DALException e) {
-            throw new BLLException("",e);
+            throw new BLLException("Erreur UserManagerImpl addUser",e);
         }
     }
     public void updateUser(User user) throws BLLException {
         try {
             userDAO.updateUser(user);
         } catch (DALException e) {
-            throw new BLLException("",e);
+            throw new BLLException("Erreur UserManagerimpl updateUser",e);
         }
     }
     public void deleteUser(Integer id) throws BLLException {
         try {
             userDAO.deleteUser(id);
         } catch (DALException e) {
-            throw new BLLException("",e);
+            throw new BLLException("Erreur UserManagerImpl deleteUser",e);
         }
     }
     public User selectUser(Integer id) throws BLLException {
         try {
             return userDAO.selectUser(id);
         } catch (DALException e) {
-            throw new BLLException("",e);
+            throw new BLLException("Erreur UserManagerImpl selectUser",e);
+        }
+    }
+
+    @Override
+    public void connectUser(String username, String password) throws BLLException {
+        try{
+            userDAO.connectUser(username,password);
+        } catch (DALException e) {
+            throw new BLLException("Erreur UserManagerImpl connectUser", e);
         }
     }
 }

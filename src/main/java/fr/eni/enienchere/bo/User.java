@@ -55,6 +55,21 @@ public class User {
     public User() {
     }
 
+    public User(Integer noUser, String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password, int credit, boolean admin) {
+        this.noUser = noUser;
+        this.pseudo = pseudo;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.adresse = adresse;
+        this.cpo = cpo;
+        this.ville = ville;
+        this.email = email;
+        this.telephone = telephone;
+        this.password = password;
+        this.credit = credit;
+        this.admin = admin;
+    }
+
     public Integer getNoUser() {
         return noUser;
     }

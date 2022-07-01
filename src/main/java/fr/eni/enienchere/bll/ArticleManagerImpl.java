@@ -19,7 +19,7 @@ public class ArticleManagerImpl implements ArticleManager   {
         try {
             return articleDao.selectAll();
         } catch (DALException e) {
-            throw new BLLException("", e);
+            throw new BLLException("Erreur ArticleManagerImpl getAllArticles", e);
         }
     }
 
@@ -28,13 +28,13 @@ public class ArticleManagerImpl implements ArticleManager   {
             try {
                 articleDao.insert(article);
             } catch (DALException e) {
-                throw new BLLException("enregistrerArticle : " + article, e);
+                throw new BLLException("Erreur ArticleManagerImpl enregistrerArticle : " + article, e);
             }
         } else {
             try {
                 articleDao.update(article);
             } catch (DALException e) {
-                throw new BLLException("enregistrerArticle : " + article, e);
+                throw new BLLException("Erreur ArticleManagerImpl enregistrerArticle : " + article, e);
             }
         }
     }
@@ -43,7 +43,7 @@ public class ArticleManagerImpl implements ArticleManager   {
         try {
                 articleDao.delete(idArt);
         }catch (DALException e) {
-            throw new BLLException("supprimerArticle : " + idArt,e);
+            throw new BLLException("Erreur ArticleManagerImpl deleteArticle : " + idArt,e);
         }
     }
 }
