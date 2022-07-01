@@ -16,9 +16,11 @@ public class UserDAOImpl implements UserDAO{
 
     private static final String DELETE="DELETE FROM UTILISATEURS WHERE no_utilisateur = ?";
 
-    private static final String VERIFY=""; // TODO requete à faire
-    // TODO Requete a faire pour les méthodes
+    private static final String VERIFY="SELECT * FROM UTILISATEURS WHERE no_utilisateur = ?";
 
+
+
+    @Override
     public void addUser(User user) throws DALException {
         try ( Connection conn = ConnectionProvider.getConnection();) {
 
@@ -47,6 +49,7 @@ public class UserDAOImpl implements UserDAO{
         }
     }
 
+    @Override
     public void updateUser(User user) throws DALException {
         try (Connection conn = ConnectionProvider.getConnection();){
             PreparedStatement stmt = conn.prepareStatement(UPDATE);
@@ -71,6 +74,7 @@ public class UserDAOImpl implements UserDAO{
             throw new DALException("erreur update user : "+user.getNoUser());
         }
     }
+    @Override
     public void deleteUser(Integer id) throws DALException {
         try (Connection conn = ConnectionProvider.getConnection();) {
             PreparedStatement stmt = conn.prepareStatement(DELETE);
@@ -86,8 +90,28 @@ public class UserDAOImpl implements UserDAO{
             throw new DALException("erreur delete user : "+id, e);
         }
     }
+    @Override
     public User selectUser(Integer id) throws DALException {
-        // TODO Auto-generated
-        return null;
+        User user = null;
+        try (Connection conn = ConnectionProvider.getConnection()){
+
+            PreparedStatement stmt = conn.prepareStatement(VERIFY);
+
+            stmt.setInt(1, id);
+
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                user =new User ( rs.getInt("no_utilisateur"),rs.getString("pseudo"),rs.getString("nom"),rs.getString("prenom"),
+                        rs.getString("email"), rs.getString("telephone"), rs.getString("rue"), rs.getString("code_postal"),
+                        rs.getString("ville"), rs.getString("mot_de_passe"));
+            }else{
+                throw new DALException("erreur verify user : "+id);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+            throw new DALException("erreur selectUser : ", e);
+        }
+
+        return user;
     }
 }
