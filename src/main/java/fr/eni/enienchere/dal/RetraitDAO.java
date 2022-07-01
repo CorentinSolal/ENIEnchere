@@ -8,4 +8,8 @@ public interface RetraitDAO {
     }
 
     void addRetrait (Retrait retrait) throws DALException;
+
+    void updateRetrait (Retrait retrait) throws DALException;
+
+    void deleteRetrait (int noArticle) throws DALException;
 }

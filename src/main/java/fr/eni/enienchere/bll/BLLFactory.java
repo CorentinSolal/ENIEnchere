@@ -10,4 +10,6 @@ public class BLLFactory {
     }
 
     public static CategorieManagerImpl getCategorieManager() {return new CategorieManagerImpl();}
+
+    public static BidManagerImpl getBidManager() {return new BidManagerImpl();}
 }
