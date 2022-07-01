@@ -9,5 +9,5 @@ public interface UserDAO {
     void deleteUser(Integer id) throws DALException;
     User selectUser(Integer id) throws DALException;
 
-    void connectUser(String username, String password);
+    User connectUser(String username, String password) throws DALException;
 }
