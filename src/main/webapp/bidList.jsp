@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <img src="images/logo_ENI_global_BLANC.png" alt="logo-ENI-global-BLANC">
-            <a class="navbar-brand" href="#">ENI Enchères</a>
+            <a class="navbar-brand" href="HomeServlet">ENI Enchères</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="">Home</a>
+                        <a class="nav-link active" href="HomeServlet">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="BidListServlet">Enchères en cours

@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet({"/HomeServlet","/register"})
+@WebServlet({"/HomeServlet"})
 public class HomeServlet extends HttpServlet {
     private static final String INDEX="/index.jsp";
     private static final String CONNECTION="/connection.jsp";
@@ -18,6 +18,7 @@ public class HomeServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        getServletContext().getRequestDispatcher(INDEX).forward(request, response);
     }
 }
