@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 
 public class RetraitDAOImpl implements RetraitDAO {
-    // TODO FAIRE LA DAO POUR LIER LA BO A LA BASE DE DONNEES
+
 
     private static final String INSERT = "INSERT INTO RETRAITS (rue, cpo, ville) VALUES (?, ?, ?)";
     private static final String UPDATE = "UPDATE RETRAITS SET rue=?, cpo=?, ville=?";
@@ -70,7 +70,6 @@ public class RetraitDAOImpl implements RetraitDAO {
         }
     }
 
-    //TODO REPRENDRE LES MEMES METHODES QUE LES AUTRES DAO
 
 }
 
