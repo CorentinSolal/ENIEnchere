@@ -12,6 +12,9 @@ public class RetraitDAOImpl implements RetraitDAO {
     // TODO FAIRE LA DAO POUR LIER LA BO A LA BASE DE DONNEES
 
     private static final String INSERT = "INSERT INTO RETRAITS (rue, cpo, ville) VALUES (?, ?, ?)";
+    private static final String UPDATE = "UPDATE RETRAITS SET rue=?, cpo=?, ville=?";
+
+    private static final String DELETE = "DELETE FROM RETRAITS WHERE no_article = ?";
 
     public void addRetrait(Retrait retrait) throws DALException {
         try (Connection conn = ConnectionProvider.getConnection();) {
@@ -33,6 +36,39 @@ public class RetraitDAOImpl implements RetraitDAO {
         }
     }
 
+    public void updateRetrait (Retrait retrait) throws DALException {
+        try (Connection conn = ConnectionProvider.getConnection();) {
+            PreparedStatement stmt = conn.prepareStatement(UPDATE);
+
+            stmt.setString(1, retrait.getRue());
+            stmt.setString(2, retrait.getCpo());
+            stmt.setString(3, retrait.getVille());
+
+            int nbRows = stmt.executeUpdate();
+
+            if(nbRows == 0) {
+                throw new DALException("retrait not found");
+            }
+        } catch (SQLException e) {
+            throw new DALException("error update retrait : ", e);
+        }
+    }
+
+    public void deleteRetrait (int noArticle) throws DALException {
+        try (Connection conn = ConnectionProvider.getConnection();) {
+            PreparedStatement stmt = conn.prepareStatement(DELETE);
+
+            stmt.setInt(1, noArticle);
+
+            int nbRows = stmt.executeUpdate();
+
+            if(nbRows == 0) {
+                throw new DALException("retrait not found");
+            }
+        } catch (SQLException e) {
+            throw new DALException("error delete retrait : ", e);
+        }
+    }
 
     //TODO REPRENDRE LES MEMES METHODES QUE LES AUTRES DAO
 
