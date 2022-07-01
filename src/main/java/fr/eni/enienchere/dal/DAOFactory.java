@@ -9,6 +9,8 @@ public class DAOFactory {
 
     private static BidDAO instanceBid;
 
+    private static RetraitDAO instanceRetrait;
+
     public static ArticleDAO getArticleDao() {
         if (instanceArticle==null)
             instanceArticle = new ArticleDAOImpl();
@@ -31,4 +33,11 @@ public class DAOFactory {
             instanceBid = new BidDAOImpl();
         return instanceBid;
     }
+
+    public static RetraitDAO getRetraitDAO() {
+        if (instanceRetrait==null)
+            instanceRetrait = new RetraitDAOImpl();
+        return instanceRetrait;
+    }
+
 }
