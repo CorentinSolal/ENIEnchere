@@ -10,9 +10,9 @@ public class User {
     @NotBlank
     private String pseudo;
     @NotBlank
-    private String nom;
+    private String lastName;
     @NotBlank
-    private String prenom;
+    private String firstName;
     @NotBlank
     private String adresse;
     @NotBlank
@@ -27,33 +27,32 @@ public class User {
     private int credit;
     private boolean admin;
 
-    public User(Integer noUser, String pseudo, String nom, String prenom, String adresse, String cpo,String ville, String email, String telephone, String password) {
+    public User(Integer noUser, String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
         this.noUser = noUser;
         this.pseudo = pseudo;
-        this.nom = nom;
-        this.prenom = prenom;
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.adresse = adresse;
         this.cpo = cpo;
-        this.ville =ville;
+        this.ville = ville;
         this.email = email;
         this.telephone = telephone;
         this.password = password;
-        this.credit=1000;
-        this.admin=false;
     }
 
-    public User(String pseudo, String nom, String prenom, String adresse, String cpo,String ville, String email, String telephone, String password) {
+    public User(String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
         this.pseudo = pseudo;
-        this.nom = nom;
-        this.prenom = prenom;
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.adresse = adresse;
         this.cpo = cpo;
-        this.ville =ville;
+        this.ville = ville;
         this.email = email;
         this.telephone = telephone;
         this.password = password;
-        this.credit=1000;
-        this.admin=false;
+    }
+
+    public User() {
     }
 
     public Integer getNoUser() {
@@ -72,20 +71,20 @@ public class User {
         this.pseudo = pseudo;
     }
 
-    public String getNom() {
-        return nom;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getAdresse() {

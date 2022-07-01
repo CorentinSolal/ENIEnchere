@@ -7,8 +7,8 @@
 		type="javax.sql.DataSource"
 		
 		url="jdbc:sqlserver://localhost:1433;databasename=BID_DB"
-		username="admin"
-		password="Password123"
+		username="sa"
+		password="Pa$$w0rd"
 		
 		maxTotal="100"
 		maxIdle="30"

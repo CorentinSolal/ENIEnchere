@@ -1,11 +1,12 @@
 package fr.eni.enienchere.dal;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.SQLException;
 
 public class ConnectionProvider {
 
@@ -21,7 +22,6 @@ public class ConnectionProvider {
             throw new RuntimeException("Connexion à la BD impossible");
         }
     }
-
     public static Connection getConnection() throws SQLException
     {
         return dataSource.getConnection();

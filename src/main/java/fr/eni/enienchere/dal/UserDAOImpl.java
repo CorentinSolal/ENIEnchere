@@ -11,41 +11,38 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
 
 public class UserDAOImpl implements UserDAO{
 
-    private static final String CREATE="INSERT INTO UTILISATEURS (pseudo, nom, prenom, adresse, cpo, ville, email, telephone, password) VALUES (?,?,?,?,?,?,?,?,?)";
+    private static final String INSERT = "insert into UTILISATEURS (pseudo, nom, prenom, "
+            + "email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) "
+            + "values ( ?, ?, ?, ?, ?, ?, ?, ?, ?,100, false)";
     private static final String UPDATE="UPDATE UTILISATEURS SET PSEUDO=?,nom=?,prenom=?,telephone=?,rue=?,code_postal=?,ville=?,email=?,telephone=?,password=?,";
-
     private static final String DELETE="DELETE FROM UTILISATEURS WHERE no_utilisateur = ?";
-
     private static final String VERIFY="SELECT * FROM UTILISATEURS WHERE no_utilisateur = ?";
-
-
 
     @Override
     public void addUser(User user) throws DALException {
         try ( Connection conn = ConnectionProvider.getConnection();) {
 
-            PreparedStatement stmt = conn.prepareStatement(CREATE, RETURN_GENERATED_KEYS);
+            PreparedStatement stmt = conn.prepareStatement(INSERT, RETURN_GENERATED_KEYS);
 
             stmt.setString(1,user.getPseudo());
-            stmt.setString(2,user.getNom());
-            stmt.setString(3,user.getPrenom());
-            stmt.setString(4,user.getAdresse());
-            stmt.setString(5,user.getCpo());
-            stmt.setString(6,user.getVille());
-            stmt.setString(7,user.getEmail());
-            stmt.setString(8,user.getTelephone());
+            stmt.setString(2,user.getLastName());
+            stmt.setString(3,user.getFirstName());
+            stmt.setString(4,user.getEmail());
+            stmt.setString(5,user.getTelephone());
+            stmt.setString(6,user.getAdresse());
+            stmt.setString(7,user.getCpo());
+            stmt.setString(8,user.getVille());
             stmt.setString(9,user.getPassword());
-
-
 
             stmt.executeUpdate();
 
             ResultSet rs = stmt.getGeneratedKeys();
+
             if (rs.next()) {
                 user.setNoUser(rs.getInt(1));
             }
         } catch (SQLException e) {
-            throw new DALException("erreur create user : ", e);
+            throw new DALException("erreur insert user : ", e);
         }
     }
 
@@ -55,8 +52,8 @@ public class UserDAOImpl implements UserDAO{
             PreparedStatement stmt = conn.prepareStatement(UPDATE);
 
             stmt.setString(1,user.getPseudo());
-            stmt.setString(2,user.getNom());
-            stmt.setString(3,user.getPrenom());
+            stmt.setString(2,user.getFirstName());
+            stmt.setString(3,user.getLastName());
             stmt.setString(4,user.getAdresse());
             stmt.setString(5,user.getCpo());
             stmt.setString(6,user.getVille());

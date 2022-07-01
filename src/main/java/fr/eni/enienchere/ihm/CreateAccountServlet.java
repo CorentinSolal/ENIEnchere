@@ -13,41 +13,37 @@ import java.io.IOException;
 @WebServlet(name = "CreateAccountServlet", value = "/CreateAccountServlet")
 public class CreateAccountServlet extends HttpServlet {
     private static final String INDEX="/index.jsp";
-    private static final String CONNECTION="/connection.jsp";
-    private static final String BIDLIST="/bidList.jsp";
-    private static final String NEWBID="/.jsp";
-    private static final String PROFIL="/profil.jsp";
     private static final String NEWACCOUNT="/newAccount.jsp";
 
-    UserManager userManager= BLLFactory.getUserManager();
+    UserManager userManager;
 
     @Override
     public void init() throws ServletException {
+        userManager= BLLFactory.getUserManager();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext().getRequestDispatcher(NEWACCOUNT).forward(request, response);
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String pseudo=request.getParameter("pseudo");
-        String lastName=request.getParameter("name");
-        String firstName=request.getParameter("firstName");
-        String phoneNumber=request.getParameter("phoneNumber");
-        String email=request.getParameter("email");
-        String password=request.getParameter("password");
-        String street=request.getParameter("street");
-        String postalCode=request.getParameter("postalCode");
-        String city=request.getParameter("city");
-
+        User newUser = new User();
+        newUser.setPseudo(request.getParameter("pseudo"));
+        newUser.setLastName(request.getParameter("lastName"));
+        newUser.setFirstName(request.getParameter("firstName"));
+        newUser.setEmail(request.getParameter("email"));
+        newUser.setTelephone(request.getParameter("phoneNumber"));
+        newUser.setAdresse(request.getParameter("street"));
+        newUser.setCpo(request.getParameter("postalCode"));
+        newUser.setVille(request.getParameter("city"));
+        newUser.setPassword(request.getParameter("password"));
         try {
-            userManager.addUser(new User(pseudo,lastName,firstName,street,postalCode,city,email,phoneNumber,password));
+            userManager.addUser(newUser);
+            request.getRequestDispatcher(INDEX).forward(request, response);
         } catch (BLLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
-        response.sendRedirect(request.getContextPath()+INDEX);
+
     }
 }
