@@ -30,8 +30,9 @@
                         <a class="nav-link" href="ConnectionServlet">Se connecter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ConnectionServlet">Se déconnecter</a>
+                        <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
                         <div class="dropdown-menu">
