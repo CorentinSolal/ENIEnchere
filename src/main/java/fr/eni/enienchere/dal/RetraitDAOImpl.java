@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static sun.tools.jconsole.Messages.CREATE;
 
 public class RetraitDAOImpl implements RetraitDAO {
     // TODO FAIRE LA DAO POUR LIER LA BO A LA BASE DE DONNEES
@@ -17,7 +16,7 @@ public class RetraitDAOImpl implements RetraitDAO {
     public void addRetrait(Retrait retrait) throws DALException {
         try (Connection conn = ConnectionProvider.getConnection();) {
 
-            PreparedStatement stmt = conn.prepareStatement(CREATE, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement stmt = conn.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 
             stmt.setString(1, retrait.getRue());
             stmt.setString(2, retrait.getCpo());
