@@ -8,5 +8,5 @@ public interface UserManager {
     void deleteUser(Integer id) throws BLLException;
     User selectUser(Integer id) throws BLLException;
 
-    void connectUser(String username, String password) throws BLLException;
+    User connectUser(String username, String password) throws BLLException;
 }

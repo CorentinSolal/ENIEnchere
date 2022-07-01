@@ -40,11 +40,10 @@ public class UserManagerImpl implements UserManager{
             throw new BLLException("Erreur UserManagerImpl selectUser",e);
         }
     }
-
     @Override
-    public void connectUser(String username, String password) throws BLLException {
+    public User connectUser(String username, String password) throws BLLException {
         try{
-            userDAO.connectUser(username,password);
+            return userDAO.connectUser(username,password);
         } catch (DALException e) {
             throw new BLLException("Erreur UserManagerImpl connectUser", e);
         }

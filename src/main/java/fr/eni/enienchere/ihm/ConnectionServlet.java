@@ -3,6 +3,7 @@ package fr.eni.enienchere.ihm;
 import fr.eni.enienchere.bll.BLLException;
 import fr.eni.enienchere.bll.BLLFactory;
 import fr.eni.enienchere.bll.UserManager;
+import fr.eni.enienchere.bo.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -32,7 +33,7 @@ public class ConnectionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            um.connectUser(request.getParameter("username"), request.getParameter("password"));
+            User user= um.connectUser(request.getParameter("username"), request.getParameter("password"));
         }catch (BLLException e) {
             e.printStackTrace();
         }
