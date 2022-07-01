@@ -16,7 +16,7 @@ public class BidManagerImpl implements BidManager{
             try {
                 bidDAO.newBid(bid);
             }catch (DALException e){
-                throw new BLLException("saveBid :" + bid,e);
+                throw new BLLException("Erreur BidManagerImpl saveBid :" + bid,e);
             }
         }
         }

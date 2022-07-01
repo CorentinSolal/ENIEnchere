@@ -18,7 +18,7 @@ public class CategorieManagerImpl implements CategorieManager {
             try{
                 categorieDAO.insert(categorie);
             } catch (DALException e){
-                throw new BLLException("enregistrerCategorie"+ categorie,e);
+                throw new BLLException("Erreur CategorieManagerImpl enregistrerCategorie"+ categorie,e);
             }
         }
     }
@@ -27,7 +27,7 @@ public class CategorieManagerImpl implements CategorieManager {
         try{
             categorieDAO.delete(noCategorie);
         }catch (DALException e){
-            throw new BLLException("deleteCategorie"+ noCategorie,e);
+            throw new BLLException("Erreur CategorieManagerImpl deleteCategorie"+ noCategorie,e);
         }
     }
 }
