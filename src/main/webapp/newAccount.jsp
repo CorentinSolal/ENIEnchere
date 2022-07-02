@@ -61,40 +61,40 @@
                                 <h2 class="m-5" style="text-align:center">Créer un compte</h2>
 
                                 <div class="form-floating m-5">
-                                    <input type="text" class="form-control" placeholder="pseudo" id="pseudo">
-                                    <label  for="pseudo">Pseudo</label>
+                                    <input type="text" class="form-control" placeholder="username" name="username">
+                                    <label>Username</label>
                                 </div>
                                 <div class="form-floating m-5">
-                                    <input type="text" class="form-control" placeholder="name" id="lastName">
-                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="name" name="lastName">
+                                    <label>Last Name</label>
                                 </div>
                                 <div class="form-floating m-5">
-                                    <input type="text" class="form-control" placeholder="first name" id="firstName">
-                                    <label for="firstName">First name</label>
+                                    <input type="text" class="form-control" placeholder="first name" name="firstName">
+                                    <label>First name</label>
                                 </div>
                                 <div class="form-floating m-5">
-                                    <input type="text" class="form-control" placeholder="phoneNumber" id="phoneNumber">
-                                    <label for="phoneNumber">Phone number</label>
+                                    <input type="text" class="form-control" placeholder="phoneNumber" name="phoneNumber">
+                                    <label>Phone number</label>
                                 </div>
                                 <div class="form-floating m-5">
-                                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" name="email" placeholder="name@example.com">
+                                    <label>Email address</label>
                                 </div>
                                 <div class="form-floating m-5">
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
-                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" name="password" placeholder="Password">
+                                    <label>Password</label>
                                 </div>
                                 <div class="form-floating m-5">
-                                    <input type="text" class="form-control" placeholder="street" id="street">
-                                    <label for="street">Street</label>
+                                    <input type="text" class="form-control" placeholder="street" name="street">
+                                    <label>Street</label>
                                 </div>
                                 <div class="form-floating m-5">
-                                    <input type="text" class="form-control" placeholder="postalCode" id="postalCode">
-                                    <label for="postalCode">Postal Code</label>
+                                    <input type="text" class="form-control" placeholder="postalCode" name="postalCode">
+                                    <label>Postal Code</label>
                                 </div>
                                 <div class="form-floating m-5">
-                                    <input type="text" class="form-control" placeholder="city" id="city">
-                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" placeholder="city" name="city">
+                                    <label >City</label>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary" style="margin-top: 20px">Submit</button>

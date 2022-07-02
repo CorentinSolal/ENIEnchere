@@ -29,7 +29,7 @@ public class CreateAccountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User newUser = new User();
-        newUser.setPseudo(request.getParameter("pseudo"));
+        newUser.setPseudo(request.getParameter("username"));
         newUser.setLastName(request.getParameter("lastName"));
         newUser.setFirstName(request.getParameter("firstName"));
         newUser.setEmail(request.getParameter("email"));
@@ -38,6 +38,7 @@ public class CreateAccountServlet extends HttpServlet {
         newUser.setCpo(request.getParameter("postalCode"));
         newUser.setVille(request.getParameter("city"));
         newUser.setPassword(request.getParameter("password"));
+
         try {
             userManager.addUser(newUser);
             request.getRequestDispatcher(INDEX).forward(request, response);

@@ -58,11 +58,11 @@
                     <form action="ConnectionServlet" method="post">
                         <div class="form-group">
                             <label for="username" class="form-label mt-4">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
                         </div>
                         <div class="form-group">
                             <label for="password" class="form-label mt-4">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter password">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
                         </div>
                         <p>${connected}</p>
                         <p>${error}</p>

@@ -8,7 +8,7 @@ public class User {
 
     private Integer noUser;
     @NotBlank
-    private String pseudo;
+    private String username;
     @NotBlank
     private String lastName;
     @NotBlank
@@ -25,39 +25,13 @@ public class User {
     @Size(min=4,max=20,message="Must be 8-20 characteres long")
     private String password;
     private int credit;
-    private boolean admin;
-
-    public User(Integer noUser, String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
-        this.noUser = noUser;
-        this.pseudo = pseudo;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.adresse = adresse;
-        this.cpo = cpo;
-        this.ville = ville;
-        this.email = email;
-        this.telephone = telephone;
-        this.password = password;
-    }
-
-    public User(String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
-        this.pseudo = pseudo;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.adresse = adresse;
-        this.cpo = cpo;
-        this.ville = ville;
-        this.email = email;
-        this.telephone = telephone;
-        this.password = password;
-    }
+    private byte admin;
 
     public User() {
     }
 
-    public User(Integer noUser, String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password, int credit, boolean admin) {
-        this.noUser = noUser;
-        this.pseudo = pseudo;
+    public User(String username, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password, int credit, byte admin) {
+        this.username = username;
         this.lastName = lastName;
         this.firstName = firstName;
         this.adresse = adresse;
@@ -70,6 +44,46 @@ public class User {
         this.admin = admin;
     }
 
+    public User(Integer noUser, String username, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password, int credit, byte admin) {
+        this.noUser = noUser;
+        this.username = username;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.adresse = adresse;
+        this.cpo = cpo;
+        this.ville = ville;
+        this.email = email;
+        this.telephone = telephone;
+        this.password = password;
+        this.credit = credit;
+        this.admin = admin;
+    }
+
+    public User(String username, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
+        this.username = username;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.adresse = adresse;
+        this.cpo = cpo;
+        this.ville = ville;
+        this.email = email;
+        this.telephone = telephone;
+        this.password = password;
+    }
+
+    public User(Integer noUser, String username, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
+        this.noUser = noUser;
+        this.username = username;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.adresse = adresse;
+        this.cpo = cpo;
+        this.ville = ville;
+        this.email = email;
+        this.telephone = telephone;
+        this.password = password;
+    }
+
     public Integer getNoUser() {
         return noUser;
     }
@@ -79,11 +93,11 @@ public class User {
     }
 
     public String getPseudo() {
-        return pseudo;
+        return username;
     }
 
-    public void setPseudo(String pseudo) {
-        this.pseudo = pseudo;
+    public void setPseudo(String username) {
+        this.username = username;
     }
 
     public String getLastName() {
@@ -158,11 +172,11 @@ public class User {
         this.credit = credit;
     }
 
-    public boolean isAdmin() {
+    public byte getAdmin() {
         return admin;
     }
 
-    public void setAdmin(boolean admin) {
+    public void setAdmin(byte admin) {
         this.admin = admin;
     }
 }
