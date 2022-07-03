@@ -5,14 +5,11 @@ import fr.eni.enienchere.bo.Article;
 import java.util.List;
 
 public interface ArticleDAO {
-    void insert (Article article) throws DALException;
+    void insert (Article article,int id) throws DALException;
+    List<Article> getAllArticles() throws DALException;
+    void delete(int noArt ) throws DALException;
+    Article selectById(int noArticle) throws DALException;
 
-    List<Article> selectAll() throws DALException;
 
-    Article selectById(Integer id) throws DALException;
 
-    void delete(Integer id) throws DALException;
-
-    void update (Article article) throws DALException;
-
-}
+    }

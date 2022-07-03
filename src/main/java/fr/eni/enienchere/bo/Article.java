@@ -1,5 +1,6 @@
 package fr.eni.enienchere.bo;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Article {
@@ -7,6 +8,7 @@ public class Article {
     private Integer idArt;
     private String nomArt;
     private String descArt;
+    private Integer noCat;
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private Integer prixInit;
@@ -15,26 +17,31 @@ public class Article {
     public Article() {
     }
 
-    public Article(String nomArt, String descArt, LocalDate dateFin, Integer prixInit) {
+    public Article(String nomArt, String descArt, Integer noCat, LocalDate dateFin, Integer prixInit) {
         this.nomArt = nomArt;
         this.descArt = descArt;
+        this.noCat = noCat;
+        this.dateDebut=LocalDate.now();
         this.dateFin = dateFin;
         this.prixInit = prixInit;
+        prixFinal = prixInit;
     }
-
-    public Article(String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, Integer prixInit, Integer prixFinal) {
-        this.nomArt = nomArt;
-        this.descArt = descArt;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.prixInit = prixInit;
-        this.prixFinal = prixFinal;
-    }
-
-    public Article(Integer idArt, String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, Integer prixInit, Integer prixFinal) {
+    public Article(Integer idArt,String nomArt, String descArt, Integer noCat, LocalDate dateFin, Integer prixInit) {
         this.idArt = idArt;
         this.nomArt = nomArt;
         this.descArt = descArt;
+        this.noCat = noCat;
+        this.dateDebut=LocalDate.now();
+        this.dateFin = dateFin;
+        this.prixInit = prixInit;
+        this.prixFinal = prixInit;
+    }
+
+    public Article(Integer idArt, String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, Integer prixInit, Integer prixFinal, Integer noCat) {
+        this.idArt = idArt;
+        this.nomArt = nomArt;
+        this.descArt = descArt;
+        this.noCat = noCat;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.prixInit = prixInit;
@@ -63,6 +70,14 @@ public class Article {
 
     public void setDescArt(String descArt) {
         this.descArt = descArt;
+    }
+
+    public Integer getNoCat() {
+        return noCat;
+    }
+
+    public void setNoCat(Integer noCat) {
+        this.noCat = noCat;
     }
 
     public LocalDate getDateDebut() {
@@ -96,5 +111,4 @@ public class Article {
     public void setPrixFinal(Integer prixFinal) {
         this.prixFinal = prixFinal;
     }
-
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -25,22 +26,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="BidListServlet">Enchères en cours</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ConnectionServlet">Se connecter<span class="visually-hidden">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Mes enchères</a>
-                            <a class="dropdown-item" href="#">Mes articles</a>
-                            <a class="dropdown-item" href="ProfilServlet">Voir mon profil</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Se déconnecter</a>
-                        </div>
-                    </li>
+                    <c:if test="${connected.equals(\"false\")}">
+                        <li class="nav-item">
+                            <a class="nav-link" href="ConnectionServlet">Se connecter<span class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
+                        </li>
+                    </c:if>
+                    <c:if test="${connected.equals(\"true\")}">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Mes enchères</a>
+                                <a class="dropdown-item" href="#">Mes articles</a>
+                                <a class="dropdown-item" href="ProfilServlet">Voir mon profil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Se déconnecter</a>
+                            </div>
+                        </li>
+                    </c:if>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-sm-2" type="text" placeholder="Search">

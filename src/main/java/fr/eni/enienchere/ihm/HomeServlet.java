@@ -13,7 +13,13 @@ public class HomeServlet extends HttpServlet {
     private static final String NEWBID=".jsp";
     private static final String PROFIL="/profil.jsp";
 
+
+    private HttpSession session;
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        session= request.getSession();
+
         getServletContext().getRequestDispatcher(INDEX).forward(request, response);
     }
 

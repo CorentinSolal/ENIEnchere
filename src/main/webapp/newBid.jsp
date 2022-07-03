@@ -58,6 +58,16 @@
                         <input type="text" class="form-control" name="name" placeholder="Name">
                         <label>Name</label>
                     </div>
+                    <div class="form-group m-3">
+                        <label for="categorie" class="form-label mt-4">Categorie</label>
+                        <select class="form-select" id="categorie" name="categorie">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
                     <div class="form-floating m-3">
                         <input type="text" class="form-control" placeholder="description" name="description">
                         <label>Description</label>

@@ -17,22 +17,22 @@ public class ArticleManagerImpl implements ArticleManager   {
 
     public List<Article> getAllArticles() throws BLLException {
         try {
-            return articleDao.selectAll();
+            return articleDao.getAllArticles();
         } catch (DALException e) {
             throw new BLLException("Erreur ArticleManagerImpl getAllArticles", e);
         }
     }
 
-   public void enregistrerArticle (Article article) throws BLLException {
+   public void enregistrerArticle (Article article, int id) throws BLLException {
         if(article.getIdArt()==null) {
             try {
-                articleDao.insert(article);
+                articleDao.insert(article,id);
             } catch (DALException e) {
                 throw new BLLException("Erreur ArticleManagerImpl enregistrerArticle : " + article, e);
             }
         } else {
             try {
-                articleDao.update(article);
+                articleDao.update(article,id);
             } catch (DALException e) {
                 throw new BLLException("Erreur ArticleManagerImpl enregistrerArticle : " + article, e);
             }

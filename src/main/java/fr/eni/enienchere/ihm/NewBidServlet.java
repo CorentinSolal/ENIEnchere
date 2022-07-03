@@ -11,6 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Locale;
 
 @WebServlet(name = "NewBidServlet", value = "/NewBidServlet")
@@ -21,7 +22,8 @@ public class NewBidServlet extends HttpServlet {
     private static final String NEWBID="/newBid.jsp";
     private static final String PROFIL="/profil.jsp";
 
-    ArticleManager am;
+    private ArticleManager am;
+    private HttpSession session;
 
     @Override
     public void init() throws ServletException {
@@ -30,6 +32,7 @@ public class NewBidServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session=request.getSession();
         getServletContext().getRequestDispatcher(NEWBID).forward(request, response);
     }
 
@@ -43,18 +46,18 @@ public class NewBidServlet extends HttpServlet {
 
         //Transformer le String endDate en LocalDate
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        formatter = formatter.withLocale( Locale.FRANCE );  // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
+        formatter = formatter.withLocale( Locale.FRANCE );
         LocalDate date = LocalDate.parse(request.getParameter("endDate"), formatter);
 
         newArticle.setDateFin(date);
         newArticle.setPrixInit(Integer.parseInt(request.getParameter("startPrice")));
 
         try {
-            am.enregistrerArticle(newArticle);
+            am.enregistrerArticle(newArticle,Integer.parseInt(Arrays.toString(request.getParameterValues("id"))));
             getServletContext().getRequestDispatcher(INDEX).forward(request, response);
         } catch (BLLException e) {
-
-            throw new RuntimeException(e);
+            getServletContext().getRequestDispatcher(NEWBID).forward(request, response);
+            e.printStackTrace();
         }
     }
 }
