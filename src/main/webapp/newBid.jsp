@@ -44,14 +44,37 @@
                         </div>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
 </header>
-
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <fieldset class="m-5">
+                <legend>Add an article</legend>
+                <form method="post" action="NewBidServlet">
+                    <div class="form-floating m-3">
+                        <input type="text" class="form-control" name="name" placeholder="Name">
+                        <label>Name</label>
+                    </div>
+                    <div class="form-floating m-3">
+                        <input type="text" class="form-control" placeholder="description" name="description">
+                        <label>Description</label>
+                    </div>
+                    <div class="form-floating m-3">
+                        <input type="date" class="form-control" placeholder="End Date" name="endDate">
+                        <label>End Date</label>
+                    </div>
+                    <div class="form-floating m-3">
+                        <input type="number" class="form-control" placeholder="Start Price" name="startPrice">
+                        <label >Start Price</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 20px">Submit</button>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
 </body>
 </html>

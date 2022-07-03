@@ -2,7 +2,6 @@ package fr.eni.enienchere.dal;
 
 public class DALException extends  Exception{
     public DALException() {
-        // TODO Auto-generated constructor stub
     }
 
     public DALException(String message) {

@@ -97,7 +97,7 @@
                                     <label >City</label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="margin-top: 20px">Submit</button>
+                            <button type="submit" class="btn btn-primary m-5">Submit</button>
                         </fieldset>
                     </form>
                 </div>

@@ -3,19 +3,21 @@ package fr.eni.enienchere.dal;
 import fr.eni.enienchere.bo.Article;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleDAOImpl implements ArticleDAO {
 
-    private static final String INSERT = "insert into ARTICLE (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente) values(?,?,?,?,?,?)";
-    private static final String SELECT_ALL ="select * from ARTICLE";
+    //Bien faire attention aux noms des colonnes et tables dans la Base de données
+    private static final String INSERT = "insert into ARTICLES_VENDUS (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial) values(?,?,?,?,?)";
+    private static final String SELECT_ALL ="select * from ARTICLES_VENDUS";
 
-   private static final String SELECT_BY_ID = "select * from ARTICLE where no_article=? ";
+   private static final String SELECT_BY_ID = "select * from ARTICLES_VENDUS where no_article=? ";
 
-    private static final String DELETE = "delete from ARTICLE where no_article = ?";
+    private static final String DELETE = "delete from ARTICLES_VENDUS where no_article = ?";
 
-    private static final String UPDATE = "update ARTICLE set nom=?, description=?, date_debut_encheres=?, date_fin_encheres=?, prix_initial=?, prix_vente=?" + "where no-article=?";
+    private static final String UPDATE = "update ARTICLES_VENDUS set nom=?, description=?, date_debut_encheres=?, date_fin_encheres=?, prix_initial=?, prix_vente=?" + "where no-article=?";
 
     public ArticleDAOImpl() {
     }
@@ -26,10 +28,9 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             stmt.setString(1, article.getNomArt());
             stmt.setString(2, article.getDescArt());
-            stmt.setDate(3, Date.valueOf(article.getDateDebut()));
+            stmt.setDate(3, Date.valueOf(LocalDate.now()));
             stmt.setDate(4, Date.valueOf(article.getDateFin()));
             stmt.setInt(5, article.getPrixInit());
-            stmt.setInt(6, article.getPrixFinal());
 
             stmt.executeUpdate();
 
@@ -38,7 +39,7 @@ public class ArticleDAOImpl implements ArticleDAO {
                 article.setIdArt(rs.getInt(1));
             }
         } catch (SQLException e) {
-            throw new DALException("erreur insert article : ", e);
+            throw new DALException("error insert article : ", e);
         }
     }
     public List<Article> selectAll() throws DALException {

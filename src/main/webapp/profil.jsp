@@ -57,7 +57,7 @@
                 <div class="col-12">
                     <form action="" method="post">
                         <div class="form-group">
-                            <label class="col-form-label mt-4" for="inputDefault">Default input</label>
+                            <label class="col-form-label m-4" for="inputDefault">Default input</label>
                             <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
                         </div>
                     </form>

@@ -8,8 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BidDAOImpl implements BidDAO{
-    // TODO FAIRE LA DAO POUR LIER LA BO A LA BASE DE DONNEES
-    //TODO REPRENDRE LES MEMES METHODES QUE LES AUTRES DAO
 
     private static final String NEWBID="insert into ENCHERE(date_enchere, montantEnchere) values(?,?)";
 

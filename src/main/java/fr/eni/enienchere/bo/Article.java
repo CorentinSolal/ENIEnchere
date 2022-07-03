@@ -9,21 +9,29 @@ public class Article {
     private String descArt;
     private LocalDate dateDebut;
     private LocalDate dateFin;
-    private int prixInit;
-    private int prixFinal;
-    private boolean etatEnchere;//Si false alors pas en vente, si true alors en vente
+    private Integer prixInit;
+    private Integer prixFinal;
 
-    public Article(String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, int prixInit, int prixFinal) {
+    public Article() {
+    }
+
+    public Article(String nomArt, String descArt, LocalDate dateFin, Integer prixInit) {
+        this.nomArt = nomArt;
+        this.descArt = descArt;
+        this.dateFin = dateFin;
+        this.prixInit = prixInit;
+    }
+
+    public Article(String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, Integer prixInit, Integer prixFinal) {
         this.nomArt = nomArt;
         this.descArt = descArt;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.prixInit = prixInit;
         this.prixFinal = prixFinal;
-        etatEnchere=false;
     }
 
-    public Article(Integer idArt, String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, int prixInit, int prixFinal) {
+    public Article(Integer idArt, String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, Integer prixInit, Integer prixFinal) {
         this.idArt = idArt;
         this.nomArt = nomArt;
         this.descArt = descArt;
@@ -31,7 +39,6 @@ public class Article {
         this.dateFin = dateFin;
         this.prixInit = prixInit;
         this.prixFinal = prixFinal;
-        etatEnchere=false;
     }
 
     public Integer getIdArt() {
@@ -74,27 +81,20 @@ public class Article {
         this.dateFin = dateFin;
     }
 
-    public int getPrixInit() {
+    public Integer getPrixInit() {
         return prixInit;
     }
 
-    public void setPrixInit(int prixInit) {
+    public void setPrixInit(Integer prixInit) {
         this.prixInit = prixInit;
     }
 
-    public int getPrixFinal() {
+    public Integer getPrixFinal() {
         return prixFinal;
     }
 
-    public void setPrixFinal(int prixFinal) {
+    public void setPrixFinal(Integer prixFinal) {
         this.prixFinal = prixFinal;
     }
 
-    public boolean isEtatEnchere() {
-        return etatEnchere;
-    }
-
-    public void setEtatEnchere(boolean etatEnchere) {
-        this.etatEnchere = etatEnchere;
-    }
 }
