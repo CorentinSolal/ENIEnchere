@@ -1,6 +1,13 @@
 package fr.eni.enienchere.ihm;
 
+import fr.eni.enienchere.bll.ArticleManager;
+import fr.eni.enienchere.bll.BLLException;
+import fr.eni.enienchere.bll.BLLFactory;
+import fr.eni.enienchere.bo.Article;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -15,10 +22,17 @@ public class HomeServlet extends HttpServlet {
 
 
     private HttpSession session;
+    private ArticleManager am = BLLFactory.getArticleManager();
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
+        List<Article> listeArticles = new ArrayList<Article>();
         session= request.getSession();
+        try {
+            listeArticles=am.getAllArticles();
+            request.setAttribute("article", listeArticles);
+        } catch (BLLException e) {
+            throw new RuntimeException(e);
+        }
 
         getServletContext().getRequestDispatcher(INDEX).forward(request, response);
     }

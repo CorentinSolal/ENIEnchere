@@ -26,7 +26,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="BidListServlet">Enchères en cours</a>
                     </li>
-                    <c:if test="${connected.equals(\"false\")}">
+                    <c:if test="true">
                         <li class="nav-item">
                             <a class="nav-link" href="ConnectionServlet">Se connecter<span class="visually-hidden">(current)</span></a>
                         </li>
@@ -34,7 +34,7 @@
                             <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
                         </li>
                     </c:if>
-                    <c:if test="${connected.equals(\"true\")}">
+                    <c:if test="true">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
                             <div class="dropdown-menu">
@@ -58,89 +58,15 @@
                 <c:forEach var="article" items="${article}">
                     <div class="col-4">
                         <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                            <div class="card-header">Enchère n° ${article.id}</div>
+                            <div class="card-header">Enchère n° ${article.idArt}</div>
                             <div class="card-body">
-                                <h4 class="card-title">${article.title}</h4>
-                                <p class="card-text">Prix : ${article.prix} points</p>
+                                <h4 class="card-title">${article.nomArt}</h4>
+                                <p class="card-text">Prix : ${article.prixFinal} points</p>
                                 <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
-                                <p class="card-text">Retrait : </p>
-                                <p class="card-text"> Vendeur : </p>
                             </div>
                         </div>
                     </div>
                 </c:forEach>
-                <div class="col-4">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Enchère n° ${article.id}</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Article</h4>
-                            <p class="card-text">Prix : ${article.prix} points</p>
-                            <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
-                            <p class="card-text">Retrait : </p>
-                            <p class="card-text"> Vendeur :</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Enchère n° ${article.id}</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Article</h4>
-                            <p class="card-text">Prix : ${article.prix} points</p>
-                            <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
-                            <p class="card-text">Retrait : </p>
-                            <p class="card-text"> Vendeur :</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Enchère n° ${article.id}</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Article</h4>
-                            <p class="card-text">Prix : ${article.prix} points</p>
-                            <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
-                            <p class="card-text">Retrait : </p>
-                            <p class="card-text"> Vendeur :</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Enchère n° ${article.id}</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Article</h4>
-                            <p class="card-text">Prix : ${article.prix} points</p>
-                            <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
-                            <p class="card-text">Retrait : </p>
-                            <p class="card-text"> Vendeur :</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Enchère n° ${article.id}</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Article</h4>
-                            <p class="card-text">Prix : ${article.prix} points</p>
-                            <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
-                            <p class="card-text">Retrait : </p>
-                            <p class="card-text"> Vendeur :</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Enchère n° ${article.id}</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Article</h4>
-                            <p class="card-text">Prix : ${article.prix} points</p>
-                            <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
-                            <p class="card-text">Retrait : </p>
-                            <p class="card-text"> Vendeur :</p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div>
                 <button type="submit" class="btn btn-primary" value="moreBid" style="align-content: center">Voir plus</button>
