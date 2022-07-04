@@ -1,6 +1,7 @@
 package fr.eni.enienchere.bll;
 
 import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.bo.Bid;
 import fr.eni.enienchere.dal.ArticleDAO;
 import fr.eni.enienchere.dal.DALException;
 import fr.eni.enienchere.dal.DAOFactory;
@@ -52,11 +53,11 @@ public class ArticleManagerImpl implements ArticleManager   {
         }
     }
 
-    public void updateArticle(int no_article) throws BLLException {
+    public void updateArticle(Article article, int idUser) throws BLLException {
         try {
-            articleDao.update(no_article);
+            articleDao.update(article, idUser);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl updateArticle : " + no_article, e);
+            throw new BLLException("Error ArticleManagerImpl updateArticle : " + idUser, e);
         }
     }
 
@@ -76,11 +77,11 @@ public class ArticleManagerImpl implements ArticleManager   {
         }
     }
 
-    public void insertEnchere (int no_enchere)  throws BLLException {
+    public void insertEnchere (Bid bid, Integer idBid)  throws BLLException {
         try {
-            articleDao.insertEnchere(no_enchere);
+            articleDao.insertEnchere(bid, idBid);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl insertEnchere : " + no_enchere, e);
+            throw new BLLException("Error ArticleManagerImpl insertEnchere : " + idBid, e);
         }
     }
 
