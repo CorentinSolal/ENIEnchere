@@ -1,6 +1,7 @@
 package fr.eni.enienchere.bll;
 
 import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.bo.Bid;
 import fr.eni.enienchere.dal.ArticleDAO;
 import fr.eni.enienchere.dal.DALException;
 import fr.eni.enienchere.dal.DAOFactory;
@@ -52,35 +53,35 @@ public class ArticleManagerImpl implements ArticleManager   {
         }
     }
 
-    public void updateArticle(int no_article) throws BLLException {
+    public void updateArticle(Article article, int idUser) throws BLLException {
         try {
-            articleDao.update(no_article);
+            articleDao.update(article, idUser);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl updateArticle : " + no_article, e);
+            throw new BLLException("Error ArticleManagerImpl updateArticle : " + idUser, e);
         }
     }
 
-    public void selectedByUserArticle(Integer idArt) throws BLLException {
+    public void selectByUserArticle(Integer idArt) throws BLLException {
         try {
-            articleDao.selectedByUser(idArt);
+            articleDao.selectByUser(idArt);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl selectedByUserArticle : " + idArt, e);
+            throw new BLLException("Error ArticleManagerImpl selectByUserArticle : " + idArt, e);
         }
     }
 
-    public void selectedCategorieArticle (int no_article) throws BLLException {
+    public void selectCategorieArticle (int no_article) throws BLLException {
         try {
-            articleDao.selectedCategorie(no_article);
+            articleDao.selectCategorie(no_article);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl selectedCategorieArt : " + no_article, e);
+            throw new BLLException("Error ArticleManagerImpl selectCategorieArt : " + no_article, e);
         }
     }
 
-    public void insertEnchere (int no_enchere)  throws BLLException {
+    public void insertEnchere (Bid bid, Integer idBid)  throws BLLException {
         try {
-            articleDao.insertEnchere(no_enchere);
+            articleDao.insertEnchere(bid, idBid);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl insertEnchere : " + no_enchere, e);
+            throw new BLLException("Error ArticleManagerImpl insertEnchere : " + idBid, e);
         }
     }
 
