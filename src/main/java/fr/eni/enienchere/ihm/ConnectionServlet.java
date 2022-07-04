@@ -27,6 +27,7 @@ public class ConnectionServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session=request.getSession();
         getServletContext().getRequestDispatcher(CONNECTION).forward(request, response);
     }
 

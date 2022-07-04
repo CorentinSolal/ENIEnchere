@@ -12,8 +12,10 @@ public class BidListServlet extends HttpServlet {
     private static final String BIDLIST="/bidList.jsp";
     private static final String NEWBID=".jsp";
     private static final String PROFIL="/profil.jsp";
+    HttpSession session;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session = request.getSession();
         getServletContext().getRequestDispatcher(BIDLIST).forward(request, response);
     }
 

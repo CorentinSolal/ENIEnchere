@@ -25,6 +25,7 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session=request.getSession();
         getServletContext().getRequestDispatcher(INDEX).forward(request, response);
     }
 }

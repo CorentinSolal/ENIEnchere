@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/disconnectServlet")
+@WebServlet("/DisconnectServlet")
 public class DisconnectServlet extends HttpServlet {
 
     @Override
@@ -18,7 +18,7 @@ public class DisconnectServlet extends HttpServlet {
 
         session.invalidate();
 
-        resp.sendRedirect("/index.jsp");
+        resp.sendRedirect("ENIEnchere_war_exploded/ConnectionServlet");
     }
 
 

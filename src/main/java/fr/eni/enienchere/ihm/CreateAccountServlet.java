@@ -15,8 +15,8 @@ public class CreateAccountServlet extends HttpServlet {
     private static final String INDEX="/index.jsp";
     private static final String NEWACCOUNT="/newAccount.jsp";
 
-    UserManager userManager;
-
+    private UserManager userManager;
+    private HttpSession session;
     @Override
     public void init() throws ServletException {
         userManager= BLLFactory.getUserManager();
@@ -24,10 +24,12 @@ public class CreateAccountServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session=request.getSession();
         getServletContext().getRequestDispatcher(NEWACCOUNT).forward(request, response);
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session=request.getSession();
         User newUser = new User();
         newUser.setPseudo(request.getParameter("username"));
         newUser.setLastName(request.getParameter("lastName"));

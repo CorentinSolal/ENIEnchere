@@ -53,7 +53,7 @@ public class NewBidServlet extends HttpServlet {
         newArticle.setPrixInit(Integer.parseInt(request.getParameter("startPrice")));
 
         try {
-            am.enregistrerArticle(newArticle,Integer.parseInt(Arrays.toString(request.getParameterValues("id"))));
+            am.insertArticle(newArticle,Integer.parseInt(Arrays.toString(request.getParameterValues("id"))));
             getServletContext().getRequestDispatcher(INDEX).forward(request, response);
         } catch (BLLException e) {
             getServletContext().getRequestDispatcher(NEWBID).forward(request, response);
