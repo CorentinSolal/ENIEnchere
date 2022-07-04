@@ -2,6 +2,9 @@ package fr.eni.enienchere.dal;
 
 import fr.eni.enienchere.bll.BLLException;
 import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.bo.Bid;
+import fr.eni.enienchere.bo.Categorie;
+import fr.eni.enienchere.bo.User;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -130,5 +133,72 @@ public class ArticleDAOImpl implements ArticleDAO {
         } catch (SQLException e) {
             throw new DALException ("erreur update",e);
         }
+    }
+
+    public List<Article> selectByUser(Integer noUser) throws DALException {
+        
+        try (Connection conn = ConnectionProvider.getConnection()) {
+
+            PreparedStatement stmt = conn.prepareStatement(SELECT_BY_USER);
+
+            stmt.setInt(1, noUser);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Date dateDebut = rs.getDate("date_debut_encheres");
+                Date dateFin = rs.getDate("date_fin_encheres");
+                LocalDate localDateDebut = dateDebut.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                LocalDate localDateFin = dateFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                return (List<Article>) new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), localDateDebut, localDateFin, rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"));
+            } else {
+                throw new DALException("Mauvais Identifiant ");
+            }
+        } catch (SQLException e) {
+            throw new DALException("erreur selectbyid", e);
+        }
+    }
+    
+    public  List<Categorie> selectCategorie(Integer noCategorie) throws DALException {
+        List<Categorie> listeCategorie = new ArrayList<Categorie>();
+        
+        try (Connection conn = ConnectionProvider.getConnection()) {
+
+            PreparedStatement stmt = conn.prepareStatement(SELECT_CATEGORIE);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while(rs.next()) {
+                
+                listeCategorie.add(new Categorie(rs.getInt("no_categorie"), rs.getString("libelle")));
+            }
+            return listeCategorie;
+        } catch (SQLException e) {
+            throw new DALException("erreur Select Categorie",e);
+        }
+    }
+    
+    public void insertEnchere (Bid bid, int idArticle, int idUser) throws DALException {
+
+        try (Connection conn = ConnectionProvider.getConnection()) {
+
+            PreparedStatement stmt = conn.prepareStatement(INSERT_ENCHERE, PreparedStatement.RETURN_GENERATED_KEYS);
+
+            stmt.setDate(1, Date.valueOf(bid.getDateEnchere()));
+            stmt.setInt(2, bid.getMontantEnchere());
+            stmt.setInt(3, idArticle);
+            stmt.setInt(4, idUser);
+            
+
+            stmt.executeUpdate();
+
+            ResultSet rs = stmt.getGeneratedKeys();
+            if (rs.next()) {
+                bid.setIdBid(rs.getInt(1));
+            }
+        } catch (SQLException e) {
+            throw new DALException("error insert enchere : ", e);
+        }
+        
     }
 }
