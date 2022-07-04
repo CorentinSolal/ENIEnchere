@@ -9,13 +9,13 @@ import fr.eni.enienchere.dal.DAOFactory;
 import java.util.List;
 
 public class ArticleManagerImpl implements ArticleManager   {
-    private ArticleDAO articleDao;
+    private ArticleDAO articleDAO;
     public ArticleManagerImpl() {
-         articleDao = DAOFactory.getArticleDao(); //couplage faible
+        articleDAO = DAOFactory.getArticleDao(); //couplage faible
     }
     public List<Article> getAllArticles() throws BLLException {
         try {
-            return articleDao.getAllArticles();
+            return articleDAO.getAllArticles();
         } catch (DALException e) {
             throw new BLLException("Error ArticleManagerImpl getAllArticles", e);
         }
@@ -24,13 +24,13 @@ public class ArticleManagerImpl implements ArticleManager   {
    public void insertArticle (Article article, int id) throws BLLException {
         if(article.getIdArt()==null) {
             try {
-                articleDao.insert(article,id);
+                articleDAO.insert(article,id);
             } catch (DALException e) {
                 throw new BLLException("Error ArticleManagerImpl enregistrerArticle : " + article, e);
             }
         } else {
             try {
-                articleDao.update(article,id);
+                articleDAO.update(article,id);
             } catch (DALException e) {
                 throw new BLLException("Error ArticleManagerImpl enregistrerArticle : " + article, e);
             }
@@ -39,7 +39,7 @@ public class ArticleManagerImpl implements ArticleManager   {
 
     public void deleteArticle(Integer idArt) throws BLLException{
         try {
-                articleDao.delete(idArt);
+            articleDAO.delete(idArt);
         }catch (DALException e) {
             throw new BLLException("Error ArticleManagerImpl deleteArticle : " + idArt,e);
         }
@@ -47,7 +47,7 @@ public class ArticleManagerImpl implements ArticleManager   {
 
     public void selectById(Integer id) throws BLLException {
         try {
-            articleDao.selectById(id);
+            articleDAO.selectById(id);
         } catch (DALException e) {
             throw new BLLException("Error ArticleManagerImpl selectById : " + id, e);
         }
@@ -55,7 +55,7 @@ public class ArticleManagerImpl implements ArticleManager   {
 
     public void updateArticle(Article article, int idUser) throws BLLException {
         try {
-            articleDao.update(article, idUser);
+            articleDAO.update(article, idUser);
         } catch (DALException e) {
             throw new BLLException("Error ArticleManagerImpl updateArticle : " + idUser, e);
         }
@@ -63,7 +63,7 @@ public class ArticleManagerImpl implements ArticleManager   {
 
     public void selectByUserArticle(Integer idArt) throws BLLException {
         try {
-            articleDao.selectByUser(idArt);
+            articleDAO.selectByUser(idArt);
         } catch (DALException e) {
             throw new BLLException("Error ArticleManagerImpl selectByUserArticle : " + idArt, e);
         }
@@ -71,7 +71,7 @@ public class ArticleManagerImpl implements ArticleManager   {
 
     public void selectCategorieArticle (int no_article) throws BLLException {
         try {
-            articleDao.selectCategorie(no_article);
+            articleDAO.selectCategorie(no_article);
         } catch (DALException e) {
             throw new BLLException("Error ArticleManagerImpl selectCategorieArt : " + no_article, e);
         }
@@ -79,7 +79,7 @@ public class ArticleManagerImpl implements ArticleManager   {
 
     public void insertEnchere (Bid bid, int idArticle, Integer idBid)  throws BLLException {
         try {
-            articleDao.insertEnchere(bid, idArticle, idBid);
+            articleDAO.insertEnchere(bid, idArticle, idBid);
         } catch (DALException e) {
             throw new BLLException("Error ArticleManagerImpl insertEnchere : " + idBid, e);
         }
