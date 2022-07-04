@@ -24,8 +24,8 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="BidListServlet">Enchères en cours</a>
-                    <c:if test="${connected.equals(\"false\")}">
                     </li>
+                    <c:if test="${connected.equals(\"false\")}">
                         <li class="nav-item">
                             <a class="nav-link" href="ConnectionServlet">Se connecter<span class="visually-hidden">(current)</span></a>
                         </li>
