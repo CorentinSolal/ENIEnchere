@@ -2,6 +2,7 @@ package fr.eni.enienchere.dal;
 
 import fr.eni.enienchere.bll.BLLException;
 import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.bo.Bid;
 import fr.eni.enienchere.bo.Categorie;
 import fr.eni.enienchere.bo.User;
 
@@ -177,7 +178,7 @@ public class ArticleDAOImpl implements ArticleDAO {
         }
     }
     
-    /*public void insertEnchere (Bid bid,Integer idBid) throws DALException {
+    /*public void insertEnchere (Bid bid, Integer idBid) throws DALException {
 
         try (Connection conn = ConnectionProvider.getConnection()) {
 

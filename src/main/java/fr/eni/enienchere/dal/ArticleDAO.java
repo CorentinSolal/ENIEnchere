@@ -1,6 +1,8 @@
 package fr.eni.enienchere.dal;
 
 import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.bo.Bid;
+import fr.eni.enienchere.bo.Categorie;
 
 import java.util.List;
 
@@ -11,5 +13,10 @@ public interface ArticleDAO {
     Article selectById(int noArticle) throws DALException;
     void update(Article article, int idUser) throws DALException;
 
+    List<Article> selectByUser(Integer noUser) throws DALException;
+
+    List<Categorie> selectCategorie (Integer noCategorie) throws DALException;
+
+    void insertEnchere (Bid bid,Integer idBid) throws DALException;
 
     }
