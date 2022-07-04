@@ -17,6 +17,6 @@ public interface ArticleDAO {
 
     List<Categorie> selectCategorie (Integer noCategorie) throws DALException;
 
-    void insertEnchere (Bid bid,Integer idBid) throws DALException;
+    void insertEnchere (Bid bid,int idArticle, int idUser) throws DALException;
 
     }

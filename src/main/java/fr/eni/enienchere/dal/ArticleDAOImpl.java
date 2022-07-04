@@ -178,7 +178,7 @@ public class ArticleDAOImpl implements ArticleDAO {
         }
     }
     
-    /*public void insertEnchere (Bid bid, Integer idBid) throws DALException {
+    public void insertEnchere (Bid bid, int idArticle, int idUser) throws DALException {
 
         try (Connection conn = ConnectionProvider.getConnection()) {
 
@@ -186,8 +186,8 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             stmt.setDate(1, Date.valueOf(bid.getDateEnchere()));
             stmt.setInt(2, bid.getMontantEnchere());
-            stmt.setInt(3, bid.idArt());
-            stmt.setInt(4, bid.noUser());
+            stmt.setInt(3, idArticle);
+            stmt.setInt(4, idUser);
             
 
             stmt.executeUpdate();
@@ -200,5 +200,5 @@ public class ArticleDAOImpl implements ArticleDAO {
             throw new DALException("error insert enchere : ", e);
         }
         
-    }*/
+    }
 }
