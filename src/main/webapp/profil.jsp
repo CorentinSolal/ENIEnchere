@@ -58,9 +58,49 @@
                 <div class="col-12">
                     <form action="" method="post">
                         <div class="form-group">
-                            <label class="col-form-label m-4" for="inputDefault">Default input</label>
-                            <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+                            <fieldset>
+                                <label class="form-label mt-4" for="userNameInput">Username</label>
+                                <input class="form-control" id="userNameInput" type="text" placeholder="Username input here..." username="${userName}">
+                            </fieldset>
                         </div>
+                        <div class="form-floating">
+                            <input type="username" class="form-control" id="floatingUsername" placeholder="Username">
+                            <label for="floatingUsername">Username</label>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset>
+                                <label class="form-label mt-4" for="lastNameInput">Lastname</label>
+                                <input class="form-control" id="lastNameInput" type="text" placeholder="Lastname input here..." lastname="${lastName}">
+                            </fieldset>
+                        </div>
+                        <div class="form-floating">
+                            <input type="lastname" class="form-control" id="floatingLastname" placeholder="Lastname">
+                            <label for="floatingLastname">Lastname</label>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset>
+                                <label class="form-label mt-4" for="firstNameInput">Firstname</label>
+                                <input class="form-control" id="firstNameInput" type="text" placeholder="Firstname input here..." firstname="${firstName}">
+                            </fieldset>
+                        </div>
+                        <div class="form-floating">
+                            <input type="firstname" class="form-control" id="floatingFirstname" placeholder="firstname">
+                            <label for="floatingFirstname">Firstname</label>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset>
+                                <label class="form-label mt-4" for="mailInput">Mail</label>
+                                <input class="form-control" id="mailInput" type="text" placeholder="Mail input here..." mail="${mail}">
+                            </fieldset>
+                        </div>
+                        <div class="form-floating">
+                            <input type="mail" class="form-control" id="floatingMail" placeholder="Mail">
+                            <label for="floatingMail">Mail</label>
+                        </div>
+
                     </form>
                 </div>
             </div>
