@@ -101,7 +101,55 @@
                             <label for="floatingMail">Mail</label>
                         </div>
 
+                        <div class="form-group">
+                            <fieldset>
+                                <label class="form-label mt-4" for="phoneInput">Phone</label>
+                                <input class="form-control" id="phoneInput" type="number" placeholder="Phone input here..." phone="${phone}">
+                            </fieldset>
+                        </div>
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="floatingPhone" placeholder="Phone">
+                            <label for="floatingPhone">Phone</label>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset>
+                                <label class="form-label mt-4" for="StreetInput">Street</label>
+                                <input class="form-control" id="StreetInput" type="text" placeholder="Street input here..." street="${street}">
+                            </fieldset>
+                        </div>
+                        <div class="form-floating">
+                            <input type="street" class="form-control" id="floatingStreet" placeholder="Street">
+                            <label for="floatingStreet">Street</label>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset>
+                                <label class="form-label mt-4" for="zipCodeInput">ZipCode</label>
+                                <input class="form-control" id="zipCodeInput" type="number" placeholder="ZipCode input here..." zipCode="${zipCode}">
+                            </fieldset>
+                        </div>
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="floatingZipCode" placeholder="ZipCode">
+                            <label for="floatingZipCode">ZipCode</label>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset>
+                                <label class="form-label mt-4" for="cityInput">City</label>
+                                <input class="form-control" id="cityInput" type="text" placeholder="City input here..." city="${city}">
+                            </fieldset>
+                        </div>
+                        <div class="form-floating">
+                            <input type="city" class="form-control" id="floatingCity" placeholder="City">
+                            <label for="floatingCity">City</label>
+                        </div>
                     </form>
+
+                    <div class="btn-group btn-group-justified">
+                        <button type="button" class="btn btn-outline-primary">Modify</button>
+                    </div>
+
                 </div>
             </div>
         </div>
