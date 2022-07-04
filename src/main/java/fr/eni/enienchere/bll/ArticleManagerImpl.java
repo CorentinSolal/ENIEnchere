@@ -77,9 +77,9 @@ public class ArticleManagerImpl implements ArticleManager   {
         }
     }
 
-    public void insertEnchere (Bid bid, Integer idBid)  throws BLLException {
+    public void insertEnchere (Bid bid, int idArticle, Integer idBid)  throws BLLException {
         try {
-            articleDao.insertEnchere(bid, idBid);
+            articleDao.insertEnchere(bid, idArticle, idBid);
         } catch (DALException e) {
             throw new BLLException("Error ArticleManagerImpl insertEnchere : " + idBid, e);
         }
