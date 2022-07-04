@@ -23,7 +23,7 @@ public class ArticleManagerImpl implements ArticleManager   {
         }
     }
 
-   public void enregistrerArticle (Article article, int id) throws BLLException {
+   /*public void enregistrerArticle (Article article, int id) throws BLLException { //TODO FAUT FINIR CA
         if(article.getIdArt()==null) {
             try {
                 articleDao.insert(article,id);
@@ -37,7 +37,7 @@ public class ArticleManagerImpl implements ArticleManager   {
                 throw new BLLException("Erreur ArticleManagerImpl enregistrerArticle : " + article, e);
             }
         }
-    }
+    }*/
 
     public void deleteArticle(Integer idArt) throws BLLException{
         try {

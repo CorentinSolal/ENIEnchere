@@ -114,16 +114,9 @@ public class ArticleDAOImpl implements ArticleDAO {
     }
     public void update(Article article, int idUser) throws DALException {
 
-
-        //Etape 1 : se connecter la BD
-
-        //try with resources
         try (Connection conn = ConnectionProvider.getConnection()){
 
             PreparedStatement stmt = conn.prepareStatement(UPDATE);
-
-
-            //Valoriser les parametres
 
             stmt.setString(1, article.getNomArt());
             stmt.setString(2, article.getDescArt());
@@ -132,16 +125,9 @@ public class ArticleDAOImpl implements ArticleDAO {
             stmt.setInt(5, article.getPrixInit());
             stmt.setInt(6, article.getNoCat());
 
-
-            //Etape : executer la requete
-
             stmt.executeUpdate();
 
-            //ResultSet un tableau
-
         } catch (SQLException e) {
-
-
             throw new DALException ("erreur update",e);
         }
     }
