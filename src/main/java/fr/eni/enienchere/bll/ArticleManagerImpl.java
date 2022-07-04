@@ -60,19 +60,19 @@ public class ArticleManagerImpl implements ArticleManager   {
         }
     }
 
-    public void selectedByUserArticle(Integer idArt) throws BLLException {
+    public void selectByUserArticle(Integer idArt) throws BLLException {
         try {
-            articleDao.selectedByUser(idArt);
+            articleDao.selectByUser(idArt);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl selectedByUserArticle : " + idArt, e);
+            throw new BLLException("Error ArticleManagerImpl selectByUserArticle : " + idArt, e);
         }
     }
 
-    public void selectedCategorieArticle (int no_article) throws BLLException {
+    public void selectCategorieArticle (int no_article) throws BLLException {
         try {
-            articleDao.selectedCategorie(no_article);
+            articleDao.selectCategorie(no_article);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl selectedCategorieArt : " + no_article, e);
+            throw new BLLException("Error ArticleManagerImpl selectCategorieArt : " + no_article, e);
         }
     }
 
