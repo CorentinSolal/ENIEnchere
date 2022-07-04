@@ -20,7 +20,7 @@ public class ArticleManagerImpl implements ArticleManager   {
         }
     }
 
-   public void enregistrerArticle (Article article, int id) throws BLLException { //TODO FAUT FINIR CA
+   public void insertArticle (Article article, int id) throws BLLException {
         if(article.getIdArt()==null) {
             try {
                 articleDao.insert(article,id);
