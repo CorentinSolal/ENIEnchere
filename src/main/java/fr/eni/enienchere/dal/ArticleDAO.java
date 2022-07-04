@@ -9,7 +9,7 @@ public interface ArticleDAO {
     List<Article> getAllArticles() throws DALException;
     void delete(int noArt ) throws DALException;
     Article selectById(int noArticle) throws DALException;
-
+    void update(Article article, int idUser) throws DALException;
 
 
     }

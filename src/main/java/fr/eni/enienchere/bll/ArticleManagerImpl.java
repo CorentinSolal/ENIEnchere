@@ -8,13 +8,10 @@ import fr.eni.enienchere.dal.DAOFactory;
 import java.util.List;
 
 public class ArticleManagerImpl implements ArticleManager   {
-
     private ArticleDAO articleDao;
-
     public ArticleManagerImpl() {
          articleDao = DAOFactory.getArticleDao(); //couplage faible
     }
-
     public List<Article> getAllArticles() throws BLLException {
         try {
             return articleDao.getAllArticles();
