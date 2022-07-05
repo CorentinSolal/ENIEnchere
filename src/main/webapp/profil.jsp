@@ -93,7 +93,6 @@
                             <button class="btn btn-primary" type="submit">Modify</button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
