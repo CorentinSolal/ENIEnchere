@@ -12,6 +12,7 @@ public class ProfilServlet extends HttpServlet {
     private static final String BIDLIST="/bidList.jsp";
     private static final String NEWBID=".jsp";
     private static final String PROFIL="/profil.jsp";
+    private static final String MODIFPROFIL="/modifProfil.jsp";
     private HttpSession session;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,6 +23,6 @@ public class ProfilServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session= request.getSession();
-
+        getServletContext().getRequestDispatcher(MODIFPROFIL).forward(request, response);
     }
 }

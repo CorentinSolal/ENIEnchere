@@ -57,98 +57,42 @@
             <div class="row">
                 <div class="col-12">
                     <form action="" method="post">
-                        <div class="form-group">
-                            <fieldset>
-                                <label class="form-label mt-4" for="userNameInput">Username</label>
-                                <input class="form-control" id="userNameInput" type="text" placeholder="Username input here..." username="${userName}">
-                            </fieldset>
-                        </div>
                         <div class="form-floating">
                             <input type="username" class="form-control" id="floatingUsername" placeholder="Username">
                             <label for="floatingUsername">Username</label>
-                        </div>
-
-                        <div class="form-group">
-                            <fieldset>
-                                <label class="form-label mt-4" for="lastNameInput">Lastname</label>
-                                <input class="form-control" id="lastNameInput" type="text" placeholder="Lastname input here..." lastname="${lastName}">
-                            </fieldset>
                         </div>
                         <div class="form-floating">
                             <input type="lastname" class="form-control" id="floatingLastname" placeholder="Lastname">
                             <label for="floatingLastname">Lastname</label>
                         </div>
-
-                        <div class="form-group">
-                            <fieldset>
-                                <label class="form-label mt-4" for="firstNameInput">Firstname</label>
-                                <input class="form-control" id="firstNameInput" type="text" placeholder="Firstname input here..." firstname="${firstName}">
-                            </fieldset>
-                        </div>
                         <div class="form-floating">
                             <input type="firstname" class="form-control" id="floatingFirstname" placeholder="firstname">
                             <label for="floatingFirstname">Firstname</label>
-                        </div>
-
-                        <div class="form-group">
-                            <fieldset>
-                                <label class="form-label mt-4" for="mailInput">Mail</label>
-                                <input class="form-control" id="mailInput" type="text" placeholder="Mail input here..." mail="${mail}">
-                            </fieldset>
                         </div>
                         <div class="form-floating">
                             <input type="mail" class="form-control" id="floatingMail" placeholder="Mail">
                             <label for="floatingMail">Mail</label>
                         </div>
-
-                        <div class="form-group">
-                            <fieldset>
-                                <label class="form-label mt-4" for="phoneInput">Phone</label>
-                                <input class="form-control" id="phoneInput" type="number" placeholder="Phone input here..." phone="${phone}">
-                            </fieldset>
-                        </div>
                         <div class="form-floating">
                             <input type="number" class="form-control" id="floatingPhone" placeholder="Phone">
                             <label for="floatingPhone">Phone</label>
-                        </div>
-
-                        <div class="form-group">
-                            <fieldset>
-                                <label class="form-label mt-4" for="StreetInput">Street</label>
-                                <input class="form-control" id="StreetInput" type="text" placeholder="Street input here..." street="${street}">
-                            </fieldset>
                         </div>
                         <div class="form-floating">
                             <input type="street" class="form-control" id="floatingStreet" placeholder="Street">
                             <label for="floatingStreet">Street</label>
                         </div>
-
-                        <div class="form-group">
-                            <fieldset>
-                                <label class="form-label mt-4" for="zipCodeInput">ZipCode</label>
-                                <input class="form-control" id="zipCodeInput" type="number" placeholder="ZipCode input here..." zipCode="${zipCode}">
-                            </fieldset>
-                        </div>
                         <div class="form-floating">
                             <input type="number" class="form-control" id="floatingZipCode" placeholder="ZipCode">
                             <label for="floatingZipCode">ZipCode</label>
-                        </div>
-
-                        <div class="form-group">
-                            <fieldset>
-                                <label class="form-label mt-4" for="cityInput">City</label>
-                                <input class="form-control" id="cityInput" type="text" placeholder="City input here..." city="${city}">
-                            </fieldset>
                         </div>
                         <div class="form-floating">
                             <input type="city" class="form-control" id="floatingCity" placeholder="City">
                             <label for="floatingCity">City</label>
                         </div>
+                        <div class="btn-group btn-group-justified">
+                            <button type="submit" class="btn btn-outline-primary">Modify</button>
+                        </div>
                     </form>
-
-                    <div class="btn-group btn-group-justified">
-                        <button type="button" class="btn btn-outline-primary">Modify</button>
-                    </div>
 
                 </div>
             </div>

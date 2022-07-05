@@ -103,13 +103,11 @@
                                 <input type="text" readonly="" class="form-control-plaintext" id="credits">
                             </div>
                         </div>
-
                     </form>
                     <div class="btn-group btn-group-justified">
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-primary">Delete my account</button>
                         <button type="button" class="btn btn-primary">Back</button>
-
                     </div>
                 </div>
             </div>
