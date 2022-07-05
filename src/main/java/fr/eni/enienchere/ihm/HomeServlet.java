@@ -17,8 +17,9 @@ public class HomeServlet extends HttpServlet {
     private static final String INDEX="/index.jsp";
     private static final String CONNECTION="/connection.jsp";
     private static final String BIDLIST="/bidList.jsp";
-    private static final String NEWBID=".jsp";
+    private static final String NEWBID="/newBid.jsp";
     private static final String PROFIL="/profil.jsp";
+    private static final String MODIFPROFILE="/modifProfil.jsp";
 
 
     private HttpSession session;

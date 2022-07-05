@@ -73,8 +73,6 @@
             </div>
         </div>
     </div>
-
-
 </main>
 <footer>
 </footer>
