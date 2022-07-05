@@ -4,6 +4,7 @@ import fr.eni.enienchere.bll.ArticleManager;
 import fr.eni.enienchere.bll.BLLException;
 import fr.eni.enienchere.bll.BLLFactory;
 import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.bo.Categorie;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 @WebServlet(name = "NewBidServlet", value = "/NewBidServlet")
@@ -33,6 +35,13 @@ public class NewBidServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session=request.getSession();
+
+        try {
+            List<Categorie> categories=am.selectCategories();
+            request.setAttribute("categories", categories);
+        } catch (BLLException e) {
+            e.printStackTrace();
+        }
         getServletContext().getRequestDispatcher(NEWBID).forward(request, response);
     }
 
