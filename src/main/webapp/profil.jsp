@@ -58,35 +58,35 @@
                 <div class="col-12">
                     <form action="" method="post">
                         <div class="form-floating">
-                            <input type="username" class="form-control" id="floatingUsername" placeholder="Username">
-                            <label for="floatingUsername">Username</label>
+                            <input type="username" class="form-control" id="floatingUsername" placeholder="Username" readOnly="${username}">
+                            <label for="floatingUsername">User name</label>
                         </div>
                         <div class="form-floating">
-                            <input type="lastname" class="form-control" id="floatingLastname" placeholder="Lastname">
-                            <label for="floatingLastname">Lastname</label>
+                            <input type="lastname" class="form-control" id="floatingLastname" placeholder="Lastname" readOnly="${lastname}">
+                            <label for="floatingLastname">Last name</label>
                         </div>
                         <div class="form-floating">
-                            <input type="firstname" class="form-control" id="floatingFirstname" placeholder="firstname">
-                            <label for="floatingFirstname">Firstname</label>
+                            <input type="firstname" class="form-control" id="floatingFirstname" placeholder="firstname" readOnly="${firstname}">
+                            <label for="floatingFirstname">First name</label>
                         </div>
                         <div class="form-floating">
-                            <input type="mail" class="form-control" id="floatingMail" placeholder="Mail">
+                            <input type="mail" class="form-control" id="floatingMail" placeholder="Mail" readOnly="${mail}">
                             <label for="floatingMail">Mail</label>
                         </div>
                         <div class="form-floating">
-                            <input type="number" class="form-control" id="floatingPhone" placeholder="Phone">
-                            <label for="floatingPhone">Phone</label>
+                            <input type="phone" class="form-control" id="floatingPhone" placeholder="Phone" readOnly="${phone}">
+                            <label for="floatingPhone">Phone number</label>
                         </div>
                         <div class="form-floating">
-                            <input type="street" class="form-control" id="floatingStreet" placeholder="Street">
+                            <input type="street" class="form-control" id="floatingStreet" placeholder="Street" readOnly="${street}">
                             <label for="floatingStreet">Street</label>
                         </div>
                         <div class="form-floating">
-                            <input type="number" class="form-control" id="floatingZipCode" placeholder="ZipCode">
-                            <label for="floatingZipCode">ZipCode</label>
+                            <input type="zipCode" class="form-control" id="floatingZipCode" placeholder="ZipCode" readOnly="${zipcode}">
+                            <label for="floatingZipCode">Zip Code</label>
                         </div>
                         <div class="form-floating">
-                            <input type="city" class="form-control" id="floatingCity" placeholder="City">
+                            <input type="city" class="form-control" id="floatingCity" placeholder="City" readOnly="${city}">
                             <label for="floatingCity">City</label>
                         </div>
                         <div class="btn-group btn-group-justified">
