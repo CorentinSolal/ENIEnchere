@@ -56,8 +56,8 @@
         <div class="container-fluid">
             <div class="row">
                 <c:forEach var="article" items="${article}">
-                    <div class="col-4">
-                        <div class="card text-white bg-primary m-5" style="max-width: 20rem;">
+                    <div class="col-3">
+                        <div class="card text-white bg-primary m-3" style="max-width: 20rem;">
                             <div class="card-header">Enchère n° ${article.idArt}</div>
                             <div class="card-body">
                                 <h4 class="card-title">${article.nomArt}</h4>
