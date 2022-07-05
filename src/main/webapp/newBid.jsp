@@ -42,6 +42,7 @@
                                 <a class="dropdown-item" href="#">Mes enchères</a>
                                 <a class="dropdown-item" href="#">Mes articles</a>
                                 <a class="dropdown-item" href="ProfilServlet">Voir mon profil</a>
+                                <a class="dropdown-item" href="NewBidServlet">Ajouter un article</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="DisconnectServlet">Se déconnecter</a>
                             </div>
@@ -58,19 +59,17 @@
             <fieldset class="m-5">
                 <legend>Add an article</legend>
                 <form method="post" action="NewBidServlet">
+                    <div class="form-group m-4">
+                        <label for="categorie" class="form-label mt-4">Categorie</label>
+                        <select class="form-select" id="categorie" name="categorie">
+                            <c:forEach var="categories" items="${categories}">
+                                <option>${categories.libelle}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
                     <div class="form-floating m-3">
                         <input type="text" class="form-control" name="name" placeholder="Name">
                         <label>Name</label>
-                    </div>
-                    <div class="form-group m-3">
-                        <label for="categorie" class="form-label mt-4">Categorie</label>
-                        <select class="form-select" id="categorie" name="categorie">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
                     </div>
                     <div class="form-floating m-3">
                         <input type="text" class="form-control" placeholder="description" name="description">
@@ -84,12 +83,16 @@
                         <input type="number" class="form-control" placeholder="Start Price" name="startPrice">
                         <label >Start Price</label>
                     </div>
+                    <div class="form-floating m-3">
+                        <input type="text" class="form-control" placeholder="Url image" name="urlImage">
+                        <label >URl image</label>
+                    </div>
                     <button type="submit" class="btn btn-primary" style="margin-top: 20px">Submit</button>
                 </form>
             </fieldset>
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

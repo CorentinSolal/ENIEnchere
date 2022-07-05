@@ -40,6 +40,7 @@
                                 <a class="dropdown-item" href="#">Mes enchères</a>
                                 <a class="dropdown-item" href="#">Mes articles</a>
                                 <a class="dropdown-item" href="ProfilServlet">Voir mon profil</a>
+                                <a class="dropdown-item" href="NewBidServlet">Ajouter un article</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="DisconnectServlet">Se déconnecter</a>
                             </div>

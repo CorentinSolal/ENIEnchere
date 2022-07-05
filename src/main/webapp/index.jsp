@@ -41,6 +41,7 @@
                                 <a class="dropdown-item" href="#">Mes enchères</a>
                                 <a class="dropdown-item" href="#">Mes articles</a>
                                 <a class="dropdown-item" href="ProfilServlet">Voir mon profil</a>
+                                <a class="dropdown-item" href="NewBidServlet">Ajouter un article</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="DisconnectServlet">Se déconnecter</a>
                             </div>
@@ -57,7 +58,7 @@
             <div class="row">
                 <c:forEach var="article" items="${article}">
                     <div class="col-4">
-                        <div class="card text-white bg-primary m-3  " style="max-width: 20rem;">
+                        <div class="card text-white bg-primary m-3" style="max-width: 20rem;">
                             <div class="card-header">Enchère n° ${article.idArt}</div>
                             <div class="row ">
                                 <div class="col-6">
