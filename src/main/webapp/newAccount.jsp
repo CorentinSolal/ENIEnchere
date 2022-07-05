@@ -96,9 +96,7 @@
                                     <input type="text" class="form-control" placeholder="city" name="city">
                                     <label >City</label>
                                 </div>
-                                <div class="form-floating m-4>
-                                    <button type="submit" class="btn btn-primary m-5">Submit</button>
-                                </div>
+                                <button type="submit" class="btn btn-primary m-4">Submit</button>
                             </div>
                         </fieldset>
                     </form>
@@ -107,5 +105,6 @@
         </div>
     </div>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
 </body>
 </html>
