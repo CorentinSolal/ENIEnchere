@@ -90,7 +90,7 @@
                             <label for="floatingCity">City</label>
                         </div>
                         <div class="btn-group btn-group-justified m-4">
-                            <button class="btn btn-primary" type="button">Modify</button>
+                            <button class="btn btn-primary" type="submit">Modify</button>
                         </div>
                     </form>
 
