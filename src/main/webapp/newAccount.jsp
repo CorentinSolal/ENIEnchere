@@ -96,9 +96,7 @@
                                     <input type="text" class="form-control" placeholder="city" name="city">
                                     <label >City</label>
                                 </div>
-                                <div class="form-floating m-4>
-                                    <button type="submit" class="btn btn-primary m-5">Submit</button>
-                                </div>
+                                <button type="submit" class="btn btn-primary m-4">Submit</button>
                             </div>
                         </fieldset>
                     </form>
