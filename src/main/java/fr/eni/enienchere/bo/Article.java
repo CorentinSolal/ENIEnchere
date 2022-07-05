@@ -14,19 +14,23 @@ public class Article {
     private Integer prixInit;
     private Integer prixFinal;
 
+    private String imageUrl;
+
     public Article() {
     }
 
-    public Article(String nomArt, String descArt, Integer noCat, LocalDate dateFin, Integer prixInit) {
+    public Article(String nomArt, String descArt, Integer noCat, LocalDate dateFin, Integer prixInit, String imageUrl) {
         this.nomArt = nomArt;
         this.descArt = descArt;
         this.noCat = noCat;
         this.dateDebut=LocalDate.now();
         this.dateFin = dateFin;
         this.prixInit = prixInit;
+        this.imageUrl = imageUrl;
         prixFinal = prixInit;
+
     }
-    public Article(Integer idArt,String nomArt, String descArt, Integer noCat, LocalDate dateFin, Integer prixInit) {
+    public Article(Integer idArt,String nomArt, String descArt, Integer noCat, LocalDate dateFin, Integer prixInit, String imageUrl) {
         this.idArt = idArt;
         this.nomArt = nomArt;
         this.descArt = descArt;
@@ -35,9 +39,10 @@ public class Article {
         this.dateFin = dateFin;
         this.prixInit = prixInit;
         this.prixFinal = prixInit;
+        this.imageUrl = imageUrl;
     }
 
-    public Article(Integer idArt, String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, Integer prixInit, Integer prixFinal, Integer noCat) {
+    public Article(Integer idArt, String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, Integer prixInit, Integer prixFinal, Integer noCat, String imageUrl) {
         this.idArt = idArt;
         this.nomArt = nomArt;
         this.descArt = descArt;
@@ -46,6 +51,7 @@ public class Article {
         this.dateFin = dateFin;
         this.prixInit = prixInit;
         this.prixFinal = prixFinal;
+        this.imageUrl = imageUrl;
     }
 
     public Integer getIdArt() {
@@ -110,5 +116,13 @@ public class Article {
 
     public void setPrixFinal(Integer prixFinal) {
         this.prixFinal = prixFinal;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
