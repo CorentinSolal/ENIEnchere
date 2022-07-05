@@ -152,7 +152,7 @@ public class ArticleDAOImpl implements ArticleDAO {
         }
     }
     
-    public  List<Categorie> selectCategorie(Integer noCategorie) throws DALException {
+    public  List<Categorie> selectCategorie() throws DALException {
         List<Categorie> listeCategorie = new ArrayList<Categorie>();
         
         try (Connection conn = ConnectionProvider.getConnection()) {
