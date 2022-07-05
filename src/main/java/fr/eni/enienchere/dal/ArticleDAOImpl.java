@@ -33,12 +33,12 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             PreparedStatement stmt = conn.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 
-            stmt.setString(1, article.getNomArt());
+            stmt.setString(1, article.getNameArt());
             stmt.setString(2, article.getDescArt());
-            stmt.setDate(3, Date.valueOf(article.getDateDebut()));
-            stmt.setDate(4, Date.valueOf(article.getDateFin()));
-            stmt.setInt(5, article.getPrixInit());
-            stmt.setInt(6, article.getPrixFinal());
+            stmt.setDate(3, Date.valueOf(article.getDateStart()));
+            stmt.setDate(4, Date.valueOf(article.getDateEnd()));
+            stmt.setInt(5, article.getStartPrice());
+            stmt.setInt(6, article.getEndPrice());
             stmt.setInt(7, idUser);
             stmt.setInt(8, article.getNoCat());
             stmt.setString(9, article.getImageUrl());
@@ -115,11 +115,11 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             PreparedStatement stmt = conn.prepareStatement(UPDATE);
 
-            stmt.setString(1, article.getNomArt());
+            stmt.setString(1, article.getNameArt());
             stmt.setString(2, article.getDescArt());
-            stmt.setDate(3, Date.valueOf(article.getDateDebut()));
-            stmt.setDate(4, Date.valueOf(article.getDateFin()));
-            stmt.setInt(5, article.getPrixInit());
+            stmt.setDate(3, Date.valueOf(article.getDateStart()));
+            stmt.setDate(4, Date.valueOf(article.getDateEnd()));
+            stmt.setInt(5, article.getStartPrice());
             stmt.setInt(6, article.getNoCat());
             stmt.setString(7, article.getImageUrl());
 
@@ -179,8 +179,8 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             PreparedStatement stmt = conn.prepareStatement(INSERT_ENCHERE, PreparedStatement.RETURN_GENERATED_KEYS);
 
-            stmt.setDate(1, Date.valueOf(bid.getDateEnchere()));
-            stmt.setInt(2, bid.getMontantEnchere());
+            stmt.setDate(1, Date.valueOf(bid.getBidDate()));
+            stmt.setInt(2, bid.getBidAmount());
             stmt.setInt(3, idArticle);
             stmt.setInt(4, idUser);
             
