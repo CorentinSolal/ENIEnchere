@@ -98,13 +98,13 @@
                         </div>
                         <div class="form-group">
                             <label class="col-form-label mt-4" for="credits">Credits</label>
-                            <input type="text" class="form-control"  id="credits">
+                            < class="form-control" id="credits">
                         </div>
                     </form>
                     <div class="d-grid gap-2 d-md-block mt-4">
-                        <button class="btn btn-primary" type="button">Save</button>
-                        <button class="btn btn-primary" type="button">Delete my account</button>
-                        <button class="btn btn-primary" type="button">Back</button>
+                        <button class="btn btn-primary m-3" type="button">Save</button>
+                        <button class="btn btn-primary m-3" type="button">Delete my account</button>
+                        <button class="btn btn-primary m-3" type="button">Back</button>
                     </div>
                 </div>
             </div>
