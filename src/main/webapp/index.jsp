@@ -57,10 +57,11 @@
             <div class="row">
                 <c:forEach var="article" items="${article}">
                     <div class="col-4">
-                        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                        <div class="card text-white bg-primary m-5" style="max-width: 20rem;">
                             <div class="card-header">Enchère n° ${article.idArt}</div>
                             <div class="card-body">
                                 <h4 class="card-title">${article.nomArt}</h4>
+                            <p class="card-text">${article.descArt}</p>
                                 <p class="card-text">Prix : ${article.prixFinal} points</p>
                                 <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
                             </div>

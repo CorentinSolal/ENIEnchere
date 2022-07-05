@@ -23,12 +23,8 @@ public class ArticleDAOImpl implements ArticleDAO {
     private static final String UPDATE = "UPDATE ARTICLES_VENDUS SET nom_article = ? ,description = ? ,date_debut_encheres = ? ,date_fin_encheres = ?,prix_initial = ?, no_categorie = ?";
     //private static final String SELECT_USER_CATALOGUE = "SELECT * FROM UTILISATEURS";
     private static final String SELECT_BY_USER = "SELECT * From ARTICLES_VENDUS Where no_utilisateur = ?";
-    //private static final String SELECT_ENCHERE_BY_ARTICLE = "SELECT * FROM ENCHERES WHERE no_article = ?";
-    //private static final String SELECT_ENCHERE_BY_USER = "SELECT * FROM ENCHERES WHERE no_utilisateur = ?";
-    //private static final String SELECT_RETRAIT_BY_ARTICLE = "SELECT * FROM RETRAITS WHERE no_article = ?";
     private static final String SELECT_CATEGORIE = "SELECT * FROM CATEGORIES";
     private static final String INSERT_ENCHERE = "insert into ENCHERES (date_enchere, montant_enchere, no_article, no_utilisateur) values (?, ?, ?, ?)";
-    //private static final String INSERT_RETRAIT = "INSERT INTO RETRAITS (no_article, rue, code_postal, ville) VALUES (?, ?, ?, ? )";
 
     public ArticleDAOImpl() {
     }
@@ -66,11 +62,8 @@ public class ArticleDAOImpl implements ArticleDAO {
             ResultSet rs = stmt.executeQuery();
 
             while(rs.next()) {
-                Date dateDebut=rs.getDate("date_debut_encheres");
-                Date dateFin=rs.getDate("date_fin_encheres");
-                LocalDate localDateDebut = dateDebut.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                LocalDate localDateFin = dateFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                listeArticles.add(new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), localDateDebut, localDateFin, rs.getInt("prix_initial"), rs.getInt("prix_vente") ,rs.getInt("no_categorie")));
+                listeArticles.add(new Article(rs.getInt("no_article"), rs.getString("nom_article"),
+                        rs.getString("description"),rs.getDate("date_debut_encheres").toLocalDate(),rs.getDate("date_fin_encheres").toLocalDate() , rs.getInt("prix_initial"), rs.getInt("prix_vente") ,rs.getInt("no_categorie")));
             }
             return listeArticles;
         } catch (SQLException e) {
