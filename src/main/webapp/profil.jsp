@@ -89,7 +89,7 @@
                             <input type="text" class="form-control" id="floatingCity" placeholder="City" readOnly="${city}">
                             <label for="floatingCity">City</label>
                         </div>
-                        <div class="btn-group btn-group-justified m-4">
+                        <div class="btn-group btn-group-justified m-4 position-relative top-100 start-50 translate-middle">
                             <button class="btn btn-primary" type="submit">Modify</button>
                         </div>
                     </form>
@@ -98,6 +98,24 @@
         </div>
     </div>
 </main>
+<footer>
+    <div class="container" "footer-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4">
+                    <p>Liefert das felis.</p>
+                </div>
+                <div class="col-4">
+                    <p>Le rang du fond</p>
+                </div>
+                <div class="col-4" >
+                    <a href="http://www.eni-ecole.fr ">ENI Ecole</a>
+                    &copy Copyright
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
