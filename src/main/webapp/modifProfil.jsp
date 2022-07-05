@@ -57,7 +57,7 @@
                 <div class="col-12">
                     <form action="" method="post">
                         <div class="form-group">
-                            <label class="col-form-label m-4" for="username">User Name</label>
+                            <label class="col-form-label mt-4" for="username">User Name</label>
                             <input type="text" class="form-control" placeholder="User name" id="username">
                         </div>
                         <div class="form-group">
@@ -68,45 +68,43 @@
                             <label class="col-form-label mt-4" for="firstName">First name</label>
                             <input type="text" class="form-control" placeholder="First name" id="firstName">
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
+                        <div class="form-group">
+                            <label class="col-form-label mt-4" for="email">Email adress</label>
+                            <input type="text" class="form-control" placeholder="email@example.com" id="email">
                         </div>
                         <div class="form-group">
                             <label class="col-form-label mt-4" for="phoneNumber">Enter your phone number</label>
                             <input type="tel" class="form-control" placeholder="Phone number" id="phoneNumber">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label m-4" for="street">Enter your street</label>
+                            <label class="col-form-label mt-4" for="street">Enter your street</label>
                             <input type="text" class="form-control" placeholder="Street" id="street">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label m-4" for="cpo">Post code</label>Post code</label>
-                            <input type="text" class="form-control" placeholder="Street" id="cpo">
+                            <label class="col-form-label mt-4" for="cpo">Post code</label>
+                            <input type="text" class="form-control" placeholder="Post code" id="cpo">
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label m-4" for="city">City</label>
+                            <label class="col-form-label mt-4" for="city">City</label>
                             <input type="text" class="form-control" placeholder="city" id="city">
                         </div>
-                        <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
+                        <div class="form-group">
+                            <label class="col-form-label mt-4" for="password">Password</label>
+                            <input type="text" class="form-control" placeholder="Password" id="password">
                         </div>
-                        <div class="form-floating">
-                            <input type="password" class="form-control" id="confirmPassword">
-                            <label for="confirmPassword">Confirm</label>
+                        <div class="form-group">
+                            <label class="col-form-label mt-4" for="confirm">Confirm Password</label>
+                            <input type="text" class="form-control" placeholder="Confirm Password" id="confirm">
                         </div>
-                        <div class="form-group row">
-                            <label for="credits" class="col-sm-2 col-form-label">Credits</label>
-                            <div class="col-sm-10">
-                                <input type="text" readonly="" class="form-control-plaintext" id="credits">
-                            </div>
+                        <div class="form-group">
+                            <label class="col-form-label mt-4" for="credits">Credits</label>
+                            <input type="text" class="form-control"  id="credits">
                         </div>
                     </form>
-                    <div class="btn-group btn-group-justified">
-                        <button type="submit" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-primary">Delete my account</button>
-                        <button type="button" class="btn btn-primary">Back</button>
+                    <div class="d-grid gap-2 d-md-block mt-4">
+                        <button class="btn btn-primary" type="button">Save</button>
+                        <button class="btn btn-primary" type="button">Delete my account</button>
+                        <button class="btn btn-primary" type="button">Back</button>
                     </div>
                 </div>
             </div>
