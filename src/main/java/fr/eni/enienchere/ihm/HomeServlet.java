@@ -12,7 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet({"/HomeServlet"})
+@WebServlet({"/HomeServlet",""})
 public class HomeServlet extends HttpServlet {
     private static final String INDEX="/index.jsp";
     private static final String CONNECTION="/connection.jsp";
