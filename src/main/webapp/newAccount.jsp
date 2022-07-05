@@ -60,43 +60,45 @@
                         <fieldset>
                             <div class="form-group m-4">
                                 <h2 class="m-5" style="text-align:center">Créer un compte</h2>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="text" class="form-control" placeholder="username" name="username">
                                     <label>Username</label>
                                 </div>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="text" class="form-control" placeholder="name" name="lastName">
                                     <label>Last Name</label>
                                 </div>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="text" class="form-control" placeholder="first name" name="firstName">
                                     <label>First name</label>
                                 </div>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="text" class="form-control" placeholder="phoneNumber" name="phoneNumber">
                                     <label>Phone number</label>
                                 </div>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="email" class="form-control" placeholder="name@example.com" name="email" >
                                     <label>Email address</label>
                                 </div>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="password" class="form-control" placeholder="Password" name="password" >
                                     <label>Password</label>
                                 </div>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="text" class="form-control" placeholder="street" name="street">
                                     <label>Street</label>
                                 </div>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="text" class="form-control" placeholder="postalCode" name="postalCode">
                                     <label>Postal Code</label>
                                 </div>
-                                <div class="form-floating m-5">
+                                <div class="form-floating m-4">
                                     <input type="text" class="form-control" placeholder="city" name="city">
                                     <label >City</label>
                                 </div>
-                            <button type="submit" class="btn btn-primary m-5">Submit</button>
+                                <div class="form-floating m-4>
+                                    <button type="submit" class="btn btn-primary m-5">Submit</button>
+                                </div>
                             </div>
                         </fieldset>
                     </form>
