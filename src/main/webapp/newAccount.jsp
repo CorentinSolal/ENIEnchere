@@ -26,7 +26,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="BidListServlet">Enchères en cours</a>
                     </li>
-                    <c:if test="${connected.equals(\"false\")}">
+                    <c:if test="true">
                         <li class="nav-item">
                             <a class="nav-link" href="ConnectionServlet">Se connecter<span class="visually-hidden">(current)</span></a>
                         </li>
@@ -34,7 +34,7 @@
                             <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
                         </li>
                     </c:if>
-                    <c:if test="${connected.equals(\"true\")}">
+                    <c:if test="true">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
                             <div class="dropdown-menu">
@@ -60,7 +60,6 @@
                         <fieldset>
                             <div class="form-group m-4">
                                 <h2 class="m-5" style="text-align:center">Créer un compte</h2>
-
                                 <div class="form-floating m-5">
                                     <input type="text" class="form-control" placeholder="username" name="username">
                                     <label>Username</label>
