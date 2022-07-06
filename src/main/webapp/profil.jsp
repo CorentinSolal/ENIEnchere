@@ -104,24 +104,27 @@
     <div class="container" "footer-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3">
-                    <p>Liefert das felis.</p>
+                <div class="pres col-4" >
+                    <h4>L'agence</h4>
+                    <p>Qui sommes nous ?</p>
+                    <p>3 stagiaires en
+                    charge de créer<br>
+                    des sites pour des
+                    clients exigeant.<br>
+                    Une agence pleine de bonne volonté<br>
+                    et de jeunes talents !</p>
                 </div>
-                <div class="col-3">
-                    <p>Le rang du fond</p>
+                <div class="col-4">
+
+                    <p>Localisation :</p>
+                    <p>3, Rue Michael Faraday,</p>
+                    <p>44800 Saint-Herblain</p>
                 </div>
-                <div class="col-3">
-                    <a class="link" href="http://www.eni-ecole.fr ">ENI Ecole</a>
+                <div class="clot col-4">
+                    <a class="link" href="https://www.hervecuisine.com/recette/recette-pizza-hawaienne-ananas/"> <p>Nous contacter</p> </a>
+                    <p>Conditions d'utilisations</p>
+                    <a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <p>ENI Ecole</p> </a>
                     &copy Copyright
-                </div>
-                <div class="col-3">
-                    <ul class="socials">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-                    </ul>
-                    <link rel="icon" href="favicon.png">
                 </div>
             </div>
         </div>

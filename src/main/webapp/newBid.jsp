@@ -93,6 +93,36 @@
         </div>
     </div>
 </div>
+<footer>
+    <div class="container" "footer-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pres col-4" >
+                <h4>L'agence</h4>
+                <p>Qui sommes nous ?</p>
+                <p>3 stagiaires en
+                    charge de créer<br>
+                    des sites pour des
+                    clients exigeant.<br>
+                    Une agence pleine de bonne volonté<br>
+                    et de jeunes talents !</p>
+            </div>
+            <div class="col-4">
+
+                <p>Localisation :</p>
+                <p>3, Rue Michael Faraday,</p>
+                <p>44800 Saint-Herblain</p>
+            </div>
+            <div class="clot col-4">
+                <a class="link" href="https://www.hervecuisine.com/recette/recette-pizza-hawaienne-ananas/"> <p>Nous contacter</p> </a>
+                <p>Conditions d'utilisations</p>
+                <a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <p>ENI Ecole</p> </a>
+                &copy Copyright
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous">
