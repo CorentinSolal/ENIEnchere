@@ -68,7 +68,7 @@
                                     <p >${article.descArt}</p>
                                     <p >End date : ${article.dateEnd}</p>
                                     <p >Price : ${article.endPrice}</p>
-                                    <p >Seller : ${article.userName}</p>
+                                    <p >Seller :</p>
                                 </div>
                             </div>
                         </div>

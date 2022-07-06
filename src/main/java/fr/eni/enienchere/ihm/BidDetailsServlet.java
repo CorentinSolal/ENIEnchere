@@ -15,23 +15,18 @@ import java.io.IOException;
 
 @WebServlet (name = "BidDetailsServlet", value = "/BidDetailsServlet")
 public class BidDetailsServlet extends HttpServlet {
-    private static final String INDEX="/index.jsp";
-    private static final String CONNECTION="/connection.jsp";
     private static final String BIDDETAILS ="/bidDetails.jsp";
-    private static final String NEWBID=".jsp";
-    private static final String PROFIL="/profil.jsp";
-
     HttpSession session;
 
      ArticleManager am = BLLFactory.getArticleManager();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArticleManager am = BLLFactory.getArticleManager();
         Article article=null;
         try {
-            article=am.selectById(10);
-            request.setAttribute("article", am);
+            article=am.selectById(16);
+            System.out.println(article);
+            request.setAttribute("article", article);
         }catch (BLLException e) {
             throw new RuntimeException(e);
         }
