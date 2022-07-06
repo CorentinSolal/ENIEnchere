@@ -67,7 +67,7 @@
                         </div>
                         <p>${connected}</p>
                         <p>${error}</p>
-                        <button class="btn btn-primary" type="button" style="margin-top:20px;">Connect</button>
+                        <button class="btn btn-primary" type="submit" style="margin-top:20px;">Connect</button>
                     </form>
                 </div>
             </div>
