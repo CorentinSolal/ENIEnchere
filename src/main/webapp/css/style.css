@@ -5,3 +5,7 @@ img{
     object-fit: scale-down;
 }
 
+footer{
+    background-color: black;
+    color: lightslategrey;
+}
