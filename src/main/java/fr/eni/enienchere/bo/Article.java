@@ -67,8 +67,10 @@ public class Article {
             case "Instruments de musique" : this.noCat = 1; break;
             case "Informatique" : this.noCat = 2; break;
             case "Mobilier" : this.noCat = 3; break;
-            case "Vêtements" : this.noCat = 4; break;
+            case "Vetements" : this.noCat = 4; break;
             case "Nourritures" : this.noCat = 5; break;
+            case "autre" : this.noCat = 6; break;
+            default:this.noCat =6;break;
         }
     }
 

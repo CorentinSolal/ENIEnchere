@@ -12,6 +12,9 @@ footer{
     color: lightslategrey;
     text-align: center;
 }
+.card-title {
+    font-size:1em;
+}
 
 .link {
     color: lightslategrey;
@@ -21,4 +24,9 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.cardbis{
+    margin: 20px;
+    height: 350px;
+    width: 500px;
 }
