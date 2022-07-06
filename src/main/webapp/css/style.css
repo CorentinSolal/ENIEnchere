@@ -25,3 +25,8 @@ footer{
     align-items: center;
     justify-content: center;
 }
+.cardbis{
+    margin: 20px;
+    height: 350px;
+    width: 500px;
+}
