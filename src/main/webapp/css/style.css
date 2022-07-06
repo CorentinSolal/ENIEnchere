@@ -44,3 +44,37 @@ h4 {
     text-align: left;
 }
 
+.art {
+    background-color: black;
+}
+.descArticle{
+    color: white;
+    margin: 20px;
+    padding-top: 50px;
+
+}
+.titleArt {
+    color:white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+li {
+    margin-top: 50px;
+}
+h2{
+    color: white;
+}
+
+.noArticle{
+    color: white;
+    text-align: center;
+    margin: 20px;
+    font-size: 3em;
+}
+
+.buttonbid{
+    text-align: center;
+    margin-top: 100px;
+}
+
