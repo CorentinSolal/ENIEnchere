@@ -12,6 +12,9 @@ footer{
     color: lightslategrey;
     text-align: center;
 }
+.card-title {
+    font-size:1em;
+}
 
 .link {
     color: lightslategrey;
