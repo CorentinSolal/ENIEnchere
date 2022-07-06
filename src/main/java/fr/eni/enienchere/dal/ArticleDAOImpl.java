@@ -86,22 +86,18 @@ public class ArticleDAOImpl implements ArticleDAO {
         }
 
     }
-    public Article selectById(int noArticle) throws DALException {
+    public Article selectById(int noArt) throws DALException {
 
         try (Connection conn = ConnectionProvider.getConnection()){
 
             PreparedStatement stmt = conn.prepareStatement(SELECT_BY_ID);
 
-            stmt.setInt(1,noArticle);
+            stmt.setInt(1,noArt);
 
             ResultSet rs = stmt.executeQuery();
 
             if(rs.next()) {
-                Date dateDebut=rs.getDate("date_debut_encheres");
-                Date dateFin=rs.getDate("date_fin_encheres");
-                LocalDate localDateDebut = dateDebut.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                LocalDate localDateFin = dateFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                return new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), localDateDebut, localDateFin, rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
+                return new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(),rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
             }else {
                 throw new DALException ("Mauvais Identifiant ");
             }

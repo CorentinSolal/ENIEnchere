@@ -13,7 +13,6 @@ public class Article {
     private LocalDate dateEnd;
     private Integer startPrice;
     private Integer endPrice;
-
     private String imageUrl;
 
     public Article() {

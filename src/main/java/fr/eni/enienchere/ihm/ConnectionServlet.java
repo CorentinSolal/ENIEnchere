@@ -41,7 +41,7 @@ public class ConnectionServlet extends HttpServlet {
             session.setAttribute("connected","true");
             System.out.println(request.getParameter("username"));
             System.out.println(request.getParameter("password"));
-            request.getRequestDispatcher(INDEX).forward(request, response);
+            request.getRequestDispatcher("/HomeServlet").forward(request, response);
         }catch (BLLException e) {
             request.setAttribute("error", "Erreur lors de la connection");
             request.getRequestDispatcher(CONNECTION).forward(request, response);
