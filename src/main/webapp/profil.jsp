@@ -6,6 +6,7 @@
 <head>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mon profil</title>
@@ -103,15 +104,24 @@
     <div class="container" "footer-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     <p>Liefert das felis.</p>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <p>Le rang du fond</p>
                 </div>
-                <div class="col-4">
-                    <a href="http://www.eni-ecole.fr ">ENI Ecole</a>
+                <div class="col-3">
+                    <a class="link" href="http://www.eni-ecole.fr ">ENI Ecole</a>
                     &copy Copyright
+                </div>
+                <div class="col-3">
+                    <ul class="socials">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    </ul>
+                    <link rel="icon" href="favicon.png">
                 </div>
             </div>
         </div>

@@ -10,4 +10,15 @@ img{
 footer{
     background-color: black;
     color: lightslategrey;
+    text-align: center;
+}
+
+.link {
+    color: lightslategrey;
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
