@@ -115,15 +115,15 @@
                     et de jeunes talents !</p>
                 </div>
                 <div class="col-4">
-                    <a class="link" href="http://...">Nous contacter</a>
+
                     <p>Localisation :</p>
                     <p>3, Rue Michael Faraday,</p>
                     <p>44800 Saint-Herblain</p>
                 </div>
-                <div class="col-4">
-
+                <div class="clot col-4">
+                    <a class="link" href="https://www.hervecuisine.com/recette/recette-pizza-hawaienne-ananas/"> <p>Nous contacter</p> </a>
                     <p>Conditions d'utilisations</p>
-                    <a class="link" href="http://www.eni-ecole.fr ">ENI Ecole</a>
+                    <a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <p>ENI Ecole</p> </a>
                     &copy Copyright
                 </div>
             </div>
