@@ -75,9 +75,6 @@
                     </div>
                 </c:forEach>
             </div>
-            <div>
-                <button type="submit" class="btn btn-primary" value="moreBid" style="align-content: center">Voir plus</button>
-            </div>
         </div>
     </div>
 </main>
