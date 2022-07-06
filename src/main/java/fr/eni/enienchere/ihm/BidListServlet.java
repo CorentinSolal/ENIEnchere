@@ -1,6 +1,8 @@
 package fr.eni.enienchere.ihm;
 
+import fr.eni.enienchere.bll.ArticleManager;
 import fr.eni.enienchere.bll.BLLException;
+import fr.eni.enienchere.bll.BLLFactory;
 import fr.eni.enienchere.bo.Article;
 
 import javax.servlet.*;
@@ -18,6 +20,7 @@ public class BidListServlet extends HttpServlet {
     private static final String NEWBID=".jsp";
     private static final String PROFIL="/profil.jsp";
     HttpSession session;
+    private ArticleManager am = BLLFactory.getArticleManager();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session = request.getSession();
