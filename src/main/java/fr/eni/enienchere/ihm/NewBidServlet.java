@@ -50,6 +50,7 @@ public class NewBidServlet extends HttpServlet {
 
         Article newArticle = new Article();
 
+        newArticle.setNoCat(request.getParameter("categorie"));
         newArticle.setNameArt(request.getParameter("name"));
         newArticle.setDescArt(request.getParameter("description"));
 
@@ -61,10 +62,10 @@ public class NewBidServlet extends HttpServlet {
         newArticle.setDateEnd(date);
         newArticle.setStartPrice(Integer.parseInt(request.getParameter("startPrice")));
         newArticle.setImageUrl(request.getParameter("urlImage"));
-
+        System.out.println(newArticle);
         try {
             am.insertArticle(newArticle,12);
-            getServletContext().getRequestDispatcher(INDEX).forward(request, response);
+            getServletContext().getRequestDispatcher("/HomeServlet").forward(request, response);
         } catch (BLLException e) {
             getServletContext().getRequestDispatcher(NEWBID).forward(request, response);
             e.printStackTrace();

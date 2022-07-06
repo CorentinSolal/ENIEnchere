@@ -35,10 +35,10 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             stmt.setString(1, article.getNameArt());
             stmt.setString(2, article.getDescArt());
-            stmt.setDate(3, Date.valueOf(article.getDateStart()));
+            stmt.setDate(3, Date.valueOf(LocalDate.now()));
             stmt.setDate(4, Date.valueOf(article.getDateEnd()));
             stmt.setInt(5, article.getStartPrice());
-            stmt.setInt(6, article.getEndPrice());
+            stmt.setInt(6, article.getStartPrice());
             stmt.setInt(7, idUser);
             stmt.setInt(8, article.getNoCat());
             stmt.setString(9, article.getImageUrl());

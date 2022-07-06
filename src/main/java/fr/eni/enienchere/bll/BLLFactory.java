@@ -8,5 +8,5 @@ public class BLLFactory {
     public static UserManagerImpl getUserManager() {
         return new UserManagerImpl();
     }
-        public static RetraitManagerImpl getRetraitManager() {return new RetraitManagerImpl();}
+    public static RetraitManagerImpl getRetraitManager() {return new RetraitManagerImpl();}
 }
