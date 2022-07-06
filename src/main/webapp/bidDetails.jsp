@@ -56,31 +56,67 @@
     <div class="container">
         <div class="container-fluid">
             <div class="row">
-                    <div col-lg-12>
-                        <div  style="max-width: 20rem;">
-                            <div >Enchère n° ${article.idArt}</div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="${article.imageUrl}"  width="100%" height="100%">
+                <div col-12>
+                    <div class= "row art" >
+                    <div class="noArticle" text-align="center" >Enchère n° ${article.idArt}</div>
+
+                        <div class=" col-6">
+                            <img src="${article.imageUrl}"  width="100%" height="100%">
+                        </div>
+                            <div class="col-6 ">
+                                <div class="row titleArt">
+                                    <h2>${article.nameArt}</h2>
                                 </div>
-                                <div  col-6 " >
-                                    <h4>${article.nameArt}</h4>
-                                    <p >${article.descArt}</p>
-                                    <p >End date : ${article.dateEnd}</p>
-                                    <p >Price : ${article.endPrice}</p>
-                                    <p >Seller :</p>
+                                <div class="descArticle">
+                                    <ul>
+                                    <li>${article.descArt}</li>
+                                    <li >End date : ${article.dateEnd}</li>
+                                    <li >Price : ${article.endPrice}</li>
+                                    <li >Seller :</li>
+                                    </ul>
+                                </div>
+                                <div class="buttonbid">
+                                    <button type="button" class="btn btn-primary btn-lg col-4">Bid</button>
                                 </div>
                             </div>
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
 </main>
 <footer>
+    <div class="container footer-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="pres col-4" >
+                    <h4>L'agence</h4>
+                    <p>Qui sommes nous ?</p>
+                    <p>3 stagiaires en
+                        charge de créer<br>
+                        des sites pour des
+                        clients exigeant.<br>
+                        Une agence pleine de bonne volonté<br>
+                        et de jeunes talents !</p>
+                </div>
+                <div class="col-4">
 
+                    <p>Localisation :</p>
+                    <p>3, Rue Michael Faraday,</p>
+                    <p>44800 Saint-Herblain</p>
+                </div>
+                <div class="clot col-4">
+                    <a class="link" href="https://www.hervecuisine.com/recette/recette-pizza-hawaienne-ananas/"> <p>Nous contacter</p> </a>
+                    <p>Conditions d'utilisations</p>
+                    <a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <p>ENI Ecole</p> </a>
+                    &copy Copyright
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
