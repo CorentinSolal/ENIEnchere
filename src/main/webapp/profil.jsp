@@ -5,6 +5,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mon profil</title>
@@ -108,7 +109,7 @@
                 <div class="col-4">
                     <p>Le rang du fond</p>
                 </div>
-                <div class="col-4" >
+                <div class="col-4">
                     <a href="http://www.eni-ecole.fr ">ENI Ecole</a>
                     &copy Copyright
                 </div>

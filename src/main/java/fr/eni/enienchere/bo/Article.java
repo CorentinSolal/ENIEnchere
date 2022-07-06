@@ -6,51 +6,28 @@ import java.time.LocalDate;
 public class Article {
 
     private Integer idArt;
-    private String nomArt;
+    private String nameArt;
     private String descArt;
     private Integer noCat;
-    private LocalDate dateDebut;
-    private LocalDate dateFin;
-    private Integer prixInit;
-    private Integer prixFinal;
+    private LocalDate dateStart;
+    private LocalDate dateEnd;
+    private Integer startPrice;
+    private Integer endPrice;
 
     private String imageUrl;
 
     public Article() {
     }
 
-    public Article(String nomArt, String descArt, Integer noCat, LocalDate dateFin, Integer prixInit, String imageUrl) {
-        this.nomArt = nomArt;
-        this.descArt = descArt;
-        this.noCat = noCat;
-        this.dateDebut=LocalDate.now();
-        this.dateFin = dateFin;
-        this.prixInit = prixInit;
-        this.imageUrl = imageUrl;
-        prixFinal = prixInit;
-
-    }
-    public Article(Integer idArt,String nomArt, String descArt, Integer noCat, LocalDate dateFin, Integer prixInit, String imageUrl) {
+    public Article(Integer idArt, String nameArt, String descArt, LocalDate dateStart, LocalDate dateEnd, Integer startPrice, Integer endPrice, Integer noCat, String imageUrl) {
         this.idArt = idArt;
-        this.nomArt = nomArt;
+        this.nameArt = nameArt;
         this.descArt = descArt;
         this.noCat = noCat;
-        this.dateDebut=LocalDate.now();
-        this.dateFin = dateFin;
-        this.prixInit = prixInit;
-        this.prixFinal = prixInit;
-        this.imageUrl = imageUrl;
-    }
-
-    public Article(Integer idArt, String nomArt, String descArt, LocalDate dateDebut, LocalDate dateFin, Integer prixInit, Integer prixFinal, Integer noCat, String imageUrl) {
-        this.idArt = idArt;
-        this.nomArt = nomArt;
-        this.descArt = descArt;
-        this.noCat = noCat;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.prixInit = prixInit;
-        this.prixFinal = prixFinal;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+        this.startPrice = startPrice;
+        this.endPrice = endPrice;
         this.imageUrl = imageUrl;
     }
 
@@ -62,12 +39,12 @@ public class Article {
         this.idArt = idArt;
     }
 
-    public String getNomArt() {
-        return nomArt;
+    public String getNameArt() {
+        return nameArt;
     }
 
-    public void setNomArt(String nomArt) {
-        this.nomArt = nomArt;
+    public void setNameArt(String nameArt) {
+        this.nameArt = nameArt;
     }
 
     public String getDescArt() {
@@ -86,36 +63,36 @@ public class Article {
         this.noCat = noCat;
     }
 
-    public LocalDate getDateDebut() {
-        return dateDebut;
+    public LocalDate getDateStart() {
+        return dateStart;
     }
 
-    public void setDateDebut(LocalDate dateDebut) {
-        this.dateDebut = dateDebut;
+    public void setDateStart(LocalDate dateStart) {
+        this.dateStart = dateStart;
     }
 
-    public LocalDate getDateFin() {
-        return dateFin;
+    public LocalDate getDateEnd() {
+        return dateEnd;
     }
 
-    public void setDateFin(LocalDate dateFin) {
-        this.dateFin = dateFin;
+    public void setDateEnd(LocalDate dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
-    public Integer getPrixInit() {
-        return prixInit;
+    public Integer getStartPrice() {
+        return startPrice;
     }
 
-    public void setPrixInit(Integer prixInit) {
-        this.prixInit = prixInit;
+    public void setStartPrice(Integer startPrice) {
+        this.startPrice = startPrice;
     }
 
-    public Integer getPrixFinal() {
-        return prixFinal;
+    public Integer getEndPrice() {
+        return endPrice;
     }
 
-    public void setPrixFinal(Integer prixFinal) {
-        this.prixFinal = prixFinal;
+    public void setEndPrice(Integer endPrice) {
+        this.endPrice = endPrice;
     }
 
     public String getImageUrl() {

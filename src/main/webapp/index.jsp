@@ -65,10 +65,10 @@
                                     <img src="${article.imageUrl}"  width="100%" height="100%">
                                 </div>
                                 <div class="card-body col-6 " >
-                                    <h4 class="card-title">${article.nomArt}</h4>
+                                    <h4 class="card-title">${article.nameArt}</h4>
                                     <p class="card-text">${article.descArt}</p>
-                                    <p class="card-text">Prix : ${article.prixFinal} points</p>
-                                    <p class="card-text">Fin de l'enchère : ${article.dateFin}</p>
+                                    <p class="card-text">Prix : ${article.startPrice} points</p>
+                                    <p class="card-text">Fin de l'enchère : ${article.dateEnd}</p>
                                 </div>
                             </div>
                         </div>

@@ -5,18 +5,18 @@ import java.time.LocalDate;
 public class Bid {
 
     private Integer idBid;
-    private LocalDate dateEnchere;
-    private int montantEnchere;
+    private LocalDate bidDate;
+    private int bidAmount;
 
-    public Bid(Integer idBid, LocalDate dateEnchere, int montantEnchere) {
-        this.idBid = idBid;
-        this.dateEnchere = dateEnchere;
-        this.montantEnchere = montantEnchere;
+    public Bid(LocalDate bidDate, int bidAmount) {
+        this.bidDate = bidDate;
+        this.bidAmount = bidAmount;
     }
 
-    public Bid(LocalDate dateEnchere, int montantEnchere) {
-        this.dateEnchere = dateEnchere;
-        this.montantEnchere = montantEnchere;
+    public Bid(Integer idBid, LocalDate bidDate, int bidAmount) {
+        this.idBid = idBid;
+        this.bidDate = bidDate;
+        this.bidAmount = bidAmount;
     }
 
     public Integer getIdBid() {
@@ -27,19 +27,19 @@ public class Bid {
         this.idBid = idBid;
     }
 
-    public LocalDate getDateEnchere() {
-        return dateEnchere;
+    public LocalDate getBidDate() {
+        return bidDate;
     }
 
-    public void setDateEnchere(LocalDate dateEnchere) {
-        this.dateEnchere = dateEnchere;
+    public void setBidDate(LocalDate bidDate) {
+        this.bidDate = bidDate;
     }
 
-    public int getMontantEnchere() {
-        return montantEnchere;
+    public int getBidAmount() {
+        return bidAmount;
     }
 
-    public void setMontantEnchere(int montantEnchere) {
-        this.montantEnchere = montantEnchere;
+    public void setBidAmount(int bidAmount) {
+        this.bidAmount = bidAmount;
     }
 }
