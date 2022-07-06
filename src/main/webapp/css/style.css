@@ -2,6 +2,12 @@ main{
     margin: 20px;
 }
 img{
+    margin: 10px;
+    margin-bottom: 30px;
     object-fit: scale-down;
 }
 
+footer{
+    background-color: black;
+    color: lightslategrey;
+}
