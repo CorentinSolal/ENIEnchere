@@ -59,7 +59,7 @@
                 <c:forEach var="article" items="${article}">
                     <div class="col-4">
                         <a href="BidDetailsServlet">
-                        <div class="card text-white bg-primary m-3" style="max-width: 20rem;">
+                        <div class="card text-white bg-primary m-3 cardbis" style="max-width: 20rem;">
                             <div class="card-header">Enchère n° ${article.idArt}</div>
                             <div class="row ">
                                 <div class="col-6">
@@ -82,7 +82,7 @@
     </div>
 </main>
 <footer>
-    <div class="container" "footer-content">
+    <div class="container footer-content">
         <div class="container-fluid">
             <div class="row">
                 <div class="pres col-4" >
