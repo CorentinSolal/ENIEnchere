@@ -179,4 +179,22 @@ public class User {
     public void setAdmin(byte admin) {
         this.admin = admin;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "noUser=" + noUser +
+                ", username='" + username + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", cpo='" + cpo + '\'' +
+                ", ville='" + ville + '\'' +
+                ", email='" + email + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", password='" + password + '\'' +
+                ", credit=" + credit +
+                ", admin=" + admin +
+                '}';
+    }
 }

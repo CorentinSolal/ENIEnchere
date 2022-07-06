@@ -24,10 +24,10 @@ public class Article {
         this.nameArt = nameArt;
         this.descArt = descArt;
         this.noCat = noCat;
-        this.dateStart = dateStart;
+        setDateStart();
         this.dateEnd = dateEnd;
         this.startPrice = startPrice;
-        this.endPrice = endPrice;
+        this.endPrice = startPrice;
         this.imageUrl = imageUrl;
     }
 
@@ -62,13 +62,22 @@ public class Article {
     public void setNoCat(Integer noCat) {
         this.noCat = noCat;
     }
+    public void setNoCat(String libelle) {
+        switch (libelle) {
+            case "Instruments de musique" : this.noCat = 1; break;
+            case "Informatique" : this.noCat = 2; break;
+            case "Mobilier" : this.noCat = 3; break;
+            case "Vêtements" : this.noCat = 4; break;
+            case "Nourritures" : this.noCat = 5; break;
+        }
+    }
 
     public LocalDate getDateStart() {
         return dateStart;
     }
 
-    public void setDateStart(LocalDate dateStart) {
-        this.dateStart = dateStart;
+    public void setDateStart() {
+        this.dateStart = LocalDate.now();
     }
 
     public LocalDate getDateEnd() {
@@ -101,5 +110,20 @@ public class Article {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "idArt=" + idArt +
+                ", nameArt='" + nameArt + '\'' +
+                ", descArt='" + descArt + '\'' +
+                ", noCat=" + noCat +
+                ", dateStart=" + dateStart +
+                ", dateEnd=" + dateEnd +
+                ", startPrice=" + startPrice +
+                ", endPrice=" + endPrice +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
     }
 }
