@@ -11,6 +11,8 @@ footer{
     background-color: black;
     color: lightslategrey;
     text-align: center;
+    margin-top: 100px;
+    padding-top: 20px;
 }
 .card-title {
     font-size:1em;
@@ -29,4 +31,12 @@ footer{
     margin: 20px;
     height: 350px;
     width: 500px;
+}
+
+h4 {
+    color: lightslategrey;
+}
+
+.pres {
+    text-align: left;
 }

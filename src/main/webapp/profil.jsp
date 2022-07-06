@@ -104,20 +104,24 @@
     <div class="container" "footer-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4">
+                <div class="pres col-4" >
                     <h4>L'agence</h4>
-                    <p>Qui sommes nous ? 3 stagiaires
-                        en charge de créer
-                        des sites pour des
-                        clients exigeant.</p>
+                    <p>Qui sommes nous ?</p>
+                    <p>3 stagiaires en
+                    charge de créer<br>
+                    des sites pour des
+                    clients exigeant.<br>
+                    Une agence pleine de bonne volonté<br>
+                    et de jeunes talents !</p>
                 </div>
                 <div class="col-4">
-                    <span>Localisation :</span>
+                    <a class="link" href="http://...">Nous contacter</a>
+                    <p>Localisation :</p>
                     <p>3, Rue Michael Faraday,</p>
                     <p>44800 Saint-Herblain</p>
                 </div>
                 <div class="col-4">
-                    <p>Nous contacter</p>
+
                     <p>Conditions d'utilisations</p>
                     <a class="link" href="http://www.eni-ecole.fr ">ENI Ecole</a>
                     &copy Copyright
