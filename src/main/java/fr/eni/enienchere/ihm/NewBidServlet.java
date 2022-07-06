@@ -50,7 +50,7 @@ public class NewBidServlet extends HttpServlet {
 
         Article newArticle = new Article();
 
-        newArticle.setNomArt(request.getParameter("name"));
+        newArticle.setNameArt(request.getParameter("name"));
         newArticle.setDescArt(request.getParameter("description"));
 
         //Transformer le String endDate en LocalDate
@@ -58,11 +58,12 @@ public class NewBidServlet extends HttpServlet {
         formatter = formatter.withLocale( Locale.FRANCE );
         LocalDate date = LocalDate.parse(request.getParameter("endDate"), formatter);
 
-        newArticle.setDateFin(date);
-        newArticle.setPrixInit(Integer.parseInt(request.getParameter("startPrice")));
+        newArticle.setDateEnd(date);
+        newArticle.setStartPrice(Integer.parseInt(request.getParameter("startPrice")));
+        newArticle.setImageUrl(request.getParameter("urlImage"));
 
         try {
-            am.insertArticle(newArticle,Integer.parseInt(Arrays.toString(request.getParameterValues("id"))));
+            am.insertArticle(newArticle,12);
             getServletContext().getRequestDispatcher(INDEX).forward(request, response);
         } catch (BLLException e) {
             getServletContext().getRequestDispatcher(NEWBID).forward(request, response);

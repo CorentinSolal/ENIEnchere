@@ -15,12 +15,12 @@ import java.util.List;
 public class ArticleDAOImpl implements ArticleDAO {
 
     //Bien faire attention aux noms des colonnes et tables dans la Base de données
-    private static final String INSERT = "insert Into ARTICLES_VENDUS (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente ,no_utilisateur ,no_categorie )"
-            + " values (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String INSERT = "insert Into ARTICLES_VENDUS (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente ,no_utilisateur ,no_categorie, image_url )"
+            + " values (?, ?, ?, ?, ?, ?, ?, ?,?)";
     private static final String SELECT_ALL = "Select * from ARTICLES_VENDUS";
     private static final String DELETE = "Delete FROM ARTICLES_VENDUS Where no_article = ?";
     private static final String SELECT_BY_ID = "Select * From ARTICLES_VENDUS Where no_article = ?";
-    private static final String UPDATE = "UPDATE ARTICLES_VENDUS SET nom_article = ? ,description = ? ,date_debut_encheres = ? ,date_fin_encheres = ?,prix_initial = ?, no_categorie = ?";
+    private static final String UPDATE = "UPDATE ARTICLES_VENDUS SET nom_article = ? ,description = ? ,date_debut_encheres = ? ,date_fin_encheres = ?,prix_initial = ?, no_categorie = ?, image_url = ?";
     //private static final String SELECT_USER_CATALOGUE = "SELECT * FROM UTILISATEURS";
     private static final String SELECT_BY_USER = "SELECT * From ARTICLES_VENDUS Where no_utilisateur = ?";
     private static final String SELECT_CATEGORIE = "SELECT * FROM CATEGORIES";
@@ -33,14 +33,15 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             PreparedStatement stmt = conn.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 
-            stmt.setString(1, article.getNomArt());
+            stmt.setString(1, article.getNameArt());
             stmt.setString(2, article.getDescArt());
-            stmt.setDate(3, Date.valueOf(article.getDateDebut()));
-            stmt.setDate(4, Date.valueOf(article.getDateFin()));
-            stmt.setInt(5, article.getPrixInit());
-            stmt.setInt(6, article.getPrixFinal());
+            stmt.setDate(3, Date.valueOf(article.getDateStart()));
+            stmt.setDate(4, Date.valueOf(article.getDateEnd()));
+            stmt.setInt(5, article.getStartPrice());
+            stmt.setInt(6, article.getEndPrice());
             stmt.setInt(7, idUser);
             stmt.setInt(8, article.getNoCat());
+            stmt.setString(9, article.getImageUrl());
 
             stmt.executeUpdate();
 
@@ -63,7 +64,7 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             while(rs.next()) {
                 listeArticles.add(new Article(rs.getInt("no_article"), rs.getString("nom_article"),
-                        rs.getString("description"),rs.getDate("date_debut_encheres").toLocalDate(),rs.getDate("date_fin_encheres").toLocalDate() , rs.getInt("prix_initial"), rs.getInt("prix_vente") ,rs.getInt("no_categorie")));
+                        rs.getString("description"),rs.getDate("date_debut_encheres").toLocalDate(),rs.getDate("date_fin_encheres").toLocalDate() , rs.getInt("prix_initial"), rs.getInt("prix_vente") ,rs.getInt("no_categorie"), rs.getString("image_url")));
             }
             return listeArticles;
         } catch (SQLException e) {
@@ -100,7 +101,7 @@ public class ArticleDAOImpl implements ArticleDAO {
                 Date dateFin=rs.getDate("date_fin_encheres");
                 LocalDate localDateDebut = dateDebut.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 LocalDate localDateFin = dateFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                return new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), localDateDebut, localDateFin, rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"));
+                return new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), localDateDebut, localDateFin, rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
             }else {
                 throw new DALException ("Mauvais Identifiant ");
             }
@@ -114,12 +115,13 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             PreparedStatement stmt = conn.prepareStatement(UPDATE);
 
-            stmt.setString(1, article.getNomArt());
+            stmt.setString(1, article.getNameArt());
             stmt.setString(2, article.getDescArt());
-            stmt.setDate(3, Date.valueOf(article.getDateDebut()));
-            stmt.setDate(4, Date.valueOf(article.getDateFin()));
-            stmt.setInt(5, article.getPrixInit());
+            stmt.setDate(3, Date.valueOf(article.getDateStart()));
+            stmt.setDate(4, Date.valueOf(article.getDateEnd()));
+            stmt.setInt(5, article.getStartPrice());
             stmt.setInt(6, article.getNoCat());
+            stmt.setString(7, article.getImageUrl());
 
             stmt.executeUpdate();
 
@@ -143,7 +145,7 @@ public class ArticleDAOImpl implements ArticleDAO {
                 Date dateFin = rs.getDate("date_fin_encheres");
                 LocalDate localDateDebut = dateDebut.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 LocalDate localDateFin = dateFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                return (List<Article>) new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), localDateDebut, localDateFin, rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"));
+                return (List<Article>) new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), localDateDebut, localDateFin, rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
             } else {
                 throw new DALException("Mauvais Identifiant ");
             }
@@ -177,8 +179,8 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             PreparedStatement stmt = conn.prepareStatement(INSERT_ENCHERE, PreparedStatement.RETURN_GENERATED_KEYS);
 
-            stmt.setDate(1, Date.valueOf(bid.getDateEnchere()));
-            stmt.setInt(2, bid.getMontantEnchere());
+            stmt.setDate(1, Date.valueOf(bid.getBidDate()));
+            stmt.setInt(2, bid.getBidAmount());
             stmt.setInt(3, idArticle);
             stmt.setInt(4, idUser);
             

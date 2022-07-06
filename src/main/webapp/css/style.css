@@ -1,8 +1,7 @@
 main{
     margin: 20px;
 }
-
-footer {
-    background-color: black;
-    color: grey !important;
+img{
+    object-fit: scale-down;
 }
+
