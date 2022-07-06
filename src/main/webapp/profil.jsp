@@ -60,35 +60,35 @@
                 <div class="col-12">
                     <form action="" method="post">
                         <div class="form-floating m-4">
-                            <input type="text" class="form-control" id="floatingUsername" placeholder="Username" readOnly="${username}">
+                            <input type="text" class="form-control" id="floatingUsername" placeholder="Username" readOnly="${user.username}">
                             <label for="floatingUsername">User name</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingLastname" placeholder="Lastname" readOnly="${lastname}">
+                            <input type="text" class="form-control" id="floatingLastname" placeholder="Lastname" readOnly="${user.lastName}">
                             <label for="floatingLastname">Last name</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingFirstname" placeholder="firstname" readOnly="${firstname}">
+                            <input type="text" class="form-control" id="floatingFirstname" placeholder="firstname" readOnly="${user.firstName}">
                             <label for="floatingFirstname">First name</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingMail" placeholder="Mail" readOnly="${mail}">
+                            <input type="text" class="form-control" id="floatingMail" placeholder="Mail" readOnly="${user.email}">
                             <label for="floatingMail">Mail</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingPhone" placeholder="Phone" readOnly="${phone}">
+                            <input type="text" class="form-control" id="floatingPhone" placeholder="Phone" readOnly="${user.telephone}">
                             <label for="floatingPhone">Phone number</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingStreet" placeholder="Street" readOnly="${street}">
+                            <input type="text" class="form-control" id="floatingStreet" placeholder="Street" readOnly="${user.adresse}">
                             <label for="floatingStreet">Street</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingZipCode" placeholder="ZipCode" readOnly="${zipcode}">
+                            <input type="text" class="form-control" id="floatingZipCode" placeholder="ZipCode" readOnly="${user.cpo}">
                             <label for="floatingZipCode">Zip Code</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingCity" placeholder="City" readOnly="${city}">
+                            <input type="text" class="form-control" id="floatingCity" placeholder="City" readOnly="${user.ville}">
                             <label for="floatingCity">City</label>
                         </div>
                         <div class="btn-group btn-group-justified m-4 position-relative top-100 start-50 translate-middle">
@@ -101,7 +101,7 @@
     </div>
 </main>
 <footer>
-    <div class="container" "footer-content">
+    <div class="container footer-content">
         <div class="container-fluid">
             <div class="row">
                 <div class="pres col-4" >
