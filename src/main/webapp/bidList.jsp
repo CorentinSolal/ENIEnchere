@@ -113,7 +113,7 @@
 
 </main>
 <footer>
-    <div class="container" "footer-content">
+    <div class="container footer-content">
     <div class="container-fluid">
         <div class="row">
             <div class="pres col-4" >
