@@ -104,24 +104,23 @@
     <div class="container" "footer-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3">
-                    <p>Liefert das felis.</p>
+                <div class="col-4">
+                    <h4>L'agence</h4>
+                    <p>Qui sommes nous ? 3 stagiaires
+                        en charge de créer
+                        des sites pour des
+                        clients exigeant.</p>
                 </div>
-                <div class="col-3">
-                    <p>Le rang du fond</p>
+                <div class="col-4">
+                    <span>Localisation :</span>
+                    <p>3, Rue Michael Faraday,</p>
+                    <p>44800 Saint-Herblain</p>
                 </div>
-                <div class="col-3">
+                <div class="col-4">
+                    <p>Nous contacter</p>
+                    <p>Conditions d'utilisations</p>
                     <a class="link" href="http://www.eni-ecole.fr ">ENI Ecole</a>
                     &copy Copyright
-                </div>
-                <div class="col-3">
-                    <ul class="socials">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-                    </ul>
-                    <link rel="icon" href="favicon.png">
                 </div>
             </div>
         </div>
