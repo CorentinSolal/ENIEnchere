@@ -18,10 +18,12 @@ public class ProfilServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserManager um= BLLFactory.getUserManager();
-        User user= null;
+        User user;
+        session = request.getSession();
         try {
-            session = request.getSession();
-            user = um.selectUser(12);
+            System.out.println(Integer.parseInt(request.getParameter("id")));
+            user = um.selectUser(Integer.parseInt(request.getParameter("id")));
+            System.out.println(user);
             request.setAttribute("user", user);
             getServletContext().getRequestDispatcher(PROFIL).forward(request, response);
         } catch (BLLException e) {

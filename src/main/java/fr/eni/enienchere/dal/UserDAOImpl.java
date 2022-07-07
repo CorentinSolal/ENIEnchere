@@ -90,7 +90,7 @@ public class UserDAOImpl implements UserDAO{
     }
     @Override
     public User selectUser(Integer id) throws DALException {
-        User user = null;
+        User user;
         try (Connection conn = ConnectionProvider.getConnection()){
 
             PreparedStatement stmt = conn.prepareStatement(VERIFY);

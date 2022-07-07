@@ -76,7 +76,7 @@
                                     </ul>
                                 </div>
                                 <div class="buttonbid">
-                                    <button type="button" class="btn btn-primary btn-lg col-4">Bid</button>
+                                    <button type="button" class="btn btn-secondary btn-lg col-4 -white">Bid</button>
                                 </div>
                             </div>
                     </div>

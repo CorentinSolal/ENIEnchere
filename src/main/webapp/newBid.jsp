@@ -87,7 +87,9 @@
                         <input type="text" class="form-control" placeholder="Url image" name="urlImage">
                         <label >URl image</label>
                     </div>
+                    <div class="btnSubmit">
                     <button type="submit" class="btn btn-primary" style="margin-top: 20px">Submit</button>
+                    </div>
                 </form>
             </fieldset>
         </div>

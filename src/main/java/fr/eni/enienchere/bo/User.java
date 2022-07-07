@@ -5,28 +5,18 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 public class User {
-
     private Integer noUser;
-    @NotBlank
     private String username;
-    @NotBlank
     private String lastName;
-    @NotBlank
     private String firstName;
-    @NotBlank
     private String adresse;
-    @NotBlank
     private String cpo;
-    @NotBlank
     private String ville;
-    @Email
     private String email;
     private String telephone;
-    @Size(min=4,max=20,message="Must be 8-20 characteres long")
     private String password;
     private int credit;
     private byte admin;
-
     public User() {
     }
 
