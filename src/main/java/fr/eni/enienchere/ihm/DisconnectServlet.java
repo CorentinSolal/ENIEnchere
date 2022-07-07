@@ -16,9 +16,9 @@ public class DisconnectServlet extends HttpServlet {
 
         HttpSession session = req.getSession();
 
-        session.invalidate();
+        session.setAttribute("connected",false);
 
-        resp.sendRedirect("ENIEnchere_war_exploded/HomeServlet");
+        resp.sendRedirect("HomeServlet");
     }
 
 

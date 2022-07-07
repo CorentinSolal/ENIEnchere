@@ -38,7 +38,7 @@ public class ConnectionServlet extends HttpServlet {
             User user= um.connectUser(request.getParameter("username"), request.getParameter("password"));
             session.setAttribute("id", user.getNoUser());
             session.setAttribute("username", user.getPseudo());
-            session.setAttribute("connected","true");
+            session.setAttribute("connected",true);
             System.out.println(request.getParameter("username"));
             System.out.println(request.getParameter("password"));
             request.getRequestDispatcher("/HomeServlet").forward(request, response);
