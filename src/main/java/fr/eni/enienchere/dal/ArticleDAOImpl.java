@@ -26,6 +26,7 @@ public class ArticleDAOImpl implements ArticleDAO {
     private static final String SELECT_CATEGORIE = "SELECT * FROM CATEGORIES";
     private static final String INSERT_ENCHERE = "insert into ENCHERES (date_enchere, montant_enchere, no_article, no_utilisateur) values (?, ?, ?, ?)";
 
+    private static final String SELECT_BY_MOT_CLE = "SELECT_BY_MOT_CLE";
     public ArticleDAOImpl() {
     }
     public void insert(Article article, int idUser) throws DALException {
@@ -191,5 +192,25 @@ public class ArticleDAOImpl implements ArticleDAO {
             throw new DALException("error insert enchere : ", e);
         }
         
+    }
+
+    public selectByMotCle (String nomArt) throws DALException {
+
+        try (Connection conn = ConnectionProvider.getConnection()){
+
+            PreparedStatement stmt = conn.prepareStatement(SELECT_BY_MOT_CLE);
+
+            stmt.setString(1, nomArt);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if(rs.next()) {
+                return new Article(rs.getString("nom_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(),rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
+            }else {
+                throw new DALException ("Mauvais Identifiant ");
+            }
+        } catch (SQLException e) {
+            throw new DALException ("erreur selectbyid",e);
+        }
     }
 }
