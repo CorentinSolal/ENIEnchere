@@ -19,4 +19,5 @@ public interface ArticleDAO {
 
     void insertEnchere (Bid bid,int idArticle, int idUser) throws DALException;
 
+    //Article selectByMotCle (int noArticle) throws DALException;
     }

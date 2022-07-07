@@ -26,9 +26,11 @@ public class ArticleDAOImpl implements ArticleDAO {
     private static final String SELECT_CATEGORIE = "SELECT * FROM CATEGORIES";
     private static final String INSERT_ENCHERE = "insert into ENCHERES (date_enchere, montant_enchere, no_article, no_utilisateur) values (?, ?, ?, ?)";
 
-    private static final String SELECT_BY_MOT_CLE = "SELECT_BY_MOT_CLE";
+    //private static final String SELECT_BY_MOT_CLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article like '%' ?";
+
     public ArticleDAOImpl() {
     }
+
     public void insert(Article article, int idUser) throws DALException {
         try (Connection conn = ConnectionProvider.getConnection()) {
 
@@ -54,7 +56,8 @@ public class ArticleDAOImpl implements ArticleDAO {
             throw new DALException("error insert article : ", e);
         }
     }
-    public List<Article> getAllArticles() throws DALException{
+
+    public List<Article> getAllArticles() throws DALException {
         List<Article> listeArticles = new ArrayList<Article>();
 
         try (Connection conn = ConnectionProvider.getConnection()) {
@@ -63,52 +66,55 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             ResultSet rs = stmt.executeQuery();
 
-            while(rs.next()) {
+            while (rs.next()) {
                 listeArticles.add(new Article(rs.getInt("no_article"), rs.getString("nom_article"),
-                        rs.getString("description"),rs.getDate("date_debut_encheres").toLocalDate(),rs.getDate("date_fin_encheres").toLocalDate() , rs.getInt("prix_initial"), rs.getInt("prix_vente") ,rs.getInt("no_categorie"), rs.getString("image_url")));
+                        rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(), rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url")));
             }
             return listeArticles;
         } catch (SQLException e) {
-            throw new DALException("erreur Select All",e);
+            throw new DALException("erreur Select All", e);
         }
     }
-    public void delete(int noArt ) throws DALException {
 
-        try (Connection conn = ConnectionProvider.getConnection()){
+    public void delete(int noArt) throws DALException {
+
+        try (Connection conn = ConnectionProvider.getConnection()) {
 
             PreparedStatement stmt = conn.prepareStatement(DELETE);
 
-            stmt.setInt(1,noArt);
+            stmt.setInt(1, noArt);
 
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            throw new DALException ("erreur delete",e);
+            throw new DALException("erreur delete", e);
         }
 
     }
+
     public Article selectById(int noArt) throws DALException {
 
-        try (Connection conn = ConnectionProvider.getConnection()){
+        try (Connection conn = ConnectionProvider.getConnection()) {
 
             PreparedStatement stmt = conn.prepareStatement(SELECT_BY_ID);
 
-            stmt.setInt(1,noArt);
+            stmt.setInt(1, noArt);
 
             ResultSet rs = stmt.executeQuery();
 
-            if(rs.next()) {
-                return new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(),rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
-            }else {
-                throw new DALException ("Mauvais Identifiant ");
+            if (rs.next()) {
+                return new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(), rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
+            } else {
+                throw new DALException("Mauvais Identifiant ");
             }
         } catch (SQLException e) {
-            throw new DALException ("erreur selectbyid",e);
+            throw new DALException("erreur selectbyid", e);
         }
     }
+
     public void update(Article article, int idUser) throws DALException {
 
-        try (Connection conn = ConnectionProvider.getConnection()){
+        try (Connection conn = ConnectionProvider.getConnection()) {
 
             PreparedStatement stmt = conn.prepareStatement(UPDATE);
 
@@ -123,12 +129,12 @@ public class ArticleDAOImpl implements ArticleDAO {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            throw new DALException ("erreur update",e);
+            throw new DALException("erreur update", e);
         }
     }
 
     public List<Article> selectByUser(Integer noUser) throws DALException {
-        
+
         try (Connection conn = ConnectionProvider.getConnection()) {
 
             PreparedStatement stmt = conn.prepareStatement(SELECT_BY_USER);
@@ -150,27 +156,27 @@ public class ArticleDAOImpl implements ArticleDAO {
             throw new DALException("erreur selectbyid", e);
         }
     }
-    
-    public  List<Categorie> selectCategorie() throws DALException {
+
+    public List<Categorie> selectCategorie() throws DALException {
         List<Categorie> listeCategorie = new ArrayList<Categorie>();
-        
+
         try (Connection conn = ConnectionProvider.getConnection()) {
 
             PreparedStatement stmt = conn.prepareStatement(SELECT_CATEGORIE);
 
             ResultSet rs = stmt.executeQuery();
 
-            while(rs.next()) {
-                
+            while (rs.next()) {
+
                 listeCategorie.add(new Categorie(rs.getInt("no_categorie"), rs.getString("libelle")));
             }
             return listeCategorie;
         } catch (SQLException e) {
-            throw new DALException("erreur Select Categorie",e);
+            throw new DALException("erreur Select Categorie", e);
         }
     }
-    
-    public void insertEnchere (Bid bid, int idArticle, int idUser) throws DALException {
+
+    public void insertEnchere(Bid bid, int idArticle, int idUser) throws DALException {
 
         try (Connection conn = ConnectionProvider.getConnection()) {
 
@@ -180,7 +186,7 @@ public class ArticleDAOImpl implements ArticleDAO {
             stmt.setInt(2, bid.getBidAmount());
             stmt.setInt(3, idArticle);
             stmt.setInt(4, idUser);
-            
+
 
             stmt.executeUpdate();
 
@@ -191,26 +197,22 @@ public class ArticleDAOImpl implements ArticleDAO {
         } catch (SQLException e) {
             throw new DALException("error insert enchere : ", e);
         }
-        
+
     }
 
-    public selectByMotCle (String nomArt) throws DALException {
+    /*public Article selectByMotCle(String nomArt) throws DALException {
 
-        try (Connection conn = ConnectionProvider.getConnection()){
+        try (Connection conn = ConnectionProvider.getConnection()) {
 
             PreparedStatement stmt = conn.prepareStatement(SELECT_BY_MOT_CLE);
 
-            stmt.setString(1, nomArt);
+            stmt.setString(1, articlesVendus.getNameArt());
 
             ResultSet rs = stmt.executeQuery();
 
-            if(rs.next()) {
-                return new Article(rs.getString("nom_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(),rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
-            }else {
-                throw new DALException ("Mauvais Identifiant ");
-            }
         } catch (SQLException e) {
-            throw new DALException ("erreur selectbyid",e);
+            throw new DALException("erreur selectbymotcle", e);
         }
-    }
+    }*/
 }
+
