@@ -25,7 +25,6 @@ public class BidDetailsServlet extends HttpServlet {
         Article article=null;
         try {
             article=am.selectById(Integer.parseInt(request.getParameter("id")));
-            System.out.println(article);
             request.setAttribute("article", article);
         }catch (BLLException e) {
             throw new RuntimeException(e);

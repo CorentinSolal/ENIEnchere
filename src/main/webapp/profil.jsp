@@ -61,35 +61,35 @@
                     <form action="" method="post">
                         <div class="form-floating m-4">
                             <input type="text" class="form-control" id="floatingUsername" placeholder="Username" readOnly="">
-                            <label for="floatingUsername">User name</label>
+                            <label for="floatingUsername">${user.username}</label>
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingLastname" placeholder="Lastname" readOnly="">
-                            <label for="floatingLastname">Last name</label>
+                            <label for="floatingLastname">${user.lastName}</label>
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingFirstname" placeholder="firstname" readOnly="">
-                            <label for="floatingFirstname">First name</label>
+                            <label for="floatingFirstname">${user.firstName}</label>
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingMail" placeholder="Mail" readOnly="">
-                            <label for="floatingMail">Mail</label>
+                            <label for="floatingMail">${user.email}</label>
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingPhone" placeholder="Phone" readOnly="">
-                            <label for="floatingPhone">Phone number</label>
+                            <label for="floatingPhone">${user.telephone}</label>
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingStreet" placeholder="Street" readOnly="">
-                            <label for="floatingStreet">Street</label>
+                            <label for="floatingStreet">${user.adresse}</label>
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingZipCode" placeholder="ZipCode" readOnly="">
-                            <label for="floatingZipCode">Zip Code</label>
+                            <label for="floatingZipCode">${user.cpo}</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingCity" placeholder="City" readOnly="">
-                            <label for="floatingCity">City</label>
+                            <input type="text" class="form-control" id="floatingCity" placeholder="${user.ville}" readOnly="">
+                            <label for="floatingCity"></label>
                         </div>
                         <div class="btn-group btn-group-justified m-4 position-relative top-100 start-50 translate-middle">
                             <button class="btn btn-primary" type="submit">Modify</button>
