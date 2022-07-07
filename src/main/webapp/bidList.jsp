@@ -56,70 +56,50 @@
 <main>
     <div class="container">
         <div class="container-fluid">
-            <div class="row" name="Filtres">
+            <div class="row">
                 <div class="col-12">
                     <h3>Filtres : </h3>
-                    <div>
-                        <input type="radio" id="achats" value="achats">
-                        <label for="achats">Achats</label>
-                        <input type="checkbox" id="encheresOuvertes" value="encheresouvertes">
-                        <label for="encheresOuvertes">Enchères ouvertes</label>
-                        <input type="checkbox" id="encheresEnCours" value="encheresEnCours">
-                        <label for="encheresEnCours">Enchères en cours</label>
-                        <input type="checkbox" id="encheresRemportees" value="encheresRemportees">
-                        <label for="encheresRemportees">Enchères remportées</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="ventes" value="ventes">
-                        <label for="ventes">Mes ventes</label>
-                        <input type="checkbox" id="ventesEnCours" value="ventesEnCours">
-                        <label for="ventesEnCours">Mes ventes en cours</label>
-                        <input type="checkbox" id="ventesNonDebutees" value="ventesNonDebutees">
-                        <label for="ventesNonDebutees">Ventes non débutées </label>
-                        <input type="checkbox" id="ventesTerminees" value="ventesTerminees">
-                        <label for="ventesTerminees">Ventes terminées</label>
-                    </div>
-                    <div>
-                        <select class="form-select" aria-label="Disabled select example" disabled>
-                            <option selected>Catégories</option>
-                            <option value="1">Toutes</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                    <!--<div class="form-group m-4">
+                        <label for="categorie" class="form-label mt-4">Categorie</label>
+                        <select class="form-select" id="categorie" name="categorie">
+                            <c:forEach var="categories" items="${categories}">
+                                <option>${categories.libelle}</option>
+                            </c:forEach>
                         </select>
-                    </div>
-                    <div>
-                        <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
+                    </div>-->
+                    <div class="form-group">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="Key word" name="keyword">
+                            <label for="floatingInput">Search by key words</label>
+                        </div>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="button">Rechercher</button>
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
                     </div>
                 </div>
-            </div>
-            <c:forEach var="article" items="${article}">
-                <div class="col-4">
-                    <a href="BidDetailsServlet">
-                        <div class="card text-white bg-primary m-3 cardbis" style="max-width: 20rem;">
-                            <div class="card-header">Enchère n° ${article.idArt}</div>
-                            <div class="row ">
-                                <div class="col-6">
-                                    <img src="${article.imageUrl}"  width="100%" height="100%" >
-
-                                </div>
-                                <div class="card-body col-6 " >
-                                    <h4 class="card-title">${article.nameArt}</h4>
-                                    <p class="card-text">${article.descArt}</p>
-                                    <p class="card-text">Prix : ${article.startPrice} points</p>
-                                    <p class="card-text">Fin de l'enchère : ${article.dateEnd}</p>
+                <c:forEach var="article" items="${article}">
+                    <div class="col-4">
+                        <a href="BidDetailsServlet" onclick="location.href=this.href+'?id='+${article.idArt};return false;">
+                            <div class="card text-white bg-primary m-3 cardbis" style="max-width: 20rem;">
+                                <div class="card-header">Enchère n° ${article.idArt}</div>
+                                <div class="row ">
+                                    <div class="col-6">
+                                        <img src="${article.imageUrl}"  width="100%" height="100%" >
+                                    </div>
+                                    <div class="card-body col-6 " >
+                                        <h4 class="card-title">${article.nameArt}</h4>
+                                        <p class="card-text">${article.descArt}</p>
+                                        <p class="card-text">Prix : ${article.startPrice} points</p>
+                                        <p class="card-text">Fin de l'enchère : ${article.dateEnd}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-            </c:forEach>
+                        </a>
+                    </div>
+                </c:forEach>
+            </div>
         </div>
     </div>
-
 </main>
 <footer>
     <div class="container footer-content">

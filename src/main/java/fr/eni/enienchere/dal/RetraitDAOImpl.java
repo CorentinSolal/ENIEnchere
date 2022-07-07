@@ -11,8 +11,8 @@ import java.sql.SQLException;
 public class RetraitDAOImpl implements RetraitDAO {
 
 
-    private static final String INSERT = "INSERT INTO RETRAITS (rue, cpo, ville) VALUES (?, ?, ?)";
-    private static final String UPDATE = "UPDATE RETRAITS SET rue=?, cpo=?, ville=?";
+    private static final String INSERT = "INSERT INTO RETRAITS (rue, code_postal, ville) VALUES (?, ?, ?)";
+    private static final String UPDATE = "UPDATE RETRAITS SET rue=?, code_postal=?, ville=?";
 
     private static final String DELETE = "DELETE FROM RETRAITS WHERE no_article = ?";
 

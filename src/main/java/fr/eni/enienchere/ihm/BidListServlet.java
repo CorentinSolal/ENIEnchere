@@ -4,6 +4,7 @@ import fr.eni.enienchere.bll.ArticleManager;
 import fr.eni.enienchere.bll.BLLException;
 import fr.eni.enienchere.bll.BLLFactory;
 import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.bo.Categorie;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -24,19 +25,26 @@ public class BidListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session = request.getSession();
-        List<Article> listeArticles = new ArrayList<Article>();
         session= request.getSession();
         try {
-            listeArticles=am.getAllArticles();
+            List<Categorie> categories=am.selectCategories();
+            request.setAttribute("categories", categories);
+
+            List<Article> listeArticles=am.getAllArticles();
             request.setAttribute("article", listeArticles);
         } catch (BLLException e) {
             throw new RuntimeException(e);
         }
         getServletContext().getRequestDispatcher(BIDLIST).forward(request, response);
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String keyword=request.getParameter("keyword");
+        try {
+            List<Article> listeArticles=am.getArtByMotCle(keyword);
+        } catch (BLLException e) {
+            e.printStackTrace();
+        }
     }
 }

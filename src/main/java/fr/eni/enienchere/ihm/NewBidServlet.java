@@ -34,25 +34,19 @@ public class NewBidServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        session=request.getSession();
-
         try {
             List<Categorie> categories=am.selectCategories();
             request.setAttribute("categories", categories);
         } catch (BLLException e) {
             e.printStackTrace();
         }
+
         getServletContext().getRequestDispatcher(NEWBID).forward(request, response);
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            List<Categorie> categories=am.selectCategories();
-            request.setAttribute("categories", categories);
-        } catch (BLLException e) {
-            e.printStackTrace();
-        }
+
+
         Article newArticle = new Article();
 
         newArticle.setNoCat(request.getParameter("categorie"));

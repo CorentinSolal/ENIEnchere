@@ -79,4 +79,12 @@ public class ArticleManagerImpl implements ArticleManager   {
         }
     }
 
+    public List<Article> getArtByMotCle(String keyword) throws BLLException {
+        try {
+            return articleDAO.getArtByMotCle(keyword);
+        } catch (DALException e) {
+            throw new BLLException("Error ArticleManagerImpl getArtByMotCle : " + keyword, e);
+        }
+    }
+
 }
