@@ -21,5 +21,7 @@ public interface ArticleDAO {
 
     List<Article> getArtByMotCle(String keyword) throws DALException;
 
+    Integer getNoUser(Integer noArt) throws DALException;
+
     //Article selectByMotCle (int noArticle) throws DALException;
     }

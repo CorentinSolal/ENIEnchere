@@ -72,7 +72,7 @@
                                     <li>${article.descArt}</li>
                                     <li >End date : ${article.dateEnd}</li>
                                     <li >Price : ${article.endPrice}</li>
-                                    <li >Seller :</li>
+                                    <li >Seller : ${seller.pseudo} </li>
                                     </ul>
                                 </div>
                                 <div class="buttonbid">

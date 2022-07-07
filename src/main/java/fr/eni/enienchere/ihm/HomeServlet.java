@@ -4,6 +4,7 @@ import fr.eni.enienchere.bll.ArticleManager;
 import fr.eni.enienchere.bll.BLLException;
 import fr.eni.enienchere.bll.BLLFactory;
 import fr.eni.enienchere.bo.Article;
+import fr.eni.enienchere.bo.User;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -28,6 +29,8 @@ public class HomeServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         List<Article> listeArticles = new ArrayList<Article>();
         session= request.getSession();
+        User user= (User) session.getAttribute("user");
+        request.setAttribute("user", user);
         try {
             listeArticles=am.getAllArticles();
             request.setAttribute("article", listeArticles);
@@ -41,6 +44,8 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session=request.getSession();
+        User user= (User) session.getAttribute("user");
+        request.setAttribute("user", user);
         doGet(request, response);
     }
 }

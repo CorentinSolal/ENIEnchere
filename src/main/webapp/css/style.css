@@ -36,14 +36,9 @@ footer{
     width: 500px;
 }
 
-h4 {
-    color: lightslategrey;
-}
-
 .pres {
     text-align: left;
 }
-
 .art {
     background-color: black;
     margin-top: 150px;
@@ -59,28 +54,24 @@ h4 {
     text-align: center;
     padding-top: 20px;
 }
-
 li {
     margin-top: 50px;
 }
-h2{
+h2,h4{
     color: white;
 }
-
 .noArticle{
     color: white;
     text-align: center;
     margin: 20px;
     font-size: 3em;
 }
-
 .buttonbid{
     text-align: center;
     margin-top: 100px;
     margin-bottom: 30px;
 
 }
-
 .btnSubmit{
     text-align: center;
 }

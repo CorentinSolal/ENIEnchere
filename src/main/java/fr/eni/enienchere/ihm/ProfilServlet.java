@@ -21,7 +21,6 @@ public class ProfilServlet extends HttpServlet {
         User user;
         session = request.getSession();
         try {
-            System.out.println(Integer.parseInt(request.getParameter("id")));
             user = um.selectUser(Integer.parseInt(request.getParameter("id")));
             System.out.println(user);
             request.setAttribute("user", user);
