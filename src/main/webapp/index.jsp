@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href=""><h2>ENI Enchères</h2></a>
+                        <a class="nav-link" href="HomeServlet"><h2>ENI Enchères</h2></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="BidListServlet"><h4>Enchères en cours</h4></a>
@@ -36,7 +36,7 @@
                     </c:if>
                     <c:if test="${connected}">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h2>Bonjour ${user.pseudo} </h2> </a>
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"><h4>Bonjour ${user.pseudo} </h4> </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Mes enchères</a>
                                 <a class="dropdown-item" href="#">Mes articles</a>

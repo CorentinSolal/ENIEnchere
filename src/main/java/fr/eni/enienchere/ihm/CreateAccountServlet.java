@@ -43,7 +43,7 @@ public class CreateAccountServlet extends HttpServlet {
 
         try {
             userManager.addUser(newUser);
-            request.getRequestDispatcher(INDEX).forward(request, response);
+            response.sendRedirect("HomeServlet");
         } catch (BLLException e) {
             e.printStackTrace();
         }
