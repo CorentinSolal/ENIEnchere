@@ -3,7 +3,6 @@ package fr.eni.enienchere.bll;
 import fr.eni.enienchere.bo.Retrait;
 import fr.eni.enienchere.dal.DALException;
 import fr.eni.enienchere.dal.DAOFactory;
-import fr.eni.enienchere.dal.RetraitDAO;
 
 public class RetraitManagerImpl implements RetraitManager{
 
