@@ -36,7 +36,7 @@
                     </c:if>
                     <c:if test="${connected}">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h2>Bonjour </h2> </a>
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h2>Bonjour ${user.pseudo} </h2> </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Mes enchères</a>
                                 <a class="dropdown-item" href="#">Mes articles</a>
