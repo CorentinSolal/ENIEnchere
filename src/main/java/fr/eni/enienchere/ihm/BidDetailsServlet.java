@@ -24,7 +24,7 @@ public class BidDetailsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Article article=null;
         try {
-            article=am.selectById(16);
+            article=am.selectById(Integer.parseInt(request.getParameter("id")));
             System.out.println(article);
             request.setAttribute("article", article);
         }catch (BLLException e) {
