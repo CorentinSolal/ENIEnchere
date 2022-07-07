@@ -87,7 +87,7 @@
                             <input type="text" class="form-control" id="floatingZipCode" placeholder="ZipCode" readOnly="">
                             <label for="floatingZipCode">${user.cpo}</label>
                         </div>
-                        <div class="form-floating  m-4">
+                        <div class="form-floating   m-4">
                             <input type="text" class="form-control" id="floatingCity" placeholder="${user.ville}" readOnly="">
                             <label for="floatingCity"></label>
                         </div>
