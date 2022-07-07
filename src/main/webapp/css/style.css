@@ -46,6 +46,7 @@ h4 {
 
 .art {
     background-color: black;
+    margin-top: 150px;
 }
 .descArticle{
     color: white;
@@ -77,5 +78,12 @@ h2{
     text-align: center;
     margin-top: 100px;
     margin-bottom: 30px;
+
 }
+
+.btnSubmit{
+    text-align: center;
+}
+
+
 
