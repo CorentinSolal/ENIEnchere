@@ -58,7 +58,7 @@
             <div class="row">
                 <c:forEach var="article" items="${article}">
                     <div class="col-4">
-                        <a href="BidDetailsServlet">
+                        <a href="BidDetailsServlet" onclick="location.href=this.href+'?id='+${article.idArt};return false;">
                         <div class="card text-white bg-primary m-3 cardbis" style="max-width: 20rem;">
                             <div class="card-header">Enchère n° ${article.idArt}</div>
                             <div class="row ">

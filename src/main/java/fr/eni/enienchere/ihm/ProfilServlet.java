@@ -19,8 +19,8 @@ public class ProfilServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserManager um= BLLFactory.getUserManager();
         User user= null;
+        session = request.getSession();
         try {
-            session = request.getSession();
             user = um.selectUser(12);
             request.setAttribute("user", user);
             getServletContext().getRequestDispatcher(PROFIL).forward(request, response);
