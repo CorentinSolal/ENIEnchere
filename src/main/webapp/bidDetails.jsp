@@ -24,19 +24,19 @@
                         <a class="nav-link" href="HomeServlet"><h2>ENI Enchères</h2></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="BidListServlet"><h4>Enchères en cours</h4></a>
+                        <a class="nav-link" href="BidListServlet">Enchères en cours</a>
                     </li>
                     <c:if test="${!connected}">
                         <li class="nav-item">
-                            <a class="nav-link" href="ConnectionServlet"><h4>Se connecter</h4></a>
+                            <a class="nav-link" href="ConnectionServlet">Se connecter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="CreateAccountServlet"><h4>Créer un compte</h4></a>
+                            <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
                         </li>
                     </c:if>
                     <c:if test="${connected}">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"><h4>Bonjour ${user.pseudo} </h4> </a>
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true">Bonjour ${user.pseudo}</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Mes enchères</a>
                                 <a class="dropdown-item" href="#">Mes articles</a>
@@ -71,7 +71,7 @@
                                     <ul>
                                     <li>${article.descArt}</li>
                                     <li >End date : ${article.dateEnd}</li>
-                                    <li >Price : ${article.endPrice}</li>
+                                    <li >Price : ${article.endPrice} points</li>
                                     <li >Seller : ${seller.pseudo} </li>
                                     </ul>
                                 </div>

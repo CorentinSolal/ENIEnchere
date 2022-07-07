@@ -18,22 +18,17 @@ public class ProfilServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserManager um= BLLFactory.getUserManager();
-        User user;
         session = request.getSession();
-        try {
-            user = um.selectUser(Integer.parseInt(request.getParameter("id")));
-            System.out.println(user);
-            request.setAttribute("user", user);
-            getServletContext().getRequestDispatcher(PROFIL).forward(request, response);
-        } catch (BLLException e) {
-            e.printStackTrace();
-            response.sendRedirect("/ConnectionServlet");
-        }
+
+        User user= (User) session.getAttribute("user");
+
+        session.setAttribute("user", user);
+        getServletContext().getRequestDispatcher(PROFIL).forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        session= request.getSession();
+
         getServletContext().getRequestDispatcher(MODIFPROFIL).forward(request, response);
     }
 }

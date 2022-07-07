@@ -26,19 +26,19 @@
                         <a class="nav-link" href="HomeServlet"><h2>ENI Enchères</h2></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="BidListServlet"><h4>Enchères en cours</h4></a>
+                        <a class="nav-link" href="BidListServlet">Enchères en cours</a>
                     </li>
                     <c:if test="${!connected}">
                         <li class="nav-item">
-                            <a class="nav-link" href="ConnectionServlet"><h4>Se connecter</h4></a>
+                            <a class="nav-link" href="ConnectionServlet">Se connecter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="CreateAccountServlet"><h4>Créer un compte</h4></a>
+                            <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
                         </li>
                     </c:if>
                     <c:if test="${connected}">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"><h4>Bonjour ${user.pseudo} </h4> </a>
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true">Bonjour ${user.pseudo}</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Mes enchères</a>
                                 <a class="dropdown-item" href="#">Mes articles</a>
@@ -62,7 +62,7 @@
                     <form action="" method="post">
                         <div class="form-floating m-4">
                             <input type="text" class="form-control" id="floatingUsername" placeholder="Username" readOnly="">
-                            <label for="floatingUsername">${user.username}</label>
+                            <label for="floatingUsername">${user.pseudo}</label>
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingLastname" placeholder="Lastname" readOnly="">
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingMail" placeholder="Mail" readOnly="">
-                            <label for="floatingMail">${user.email}</label>
+                            <label for="floatingMail">${user.email}</label>²
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingPhone" placeholder="Phone" readOnly="">
@@ -89,8 +89,8 @@
                             <label for="floatingZipCode">${user.cpo}</label>
                         </div>
                         <div class="form-floating  m-4">
-                            <input type="text" class="form-control" id="floatingCity" placeholder="${user.ville}" readOnly="">
-                            <label for="floatingCity"></label>
+                            <input type="text" class="form-control" id="floatingCity" placeholder="City" readOnly="">
+                            <label for="floatingCity">${user.ville}</label>
                         </div>
                         <div class="btn-group btn-group-justified m-4 position-relative top-100 start-50 translate-middle">
                             <button class="btn btn-primary" type="submit">Modify</button>
