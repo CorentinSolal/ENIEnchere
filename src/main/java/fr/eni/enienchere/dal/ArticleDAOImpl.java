@@ -1,10 +1,8 @@
 package fr.eni.enienchere.dal;
 
-import fr.eni.enienchere.bll.BLLException;
 import fr.eni.enienchere.bo.Article;
 import fr.eni.enienchere.bo.Bid;
 import fr.eni.enienchere.bo.Categorie;
-import fr.eni.enienchere.bo.User;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -26,7 +24,8 @@ public class ArticleDAOImpl implements ArticleDAO {
     private static final String SELECT_CATEGORIE = "SELECT * FROM CATEGORIES";
     private static final String INSERT_ENCHERE = "insert into ENCHERES (date_enchere, montant_enchere, no_article, no_utilisateur) values (?, ?, ?, ?)";
 
-    //private static final String SELECT_BY_MOT_CLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article like '%' ?";
+    private static final String SELECT_BY_MOT_CLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article like %?%";
+    private static final String SELECT_NO_USER="SELECT no_utilisateur FROM ARTICLES_VENDUS WHERE no_article=?";
 
     public ArticleDAOImpl() {
     }
@@ -200,19 +199,43 @@ public class ArticleDAOImpl implements ArticleDAO {
 
     }
 
-    /*public Article selectByMotCle(String nomArt) throws DALException {
-
+    public List<Article> getArtByMotCle(String keyword) throws DALException {
         try (Connection conn = ConnectionProvider.getConnection()) {
 
-            PreparedStatement stmt = conn.prepareStatement(SELECT_BY_MOT_CLE);
+            List<Article> listeArticles = new ArrayList<Article>();
 
-            stmt.setString(1, articlesVendus.getNameArt());
+            PreparedStatement stmt = conn.prepareStatement(SELECT_BY_MOT_CLE);
+            stmt.setString(1, keyword);
 
             ResultSet rs = stmt.executeQuery();
 
+            while (rs.next()) {
+                listeArticles.add(new Article(rs.getInt("no_article"), rs.getString("nom_article"),
+                        rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(), rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url")));
+            }
+            return listeArticles;
         } catch (SQLException e) {
-            throw new DALException("erreur selectbymotcle", e);
+            throw new DALException("erreur Select All", e);
         }
-    }*/
+    }
+    public Integer getNoUser(Integer noArt) throws DALException {
+        try (Connection conn = ConnectionProvider.getConnection()) {
+
+            Integer noUser=null;
+
+            PreparedStatement stmt = conn.prepareStatement(SELECT_NO_USER);
+
+            stmt.setInt(1,noArt);
+
+            ResultSet rs =stmt.executeQuery();
+
+            if (rs.next()) {
+                noUser = rs.getInt(1);
+            }
+            return noUser;
+        } catch (SQLException e) {
+            throw new DALException("erreur Select All", e);
+        }
+    }
 }
 

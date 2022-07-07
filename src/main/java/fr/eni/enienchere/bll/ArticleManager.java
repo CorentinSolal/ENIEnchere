@@ -15,4 +15,6 @@ public interface ArticleManager {
     void updateArticle(Article article, int idUser) throws BLLException;
     List<Article> selectByUserArticle(Integer idArt) throws BLLException;
     void insertEnchere (Bid bid, int idArticle, Integer idBid)  throws BLLException;
+    List<Article> getArtByMotCle(String keyword) throws BLLException;
+    Integer getUserByNoArt(Integer noArt) throws BLLException;
 }

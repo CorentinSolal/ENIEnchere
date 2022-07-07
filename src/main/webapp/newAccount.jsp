@@ -27,7 +27,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="BidListServlet">Enchères en cours</a>
                     </li>
-                    <c:if test="true">
+                    <c:if test="${!connected}">
                         <li class="nav-item">
                             <a class="nav-link" href="ConnectionServlet">Se connecter<span class="visually-hidden">(current)</span></a>
                         </li>
@@ -35,7 +35,7 @@
                             <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
                         </li>
                     </c:if>
-                    <c:if test="true">
+                    <c:if test="${connected}">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
                             <div class="dropdown-menu">
@@ -139,6 +139,6 @@
     </div>
     </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>>
 </body>
 </html>

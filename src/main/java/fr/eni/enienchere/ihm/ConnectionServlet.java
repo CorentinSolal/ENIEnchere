@@ -28,6 +28,8 @@ public class ConnectionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session=request.getSession();
+        User user= (User) request.getAttribute("user");
+        request.setAttribute("user", user);
         getServletContext().getRequestDispatcher(CONNECTION).forward(request, response);
     }
 
@@ -36,12 +38,9 @@ public class ConnectionServlet extends HttpServlet {
         session=request.getSession();
         try {
             User user= um.connectUser(request.getParameter("username"), request.getParameter("password"));
-            session.setAttribute("id", user.getNoUser());
-            session.setAttribute("username", user.getPseudo());
-            session.setAttribute("connected","true");
-            System.out.println(request.getParameter("username"));
-            System.out.println(request.getParameter("password"));
-            request.getRequestDispatcher("/HomeServlet").forward(request, response);
+            session.setAttribute("user", user);
+            session.setAttribute("connected",true);
+            request.getRequestDispatcher("HomeServlet").forward(request, response);
         }catch (BLLException e) {
             request.setAttribute("error", "Erreur lors de la connection");
             request.getRequestDispatcher(CONNECTION).forward(request, response);

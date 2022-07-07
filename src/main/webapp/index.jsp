@@ -14,29 +14,29 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <img src="images/logo_ENI_global_BLANC.png" alt="logo-ENI-global-BLANC">
-            <a class="navbar-brand" href="HomeServlet">ENI Enchères</a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="HomeServlet">Home</a>
+                        <a class="nav-link" href=""><h2>ENI Enchères</h2></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="BidListServlet">Enchères en cours</a>
+                        <a class="nav-link" href="BidListServlet"><h4>Enchères en cours</h4></a>
                     </li>
-                    <c:if test="true">
+                    <c:if test="${!connected}">
                         <li class="nav-item">
-                            <a class="nav-link" href="ConnectionServlet">Se connecter<span class="visually-hidden">(current)</span></a>
+                            <a class="nav-link" href="ConnectionServlet"><h4>Se connecter</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="CreateAccountServlet">Créer un compte</a>
+                            <a class="nav-link" href="CreateAccountServlet"><h4>Créer un compte</h4></a>
                         </li>
                     </c:if>
-                    <c:if test="true">
+                    <c:if test="${connected}">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h2>Bonjour ${user.pseudo} </h2> </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Mes enchères</a>
                                 <a class="dropdown-item" href="#">Mes articles</a>

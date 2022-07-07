@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 public class User {
     private Integer noUser;
-    private String username;
+    private String pseudo;
     private String lastName;
     private String firstName;
     private String adresse;
@@ -20,8 +20,8 @@ public class User {
     public User() {
     }
 
-    public User(String username, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password, int credit, byte admin) {
-        this.username = username;
+    public User(String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password, int credit, byte admin) {
+        this.pseudo = pseudo;
         this.lastName = lastName;
         this.firstName = firstName;
         this.adresse = adresse;
@@ -34,9 +34,9 @@ public class User {
         this.admin = admin;
     }
 
-    public User(Integer noUser, String username, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password, int credit, byte admin) {
+    public User(Integer noUser, String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password, int credit, byte admin) {
         this.noUser = noUser;
-        this.username = username;
+        this.pseudo = pseudo;
         this.lastName = lastName;
         this.firstName = firstName;
         this.adresse = adresse;
@@ -49,8 +49,8 @@ public class User {
         this.admin = admin;
     }
 
-    public User(String username, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
-        this.username = username;
+    public User(String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
+        this.pseudo = pseudo;
         this.lastName = lastName;
         this.firstName = firstName;
         this.adresse = adresse;
@@ -61,9 +61,9 @@ public class User {
         this.password = password;
     }
 
-    public User(Integer noUser, String username, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
+    public User(Integer noUser, String pseudo, String lastName, String firstName, String adresse, String cpo, String ville, String email, String telephone, String password) {
         this.noUser = noUser;
-        this.username = username;
+        this.pseudo = pseudo;
         this.lastName = lastName;
         this.firstName = firstName;
         this.adresse = adresse;
@@ -83,11 +83,11 @@ public class User {
     }
 
     public String getPseudo() {
-        return username;
+        return pseudo;
     }
 
-    public void setPseudo(String username) {
-        this.username = username;
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
     }
 
     public String getLastName() {
@@ -174,7 +174,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "noUser=" + noUser +
-                ", username='" + username + '\'' +
+                ", username='" + pseudo + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", adresse='" + adresse + '\'' +
