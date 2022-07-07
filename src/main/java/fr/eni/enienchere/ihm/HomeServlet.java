@@ -40,12 +40,4 @@ public class HomeServlet extends HttpServlet {
 
         getServletContext().getRequestDispatcher(INDEX).forward(request, response);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        session=request.getSession();
-        User user= (User) session.getAttribute("user");
-        request.setAttribute("user", user);
-        doGet(request, response);
-    }
 }

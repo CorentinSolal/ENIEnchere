@@ -44,6 +44,6 @@ public class BidDetailsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session=request.getSession();
-        doGet(request, response);
+        response.sendRedirect("HomeServlet");
     }
 }

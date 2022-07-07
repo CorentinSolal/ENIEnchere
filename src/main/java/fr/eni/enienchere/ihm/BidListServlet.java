@@ -22,10 +22,10 @@ public class BidListServlet extends HttpServlet {
     private static final String PROFIL="/profil.jsp";
     HttpSession session;
     private ArticleManager am = BLLFactory.getArticleManager();
-    @Override
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session = request.getSession();
-        session= request.getSession();
+
         try {
             List<Categorie> categories=am.selectCategories();
             request.setAttribute("categories", categories);
@@ -39,12 +39,15 @@ public class BidListServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        session= request.getSession();
         String keyword=request.getParameter("keyword");
         try {
             List<Article> listeArticles=am.getArtByMotCle(keyword);
+            session.setAttribute("article", listeArticles);
+            getServletContext().getRequestDispatcher(BIDLIST).forward(request, response);
         } catch (BLLException e) {
             e.printStackTrace();
+            response.sendRedirect("HomeServlet");
         }
     }
 }

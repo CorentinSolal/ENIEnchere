@@ -40,11 +40,11 @@ public class ConnectionServlet extends HttpServlet {
             User user= um.connectUser(request.getParameter("username"), request.getParameter("password"));
             session.setAttribute("user", user);
             session.setAttribute("connected",true);
-            request.getRequestDispatcher("HomeServlet").forward(request, response);
+            response.sendRedirect("HomeServlet");
         }catch (BLLException e) {
             request.setAttribute("error", "Erreur lors de la connection");
-            request.getRequestDispatcher(CONNECTION).forward(request, response);
             e.printStackTrace();
+            response.sendRedirect("HomeServlet");
         }
     }
 }
