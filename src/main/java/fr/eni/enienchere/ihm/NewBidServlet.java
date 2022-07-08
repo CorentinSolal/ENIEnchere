@@ -62,7 +62,7 @@ public class NewBidServlet extends HttpServlet {
 
         try {
             am.insertArticle(newArticle,user.getNoUser());
-            getServletContext().getRequestDispatcher("/HomeServlet").forward(request, response);
+            response.sendRedirect("HomeServlet");
         } catch (BLLException e) {
             getServletContext().getRequestDispatcher(NEWBID).forward(request, response);
             e.printStackTrace();

@@ -67,7 +67,7 @@
                             <label for="password" class="form-label mt-4">Password</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
                         </div>
-                        <p>${connected}</p>
+                        <!--<p>${connected}</p>-->
                         <p>${error}</p>
                         <div class="btnSubmit">
                         <button class="btn btn-primary" type="submit" style="margin-top:20px;">Connect</button>
