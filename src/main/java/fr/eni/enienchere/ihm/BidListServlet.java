@@ -40,14 +40,19 @@ public class BidListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session= request.getSession();
+
         String keyword=request.getParameter("keyword");
+
         try {
+
             List<Article> listeArticles=am.getArtByMotCle(keyword);
             session.setAttribute("article", listeArticles);
             getServletContext().getRequestDispatcher(BIDLIST).forward(request, response);
+
         } catch (BLLException e) {
+            session.setAttribute("error", "Erreur lors de la recherche");
             e.printStackTrace();
-            response.sendRedirect("HomeServlet");
+            response.sendRedirect("BidListServlet");
         }
     }
 }

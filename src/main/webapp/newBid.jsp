@@ -9,6 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ENI Enchères</title>
+    <link rel="icon" href="images/logo_ENI_global_BLANC.png" type="image/icon type">
 </head>
 <body>
 <header>

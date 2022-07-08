@@ -8,10 +8,10 @@ import fr.eni.enienchere.dal.UserDAO;
 public class UserManagerImpl implements UserManager{
 
     private UserDAO userDAO;
+
     public UserManagerImpl() {
         userDAO= DAOFactory.getUserDAO();
     }
-
     public void addUser(User user) throws BLLException {
         try {
             userDAO.addUser(user);
@@ -40,7 +40,6 @@ public class UserManagerImpl implements UserManager{
             throw new BLLException("Erreur UserManagerImpl selectUser",e);
         }
     }
-    @Override
     public User connectUser(String username, String password) throws BLLException {
         try{
             return userDAO.connectUser(username,password);

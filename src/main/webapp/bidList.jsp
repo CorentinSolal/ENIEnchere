@@ -9,6 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Enchères en cours</title>
+    <link rel="icon" href="images/logo_ENI_global_BLANC.png" type="image/icon type">
 </head>
 <body>
 <header>
@@ -58,24 +59,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <h3>Filtres : </h3>
-                    <!--<div class="form-group m-4">
-                        <label for="categorie" class="form-label mt-4">Categorie</label>
-                        <select class="form-select" id="categorie" name="categorie">
-                            <c:forEach var="categories" items="${categories}">
-                                <option>${categories.libelle}</option>
-                            </c:forEach>
-                        </select>
-                    </div>-->
-                    <div class="form-group">
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="Key word" name="keyword">
-                            <label for="floatingInput">Search by key words</label>
+                    <form method="post">
+                        <h3>Filtres : </h3>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Search by keyword" aria-label="search by keyword" aria-describedby="button-addon2" name="keyword">
+                                <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
+                            </div>
                         </div>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="submit">Search</button>
-                    </div>
-                    </div>
+                    </form>
+                    <p style="color: #0d0d0d">${error}</p>
                 </div>
                 <c:forEach var="article" items="${article}">
                     <div class="col-4">

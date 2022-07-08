@@ -8,6 +8,7 @@ public class Categorie {
         this.noCategorie = noCategorie;
         this.libelle = libelle;
     }
+
     public Integer getNoCategorie() {
         return noCategorie;
     }

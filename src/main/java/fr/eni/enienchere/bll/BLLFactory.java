@@ -2,10 +2,19 @@ package fr.eni.enienchere.bll;
 
 public class BLLFactory {
 
+    private static ArticleManagerImpl instanceArt;
+    private static UserManagerImpl instanceUser;
+
     public static ArticleManagerImpl getArticleManager() {
-        return new ArticleManagerImpl();
+        if (instanceArt == null) {
+            instanceArt = new ArticleManagerImpl();
+        }
+        return instanceArt;
     }
     public static UserManagerImpl getUserManager() {
-        return new UserManagerImpl();
+        if (instanceUser == null) {
+            instanceUser = new UserManagerImpl();
+        }
+        return instanceUser;
     }
 }

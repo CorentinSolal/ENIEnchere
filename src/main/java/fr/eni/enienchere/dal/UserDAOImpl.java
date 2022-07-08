@@ -58,10 +58,9 @@ public class UserDAOImpl implements UserDAO{
             stmt.setString(4,user.getAdresse());
             stmt.setString(5,user.getCpo());
             stmt.setString(6,user.getVille());
-           stmt.setString(7,user.getEmail());
-           stmt.setString(8,user.getTelephone());
-           stmt.setString(9,user.getPassword());
-
+            stmt.setString(7,user.getEmail());
+            stmt.setString(8,user.getTelephone());
+            stmt.setString(9,user.getPassword());
 
             int nbRows = stmt.executeUpdate();
 
@@ -99,8 +98,9 @@ public class UserDAOImpl implements UserDAO{
 
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                user =new User ( rs.getInt("no_utilisateur"),rs.getString("pseudo"),rs.getString("nom"),rs.getString("prenom"),
-                        rs.getString("email"), rs.getString("telephone"), rs.getString("rue"), rs.getString("code_postal"),
+                user =new User ( rs.getInt("no_utilisateur"),rs.getString("pseudo"),
+                        rs.getString("nom"),rs.getString("prenom"), rs.getString("email"),
+                        rs.getString("telephone"), rs.getString("rue"), rs.getString("code_postal"),
                         rs.getString("ville"), rs.getString("mot_de_passe"));
             }else{
                 throw new DALException("erreur verify user : "+id);
@@ -112,10 +112,10 @@ public class UserDAOImpl implements UserDAO{
 
         return user;
     }
-
     @Override
     public User connectUser(String username, String password) throws DALException {
         try (Connection connection= ConnectionProvider.getConnection()){
+
             PreparedStatement stmt = connection.prepareStatement(CONNECT);
 
             stmt.setString(1, username);
@@ -124,7 +124,11 @@ public class UserDAOImpl implements UserDAO{
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                return new User(rs.getInt("no_utilisateur"),rs.getString("pseudo"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("telephone"), rs.getString("rue"), rs.getString("code_postal"), rs.getString("ville"), rs.getString("mot_de_passe"), rs.getInt("credit"), rs.getByte("administrateur"));
+                return new User(rs.getInt("no_utilisateur"),rs.getString("pseudo"),
+                        rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
+                        rs.getString("telephone"), rs.getString("rue"), rs.getString("code_postal"),
+                        rs.getString("ville"), rs.getString("mot_de_passe"), rs.getInt("credit"),
+                        rs.getByte("administrateur"));
             } else {
                 throw new DALException("Login ou Mot de passe incorrecte");
             }

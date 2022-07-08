@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mon profil</title>
+    <link rel="icon" href="images/logo_ENI_global_BLANC.png" type="image/icon type">
 </head>
 <body>
 <header>
@@ -74,7 +75,7 @@
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingMail" placeholder="Mail" readOnly="">
-                            <label for="floatingMail">${user.email}</label>²
+                            <label for="floatingMail">${user.email}</label>
                         </div>
                         <div class="form-floating  m-4">
                             <input type="text" class="form-control" id="floatingPhone" placeholder="Phone" readOnly="">

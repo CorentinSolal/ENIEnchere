@@ -12,24 +12,22 @@ import java.util.List;
 
 public class ArticleDAOImpl implements ArticleDAO {
 
-    //Bien faire attention aux noms des colonnes et tables dans la Base de données
-    private static final String INSERT = "insert Into ARTICLES_VENDUS (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente ,no_utilisateur ,no_categorie, image_url )"
-            + " values (?, ?, ?, ?, ?, ?, ?, ?,?)";
+
+    private static final String INSERT = "insert Into ARTICLES_VENDUS (nom_article, description, date_debut_encheres, date_fin_encheres, " +
+            "prix_initial, prix_vente ,no_utilisateur ,no_categorie, image_url ) values (?,?,?,?,?,?,?,?,?)";
     private static final String SELECT_ALL = "Select * from ARTICLES_VENDUS";
     private static final String DELETE = "Delete FROM ARTICLES_VENDUS Where no_article = ?";
     private static final String SELECT_BY_ID = "Select * From ARTICLES_VENDUS Where no_article = ?";
-    private static final String UPDATE = "UPDATE ARTICLES_VENDUS SET nom_article = ? ,description = ? ,date_debut_encheres = ? ,date_fin_encheres = ?,prix_initial = ?, no_categorie = ?, image_url = ?";
-    //private static final String SELECT_USER_CATALOGUE = "SELECT * FROM UTILISATEURS";
+    private static final String UPDATE = "UPDATE ARTICLES_VENDUS SET nom_article = ? ,description = ? ,date_debut_encheres = ? ,date_fin_encheres = ?," +
+            "prix_initial = ?, no_categorie = ?, image_url = ?";
     private static final String SELECT_BY_USER = "SELECT * From ARTICLES_VENDUS Where no_utilisateur = ?";
     private static final String SELECT_CATEGORIE = "SELECT * FROM CATEGORIES";
     private static final String INSERT_ENCHERE = "insert into ENCHERES (date_enchere, montant_enchere, no_article, no_utilisateur) values (?, ?, ?, ?)";
-
-    private static final String SELECT_BY_MOT_CLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article like %?%";
+    private static final String SELECT_BY_MOT_CLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article like ?";
     private static final String SELECT_NO_USER="SELECT no_utilisateur FROM ARTICLES_VENDUS WHERE no_article=?";
 
     public ArticleDAOImpl() {
     }
-
     public void insert(Article article, int idUser) throws DALException {
         try (Connection conn = ConnectionProvider.getConnection()) {
 
@@ -55,8 +53,8 @@ public class ArticleDAOImpl implements ArticleDAO {
             throw new DALException("error insert article : ", e);
         }
     }
-
     public List<Article> getAllArticles() throws DALException {
+
         List<Article> listeArticles = new ArrayList<Article>();
 
         try (Connection conn = ConnectionProvider.getConnection()) {
@@ -67,14 +65,15 @@ public class ArticleDAOImpl implements ArticleDAO {
 
             while (rs.next()) {
                 listeArticles.add(new Article(rs.getInt("no_article"), rs.getString("nom_article"),
-                        rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(), rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url")));
+                        rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(),
+                        rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"),
+                        rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url")));
             }
             return listeArticles;
         } catch (SQLException e) {
             throw new DALException("erreur Select All", e);
         }
     }
-
     public void delete(int noArt) throws DALException {
 
         try (Connection conn = ConnectionProvider.getConnection()) {
@@ -88,10 +87,8 @@ public class ArticleDAOImpl implements ArticleDAO {
         } catch (SQLException e) {
             throw new DALException("erreur delete", e);
         }
-
     }
-
-    public Article selectById(int noArt) throws DALException {
+    public Article selectById(Integer noArt) throws DALException {
 
         try (Connection conn = ConnectionProvider.getConnection()) {
 
@@ -102,7 +99,10 @@ public class ArticleDAOImpl implements ArticleDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                return new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(), rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
+                return new Article(rs.getInt("no_article"), rs.getString("nom_article"),
+                        rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(),
+                        rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"),
+                        rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
             } else {
                 throw new DALException("Mauvais Identifiant ");
             }
@@ -110,7 +110,6 @@ public class ArticleDAOImpl implements ArticleDAO {
             throw new DALException("erreur selectbyid", e);
         }
     }
-
     public void update(Article article, int idUser) throws DALException {
 
         try (Connection conn = ConnectionProvider.getConnection()) {
@@ -131,8 +130,9 @@ public class ArticleDAOImpl implements ArticleDAO {
             throw new DALException("erreur update", e);
         }
     }
-
     public List<Article> selectByUser(Integer noUser) throws DALException {
+
+        List<Article> listeArticles = new ArrayList<Article>();
 
         try (Connection conn = ConnectionProvider.getConnection()) {
 
@@ -143,19 +143,18 @@ public class ArticleDAOImpl implements ArticleDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                Date dateDebut = rs.getDate("date_debut_encheres");
-                Date dateFin = rs.getDate("date_fin_encheres");
-                LocalDate localDateDebut = dateDebut.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                LocalDate localDateFin = dateFin.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                return (List<Article>) new Article(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), localDateDebut, localDateFin, rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
+                listeArticles.add(new Article(rs.getInt("no_article"), rs.getString("nom_article"),
+                        rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(),
+                        rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"),
+                        rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url")));
             } else {
                 throw new DALException("Mauvais Identifiant ");
             }
+            return listeArticles;
         } catch (SQLException e) {
             throw new DALException("erreur selectbyid", e);
         }
     }
-
     public List<Categorie> selectCategorie() throws DALException {
         List<Categorie> listeCategorie = new ArrayList<Categorie>();
 
@@ -174,7 +173,6 @@ public class ArticleDAOImpl implements ArticleDAO {
             throw new DALException("erreur Select Categorie", e);
         }
     }
-
     public void insertEnchere(Bid bid, int idArticle, int idUser) throws DALException {
 
         try (Connection conn = ConnectionProvider.getConnection()) {
@@ -198,24 +196,28 @@ public class ArticleDAOImpl implements ArticleDAO {
         }
 
     }
-
     public List<Article> getArtByMotCle(String keyword) throws DALException {
         try (Connection conn = ConnectionProvider.getConnection()) {
 
             List<Article> listeArticles = new ArrayList<Article>();
 
             PreparedStatement stmt = conn.prepareStatement(SELECT_BY_MOT_CLE);
-            stmt.setString(1, keyword);
+
+            stmt.setString(1, "%"+keyword+"%");
 
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                listeArticles.add(new Article(rs.getInt("no_article"), rs.getString("nom_article"),
-                        rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(), rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url")));
+                Article artKeyword = new Article(rs.getInt("no_article"), rs.getString("nom_article"),
+                        rs.getString("description"), rs.getDate("date_debut_encheres").toLocalDate(),
+                        rs.getDate("date_fin_encheres").toLocalDate(), rs.getInt("prix_initial"),
+                        rs.getInt("prix_vente"), rs.getInt("no_categorie"), rs.getString("image_url"));
+                System.out.println(artKeyword);
+                listeArticles.add(artKeyword);
             }
             return listeArticles;
         } catch (SQLException e) {
-            throw new DALException("erreur Select All", e);
+            throw new DALException("erreur Select by mot clé", e);
         }
     }
     public Integer getNoUser(Integer noArt) throws DALException {

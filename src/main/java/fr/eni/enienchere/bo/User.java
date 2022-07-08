@@ -77,100 +77,75 @@ public class User {
     public Integer getNoUser() {
         return noUser;
     }
-
     public void setNoUser(Integer noUser) {
         this.noUser = noUser;
     }
-
     public String getPseudo() {
         return pseudo;
     }
-
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public String getAdresse() {
         return adresse;
     }
-
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-
     public String getCpo() {
         return cpo;
     }
-
     public void setCpo(String cpo) {
         this.cpo = cpo;
     }
-
     public String getVille() {
         return ville;
     }
-
     public void setVille(String ville) {
         this.ville = ville;
     }
-
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
     public String getTelephone() {
         return telephone;
     }
-
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
-
     public int getCredit() {
         return credit;
     }
-
     public void setCredit(int credit) {
         this.credit = credit;
     }
-
     public byte getAdmin() {
         return admin;
     }
-
     public void setAdmin(byte admin) {
         this.admin = admin;
     }
-
-    @Override
     public String toString() {
         return "User{" +
                 "noUser=" + noUser +

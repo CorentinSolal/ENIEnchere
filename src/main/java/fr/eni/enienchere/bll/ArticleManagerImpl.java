@@ -28,7 +28,7 @@ public class ArticleManagerImpl implements ArticleManager   {
             throw new BLLException("Error ArticleManagerImpl selectCategorie : ", e);
         }
     }
-   public void insertArticle (Article article, int id) throws BLLException {
+    public void insertArticle (Article article, int id) throws BLLException {
         if(article.getIdArt()==null) {
             try {
                 articleDAO.insert(article,id);
@@ -43,11 +43,11 @@ public class ArticleManagerImpl implements ArticleManager   {
             }
         }
     }
-    public void deleteArticle(Integer idArt) throws BLLException{
+    public void deleteArticle(Integer id) throws BLLException{
         try {
-            articleDAO.delete(idArt);
+            articleDAO.delete(id);
         }catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl deleteArticle : " + idArt,e);
+            throw new BLLException("Error ArticleManagerImpl deleteArticle : " + id,e);
         }
     }
     public Article selectById(Integer id) throws BLLException {
@@ -64,11 +64,11 @@ public class ArticleManagerImpl implements ArticleManager   {
             throw new BLLException("Error ArticleManagerImpl updateArticle : " + idUser, e);
         }
     }
-    public List<Article> selectByUserArticle(Integer idArt) throws BLLException {
+    public List<Article> selectByUserArticle(Integer id) throws BLLException {
         try {
-            return articleDAO.selectByUser(idArt);
+            return articleDAO.selectByUser(id);
         } catch (DALException e) {
-            throw new BLLException("Error ArticleManagerImpl selectByUserArticle : " + idArt, e);
+            throw new BLLException("Error ArticleManagerImpl selectByUserArticle : " + id, e);
         }
     }
     public void insertEnchere (Bid bid, int idArticle, Integer idBid)  throws BLLException {
@@ -78,7 +78,6 @@ public class ArticleManagerImpl implements ArticleManager   {
             throw new BLLException("Error ArticleManagerImpl insertEnchere : " + idBid, e);
         }
     }
-
     public List<Article> getArtByMotCle(String keyword) throws BLLException {
         try {
             return articleDAO.getArtByMotCle(keyword);
@@ -93,5 +92,4 @@ public class ArticleManagerImpl implements ArticleManager   {
             throw new BLLException("Error ArticleManagerImpl getUserByNoArt : " + noArt, e);
         }
     }
-
 }

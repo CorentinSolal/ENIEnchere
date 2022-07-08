@@ -28,8 +28,10 @@ public class BidDetailsServlet extends HttpServlet {
             session=request.getSession();
             User user= (User) session.getAttribute("user");
 
-            Article article=am.selectById(Integer.parseInt(request.getParameter("id")));
             int idUser=am.getUserByNoArt(Integer.parseInt(request.getParameter("id")));
+
+            Article article=am.selectById(Integer.parseInt(request.getParameter("id")));
+
             User seller=um.selectUser(idUser);
             request.setAttribute("user", user);
             request.setAttribute("seller",seller);
@@ -37,7 +39,6 @@ public class BidDetailsServlet extends HttpServlet {
         }catch (BLLException e) {
             throw new RuntimeException(e);
         }
-       session = request.getSession();
        getServletContext().getRequestDispatcher(BIDDETAILS).forward(request, response);
     }
 

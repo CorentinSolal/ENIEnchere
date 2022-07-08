@@ -1,7 +1,6 @@
 package fr.eni.enienchere.dal;
 
 public class DAOFactory {
-
     private static ArticleDAO instanceArticle;
     private static UserDAO instanceUser;
         public static ArticleDAO getArticleDao() {

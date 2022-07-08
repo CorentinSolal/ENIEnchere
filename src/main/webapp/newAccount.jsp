@@ -9,6 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connexion</title>
+    <link rel="icon" href="images/logo_ENI_global_BLANC.png" type="image/icon type">
 </head>
 <body>
 <header>
@@ -60,6 +61,7 @@
                 <div class="col-lg-12">
                     <form action="CreateAccountServlet" method="post">
                         <fieldset>
+                            <legend>Create Account</legend>
                             <div class="form-group m-4">
                                 <h2 class="m-5" style="text-align:center">Créer un compte</h2>
                                 <div class="form-floating m-4">

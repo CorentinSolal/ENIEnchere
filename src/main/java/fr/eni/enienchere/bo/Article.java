@@ -17,7 +17,6 @@ public class Article {
 
     public Article() {
     }
-
     public Article(Integer idArt, String nameArt, String descArt, LocalDate dateStart, LocalDate dateEnd, Integer startPrice, Integer endPrice, Integer noCat, String imageUrl) {
         this.idArt = idArt;
         this.nameArt = nameArt;
@@ -29,35 +28,27 @@ public class Article {
         this.endPrice = startPrice;
         this.imageUrl = imageUrl;
     }
-
     public Integer getIdArt() {
         return idArt;
     }
-
     public void setIdArt(Integer idArt) {
         this.idArt = idArt;
     }
-
     public String getNameArt() {
         return nameArt;
     }
-
     public void setNameArt(String nameArt) {
         this.nameArt = nameArt;
     }
-
     public String getDescArt() {
         return descArt;
     }
-
     public void setDescArt(String descArt) {
         this.descArt = descArt;
     }
-
     public Integer getNoCat() {
         return noCat;
     }
-
     public void setNoCat(Integer noCat) {
         this.noCat = noCat;
     }
@@ -66,54 +57,42 @@ public class Article {
             case "Instruments de musique" : this.noCat = 1; break;
             case "Informatique" : this.noCat = 2; break;
             case "Mobilier" : this.noCat = 3; break;
-            case "Vetements" : this.noCat = 4; break;
+            case "Vêtements" : this.noCat = 4; break;
             case "Nourritures" : this.noCat = 5; break;
             case "autre" : this.noCat = 6; break;
             default:this.noCat =6;break;
         }
     }
-
     public LocalDate getDateStart() {
         return dateStart;
     }
-
     public void setDateStart() {
         this.dateStart = LocalDate.now();
     }
-
     public LocalDate getDateEnd() {
         return dateEnd;
     }
-
     public void setDateEnd(LocalDate dateEnd) {
         this.dateEnd = dateEnd;
     }
-
     public Integer getStartPrice() {
         return startPrice;
     }
-
     public void setStartPrice(Integer startPrice) {
         this.startPrice = startPrice;
     }
-
     public Integer getEndPrice() {
         return endPrice;
     }
-
     public void setEndPrice(Integer endPrice) {
         this.endPrice = endPrice;
     }
-
     public String getImageUrl() {
         return imageUrl;
     }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
-    @Override
     public String toString() {
         return "Article{" +
                 "idArt=" + idArt +
