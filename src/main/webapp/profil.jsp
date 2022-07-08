@@ -108,10 +108,10 @@
                 <div class="pres col-4" >
                     <h4>L'agence</h4>
                     <p>Qui sommes nous ?</p>
-                    <p>3 stagiaires en
+                    <p>3 Collaborateurs en
                     charge de créer<br>
                     des sites pour des
-                    clients exigeant.<br>
+                    clients exigeants.<br>
                     Une agence pleine de bonne volonté<br>
                     et de jeunes talents !</p>
                 </div>
