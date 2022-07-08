@@ -47,6 +47,7 @@ public class BidListServlet extends HttpServlet {
 
             List<Article> listeArticles=am.getArtByMotCle(keyword);
             session.setAttribute("article", listeArticles);
+            session.setAttribute("success", "Mot recherché : "+keyword);
             getServletContext().getRequestDispatcher(BIDLIST).forward(request, response);
 
         } catch (BLLException e) {

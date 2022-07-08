@@ -69,6 +69,7 @@
                         </div>
                     </form>
                     <p style="color: #0d0d0d">${error}</p>
+                    <h4 style="color: #0d0d0d"> ${success}</h4>
                 </div>
                 <c:forEach var="article" items="${article}">
                     <div class="col-4">
